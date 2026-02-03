@@ -5,8 +5,8 @@
 [node name="Node2D" type="Node2D" unique_id=101441949]
 
 [node name="Icon" type="Sprite2D" parent="." unique_id=1773129656]
-position = Vector2(-786, 503)
-scale = Vector2(1.921875, 13.78125)
+position = Vector2(-2864, -394.99994)
+scale = Vector2(34.390625, 27.8125)
 texture = ExtResource("1_vajna")
 
 [node name="Icon2" type="Sprite2D" parent="." unique_id=567490242]
@@ -15,13 +15,13 @@ scale = Vector2(1.921875, 13.78125)
 texture = ExtResource("1_vajna")
 
 [node name="Icon3" type="Sprite2D" parent="." unique_id=1930198456]
-position = Vector2(1100, 491.99997)
+position = Vector2(1257.0001, 518)
 scale = Vector2(1.921875, 13.78125)
 texture = ExtResource("1_vajna")
 
 [node name="Icon4" type="Sprite2D" parent="." unique_id=296823299]
-position = Vector2(1879, 514)
-scale = Vector2(1.921875, 13.78125)
+position = Vector2(4088, -219.99982)
+scale = Vector2(36.4375, 25.249996)
 texture = ExtResource("1_vajna")
 
 [node name="Icon5" type="Sprite2D" parent="." unique_id=1797498115]

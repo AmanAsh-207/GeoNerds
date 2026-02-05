@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ds6jg5p7tg18a"]
 
 [ext_resource type="Texture2D" uid="uid://bu4sjcb6unnpa" path="res://seperated countries/usa.png" id="1_dke4l"]
-[ext_resource type="Script" uid="uid://c0wu05iy5vpje" path="res://geonerds.gd" id="1_rtr7l"]
+[ext_resource type="Script" path="res://geonerds.gd" id="1_rtr7l"]
 [ext_resource type="Texture2D" uid="uid://daswtg77si7bl" path="res://seperated countries/uzbekistan.png" id="2_rtr7l"]
 [ext_resource type="Texture2D" uid="uid://b1kt46n3iqiwc" path="res://seperated countries/vietnam.png" id="3_jnbpa"]
 [ext_resource type="Texture2D" uid="uid://dme44gav5x4aq" path="res://seperated countries/venezuela.png" id="4_upg52"]

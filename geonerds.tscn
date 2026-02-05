@@ -1,32 +1,202 @@
 [gd_scene format=3 uid="uid://ds6jg5p7tg18a"]
 
 [ext_resource type="Texture2D" uid="uid://bu4sjcb6unnpa" path="res://seperated countries/usa.png" id="1_dke4l"]
+[ext_resource type="Script" uid="uid://c0wu05iy5vpje" path="res://geonerds.gd" id="1_rtr7l"]
 [ext_resource type="Texture2D" uid="uid://daswtg77si7bl" path="res://seperated countries/uzbekistan.png" id="2_rtr7l"]
 [ext_resource type="Texture2D" uid="uid://b1kt46n3iqiwc" path="res://seperated countries/vietnam.png" id="3_jnbpa"]
 [ext_resource type="Texture2D" uid="uid://dme44gav5x4aq" path="res://seperated countries/venezuela.png" id="4_upg52"]
 [ext_resource type="Texture2D" uid="uid://bs38yx6qblf8u" path="res://seperated countries/vuba.png" id="5_nla3t"]
 [ext_resource type="Texture2D" uid="uid://bdpdeit4yckco" path="res://seperated countries/mexico.png" id="6_ob4fa"]
 [ext_resource type="Texture2D" uid="uid://c8dccakolo118" path="res://seperated countries/kazakshtan.png" id="7_y74wa"]
+[ext_resource type="Texture2D" uid="uid://dwklr63n4hjd1" path="res://seperated countries/afghanistan.png" id="9_6x3x0"]
+[ext_resource type="Texture2D" uid="uid://dcg7lxsc0nwl7" path="res://seperated countries/albania.png" id="10_4b1pg"]
+[ext_resource type="Texture2D" uid="uid://crcqq61a6d8ms" path="res://seperated countries/argentina.png" id="11_uct5r"]
+[ext_resource type="Texture2D" uid="uid://b76u8ypplucg4" path="res://seperated countries/armenia.png" id="12_l6c6a"]
+[ext_resource type="Texture2D" uid="uid://hhpaky5ccdra" path="res://seperated countries/australia.png" id="13_xqajc"]
+[ext_resource type="Texture2D" uid="uid://cxtksmgguvq04" path="res://seperated countries/austria.png" id="14_7s8sw"]
+[ext_resource type="Texture2D" uid="uid://dw16812xgeswb" path="res://seperated countries/azerbaijan.png" id="15_o535l"]
+[ext_resource type="Texture2D" uid="uid://c0gf6bcyyinid" path="res://seperated countries/bahamas.png" id="16_8dicq"]
+[ext_resource type="Texture2D" uid="uid://80ssgl4in55b" path="res://seperated countries/bahrain.png" id="17_db2n6"]
+[ext_resource type="Texture2D" uid="uid://q6rwy3h1gwsq" path="res://seperated countries/bangladesh.png" id="18_bah41"]
+[ext_resource type="Texture2D" uid="uid://s3k4edjvf45s" path="res://seperated countries/belarus.png" id="19_ynm3x"]
+[ext_resource type="Texture2D" uid="uid://qlshwc3s8fo4" path="res://seperated countries/belgium.png" id="20_88wn7"]
+[ext_resource type="Texture2D" uid="uid://dal77yuxbvxmk" path="res://seperated countries/belize.png" id="21_1prdd"]
+[ext_resource type="Texture2D" uid="uid://b0figablvbhl" path="res://seperated countries/bhutan.png" id="22_1x203"]
+[ext_resource type="Texture2D" uid="uid://2l0gldi3escl" path="res://seperated countries/bolivia.png" id="23_0el4b"]
+[ext_resource type="Texture2D" uid="uid://xf2ym4pq0cnh" path="res://seperated countries/bosniaandherzegovina.png" id="24_0cudc"]
+[ext_resource type="Texture2D" uid="uid://tqbtpfp53qic" path="res://seperated countries/brazil.png" id="25_l6bu3"]
+[ext_resource type="Texture2D" uid="uid://dpvgv382wms6g" path="res://seperated countries/brunei.png" id="26_1rtej"]
+[ext_resource type="Texture2D" uid="uid://dgof0nxp30f4d" path="res://seperated countries/bulgaria.png" id="27_w42vt"]
+[ext_resource type="Texture2D" uid="uid://dyifgw0656a0n" path="res://seperated countries/cambodia.png" id="28_r8ifh"]
+[ext_resource type="Texture2D" uid="uid://dfppqsdx3v4y1" path="res://seperated countries/canada.png" id="29_ycok2"]
+[ext_resource type="Texture2D" uid="uid://cxpcbsk7oc3wj" path="res://seperated countries/chilie.png" id="30_ljr2f"]
+[ext_resource type="Texture2D" uid="uid://ck4x4eb2qqdum" path="res://seperated countries/china.png" id="31_wli1r"]
+[ext_resource type="Texture2D" uid="uid://q2vaf7mj4ht4" path="res://seperated countries/colombia.png" id="32_3sp1p"]
+[ext_resource type="Texture2D" uid="uid://dn3nfd4eoeqrb" path="res://seperated countries/costarica.png" id="33_yjgpr"]
+[ext_resource type="Texture2D" uid="uid://lcwdmdbxdk56" path="res://seperated countries/croatia.png" id="34_n6hqs"]
+[ext_resource type="Texture2D" uid="uid://cq0nm6u4iic26" path="res://seperated countries/cyprus.png" id="35_wqg13"]
+[ext_resource type="Texture2D" uid="uid://boyvuaphp4f05" path="res://seperated countries/czechia.png" id="36_th7lm"]
+[ext_resource type="Texture2D" uid="uid://dn6n25if64j73" path="res://seperated countries/denmark.png" id="37_srqr4"]
+[ext_resource type="Texture2D" uid="uid://dre8stg0tr7gj" path="res://seperated countries/dominica.png" id="38_vytxe"]
+[ext_resource type="Texture2D" uid="uid://dkhcqsogemblt" path="res://seperated countries/dominicanrepublic.png" id="39_627gs"]
+[ext_resource type="Texture2D" uid="uid://dgxsek4bbhdm5" path="res://seperated countries/ecuador.png" id="40_rj7h1"]
+[ext_resource type="Texture2D" uid="uid://bhidgc0lkk3d" path="res://seperated countries/elsalvador.png" id="41_rswq6"]
+[ext_resource type="Texture2D" uid="uid://4uj53s2iyydm" path="res://seperated countries/estonia.png" id="42_n1j2x"]
+[ext_resource type="Texture2D" uid="uid://dmdqk3rm2v7rw" path="res://seperated countries/finland.png" id="43_3wp5b"]
+[ext_resource type="Texture2D" uid="uid://dru8tccjeg01l" path="res://seperated countries/france.png" id="44_mwaou"]
 
 [node name="Node2D" type="Node2D" unique_id=1669328160]
+script = ExtResource("1_rtr7l")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=757323698]
+[node name="USA" type="Sprite2D" parent="." unique_id=757323698]
 texture = ExtResource("1_dke4l")
 
-[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1082197025]
+[node name="Uzbekistan" type="Sprite2D" parent="." unique_id=1082197025]
 texture = ExtResource("2_rtr7l")
 
-[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=931345480]
+[node name="Vietnam" type="Sprite2D" parent="." unique_id=931345480]
 texture = ExtResource("3_jnbpa")
 
-[node name="Sprite2D4" type="Sprite2D" parent="." unique_id=1722415211]
+[node name="Venezuela" type="Sprite2D" parent="." unique_id=1722415211]
 texture = ExtResource("4_upg52")
 
-[node name="Sprite2D5" type="Sprite2D" parent="." unique_id=2020765044]
+[node name="Cuba" type="Sprite2D" parent="." unique_id=2020765044]
 texture = ExtResource("5_nla3t")
 
-[node name="Sprite2D6" type="Sprite2D" parent="." unique_id=1685456164]
+[node name="Mexico" type="Sprite2D" parent="." unique_id=1685456164]
 texture = ExtResource("6_ob4fa")
 
-[node name="Sprite2D7" type="Sprite2D" parent="." unique_id=868752882]
+[node name="Kazakstan" type="Sprite2D" parent="." unique_id=868752882]
 texture = ExtResource("7_y74wa")
+
+[node name="Afghanistan" type="Sprite2D" parent="." unique_id=1416184422]
+texture = ExtResource("9_6x3x0")
+
+[node name="Albania" type="Sprite2D" parent="." unique_id=1104366253]
+texture = ExtResource("10_4b1pg")
+
+[node name="Argentina" type="Sprite2D" parent="." unique_id=1463258774]
+texture = ExtResource("11_uct5r")
+
+[node name="Armenia" type="Sprite2D" parent="." unique_id=1686843318]
+texture = ExtResource("12_l6c6a")
+
+[node name="Australia" type="Sprite2D" parent="." unique_id=796374679]
+texture = ExtResource("13_xqajc")
+
+[node name="Austria" type="Sprite2D" parent="." unique_id=2621251]
+texture = ExtResource("14_7s8sw")
+
+[node name="Azerbaijan" type="Sprite2D" parent="." unique_id=1792536705]
+texture = ExtResource("15_o535l")
+
+[node name="bahamas" type="Sprite2D" parent="." unique_id=167042822]
+texture = ExtResource("16_8dicq")
+
+[node name="Bahrain" type="Sprite2D" parent="." unique_id=871030293]
+texture = ExtResource("17_db2n6")
+
+[node name="Bangladesh" type="Sprite2D" parent="." unique_id=1893546357]
+texture = ExtResource("18_bah41")
+
+[node name="Belarus" type="Sprite2D" parent="." unique_id=1111860446]
+texture = ExtResource("19_ynm3x")
+
+[node name="Belgium" type="Sprite2D" parent="." unique_id=34802049]
+texture = ExtResource("20_88wn7")
+
+[node name="Belize" type="Sprite2D" parent="." unique_id=1963554043]
+texture = ExtResource("21_1prdd")
+
+[node name="Bhutan" type="Sprite2D" parent="." unique_id=1990639334]
+texture = ExtResource("22_1x203")
+
+[node name="Bolivia" type="Sprite2D" parent="." unique_id=1227937596]
+texture = ExtResource("23_0el4b")
+
+[node name="Bosnia_And_Herzegovina" type="Sprite2D" parent="." unique_id=1609417998]
+texture = ExtResource("24_0cudc")
+
+[node name="Brazil" type="Sprite2D" parent="." unique_id=413529194]
+texture = ExtResource("25_l6bu3")
+
+[node name="Brunei" type="Sprite2D" parent="." unique_id=595488731]
+texture = ExtResource("26_1rtej")
+
+[node name="Bulgaria" type="Sprite2D" parent="." unique_id=282972148]
+texture = ExtResource("27_w42vt")
+
+[node name="Cambodia" type="Sprite2D" parent="." unique_id=271090593]
+texture = ExtResource("28_r8ifh")
+
+[node name="Canada" type="Sprite2D" parent="." unique_id=144641479]
+texture = ExtResource("29_ycok2")
+
+[node name="Chilie" type="Sprite2D" parent="." unique_id=1919094499]
+texture = ExtResource("30_ljr2f")
+
+[node name="China" type="Sprite2D" parent="." unique_id=783711890]
+texture = ExtResource("31_wli1r")
+
+[node name="Columbia" type="Sprite2D" parent="." unique_id=2013221468]
+texture = ExtResource("32_3sp1p")
+
+[node name="Costa_Rica" type="Sprite2D" parent="." unique_id=2058230594]
+texture = ExtResource("33_yjgpr")
+
+[node name="Croatia" type="Sprite2D" parent="." unique_id=684141224]
+texture = ExtResource("34_n6hqs")
+
+[node name="Cyprus" type="Sprite2D" parent="." unique_id=1794618848]
+texture = ExtResource("35_wqg13")
+
+[node name="Czechia" type="Sprite2D" parent="." unique_id=745431256]
+texture = ExtResource("36_th7lm")
+
+[node name="Denmark" type="Sprite2D" parent="." unique_id=1454057267]
+texture = ExtResource("37_srqr4")
+
+[node name="Dominica" type="Sprite2D" parent="." unique_id=1871120088]
+texture = ExtResource("38_vytxe")
+
+[node name="Dominican_Republic" type="Sprite2D" parent="." unique_id=1791731701]
+texture = ExtResource("39_627gs")
+
+[node name="Ecuador" type="Sprite2D" parent="." unique_id=1941549202]
+texture = ExtResource("40_rj7h1")
+
+[node name="El_Salvador" type="Sprite2D" parent="." unique_id=1187865518]
+texture = ExtResource("41_rswq6")
+
+[node name="Estonia" type="Sprite2D" parent="." unique_id=852817357]
+texture = ExtResource("42_n1j2x")
+
+[node name="Finland" type="Sprite2D" parent="." unique_id=1967674631]
+texture = ExtResource("43_3wp5b")
+
+[node name="France" type="Sprite2D" parent="." unique_id=573228730]
+texture = ExtResource("44_mwaou")
+
+[node name="Cyprus11" type="Sprite2D" parent="." unique_id=1703945725]
+texture = ExtResource("35_wqg13")
+
+[node name="Cyprus12" type="Sprite2D" parent="." unique_id=807005922]
+texture = ExtResource("35_wqg13")
+
+[node name="Cyprus13" type="Sprite2D" parent="." unique_id=1599089061]
+texture = ExtResource("35_wqg13")
+
+[node name="Cyprus14" type="Sprite2D" parent="." unique_id=1178466464]
+texture = ExtResource("35_wqg13")
+
+[node name="Cyprus15" type="Sprite2D" parent="." unique_id=54941060]
+texture = ExtResource("35_wqg13")
+
+[node name="Cyprus16" type="Sprite2D" parent="." unique_id=622436602]
+texture = ExtResource("35_wqg13")
+
+[node name="Cyprus17" type="Sprite2D" parent="." unique_id=2027838960]
+texture = ExtResource("35_wqg13")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1348370569]
+zoom = Vector2(0.275, 0.275)

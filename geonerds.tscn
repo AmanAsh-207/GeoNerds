@@ -1,30 +1,3 @@
 [gd_scene format=3 uid="uid://ds6jg5p7tg18a"]
 
-[ext_resource type="Texture2D" uid="uid://d31kxrmblwp5s" path="res://icon.svg" id="1_vajna"]
-
-[node name="Node2D" type="Node2D" unique_id=101441949]
-
-[node name="Icon" type="Sprite2D" parent="." unique_id=1773129656]
-position = Vector2(-2864, -394.99994)
-scale = Vector2(34.390625, 27.8125)
-texture = ExtResource("1_vajna")
-
-[node name="Icon2" type="Sprite2D" parent="." unique_id=567490242]
-position = Vector2(44.99994, 455)
-scale = Vector2(1.921875, 13.78125)
-texture = ExtResource("1_vajna")
-
-[node name="Icon3" type="Sprite2D" parent="." unique_id=1930198456]
-position = Vector2(1257.0001, 518)
-scale = Vector2(1.921875, 13.78125)
-texture = ExtResource("1_vajna")
-
-[node name="Icon4" type="Sprite2D" parent="." unique_id=296823299]
-position = Vector2(4088, -219.99982)
-scale = Vector2(36.4375, 25.249996)
-texture = ExtResource("1_vajna")
-
-[node name="Icon5" type="Sprite2D" parent="." unique_id=1797498115]
-position = Vector2(645, 3649)
-scale = Vector2(4.32031, 45.117188)
-texture = ExtResource("1_vajna")
+[node name="Node2D" type="Node2D" unique_id=1991459840]

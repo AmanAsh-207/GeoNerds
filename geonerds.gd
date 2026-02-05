@@ -1,5 +1,5 @@
 extends Node2D
-@onready var main_sprite: Sprite2D = $Sprite2D
+@onready var main_sprite: Sprite2D = $Denmark
 
 func _ready():
 	correct_ans()

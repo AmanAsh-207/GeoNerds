@@ -1,8 +1,418 @@
 extends Node2D
-@onready var main_sprite: Sprite2D = $Denmark
+var country_data = {
+
+# ----- ASIA -----
+"afghanistan": "asia",
+"armenia": "asia",
+"azerbaijan": "asia",
+"bahrain": "asia",
+"bangladesh": "asia",
+"bhutan": "asia",
+"brunei": "asia",
+"cambodia": "asia",
+"china": "asia",
+"cyprus": "asia",
+"georgia": "asia",
+"india": "asia",
+"indonesia": "asia",
+"iran": "asia",
+"iraq": "asia",
+"israel": "asia",
+"japan": "asia",
+"jordan": "asia",
+"kazakhstan": "asia",
+"kuwait": "asia",
+"kyrgyzstan": "asia",
+"laos": "asia",
+"lebanon": "asia",
+"malaysia": "asia",
+"maldives": "asia",
+"mongolia": "asia",
+"myanmar": "asia",
+"nepal": "asia",
+"northkorea": "asia",
+"oman": "asia",
+"pakistan": "asia",
+"philippines": "asia",
+"qatar": "asia",
+"russia":"asia",
+"saudiarabia": "asia",
+"singapore": "asia",
+"southkorea": "asia",
+"srilanka": "asia",
+"syria": "asia",
+"tajikistan": "asia",
+"thailand": "asia",
+"timorleste": "asia",
+"turkey": "asia",
+"turkmenistan": "asia",
+"unitedarabemirates": "asia",
+"uzbekistan": "asia",
+"vietnam": "asia",
+"yemen": "asia",
+"taiwan": "asia",
+
+# ----- EUROPE -----
+"albania": "europe",
+"andorra": "europe",
+"austria": "europe",
+"belarus": "europe",
+"belgium": "europe",
+"bosniaandherzegovina": "europe",
+"bulgaria": "europe",
+"croatia": "europe",
+"czechrepublic": "europe",
+"denmark": "europe",
+"estonia": "europe",
+"finland": "europe",
+"france": "europe",
+"germany": "europe",
+"greece": "europe",
+"hungary": "europe",
+"iceland": "europe",
+"ireland": "europe",
+"italy": "europe",
+"kosovo": "europe",
+"latvia": "europe",
+"liechtenstein": "europe",
+"lithuania": "europe",
+"luxembourg": "europe",
+"malta": "europe",
+"moldova": "europe",
+"monaco": "europe",
+"montenegro": "europe",
+"netherlands": "europe",
+"northmacedonia": "europe",
+"norway": "europe",
+"poland": "europe",
+"portugal": "europe",
+"romania": "europe",
+"sanmarino": "europe",
+"serbia": "europe",
+"slovakia": "europe",
+"slovenia": "europe",
+"spain": "europe",
+"sweden": "europe",
+"switzerland": "europe",
+"ukraine": "europe",
+"unitedkingdom": "europe",
+"vaticancity": "europe",
+
+# ----- AFRICA -----
+"algeria": "africa",
+"angola": "africa",
+"benin": "africa",
+"botswana": "africa",
+"burkinafaso": "africa",
+"burundi": "africa",
+"caboverde": "africa",
+"cameroon": "africa",
+"centralafricanrepublic": "africa",
+"chad": "africa",
+"comoros": "africa",
+"democraticrepublicofthecongo": "africa",
+"republicofthecongo": "africa",
+"cotedivoire": "africa",
+"djibouti": "africa",
+"egypt": "africa",
+"equatorialguinea": "africa",
+"eritrea": "africa",
+"eswatini": "africa",
+"ethiopia": "africa",
+"gabon": "africa",
+"thegambia": "africa",
+"ghana": "africa",
+"guinea": "africa",
+"guineabissau": "africa",
+"kenya": "africa",
+"lesotho": "africa",
+"liberia": "africa",
+"libya": "africa",
+"madagascar": "africa",
+"malawi": "africa",
+"mali": "africa",
+"mauritania": "africa",
+"mauritius": "africa",
+"morocco": "africa",
+"mozambique": "africa",
+"namibia": "africa",
+"niger": "africa",
+"nigeria": "africa",
+"rwanda": "africa",
+"saotomeandprincipe": "africa",
+"senegal": "africa",
+"seychelles": "africa",
+"sierraleone": "africa",
+"somalia": "africa",
+"southafrica": "africa",
+"southsudan": "africa",
+"sudan": "africa",
+"tanzania": "africa",
+"togo": "africa",
+"tunisia": "africa",
+"uganda": "africa",
+"zambia": "africa",
+"zimbabwe": "africa",
+
+# ----- NORTH AMERICA -----
+"antiguaandbarbuda": "northamerica",
+"bahamas": "northamerica",
+"barbados": "northamerica",
+"belize": "northamerica",
+"canada": "northamerica",
+"costarica": "northamerica",
+"cuba": "northamerica",
+"dominica": "northamerica",
+"dominicanrepublic": "northamerica",
+"elsalvador": "northamerica",
+"grenada": "northamerica",
+"guatemala": "northamerica",
+"haiti": "northamerica",
+"honduras": "northamerica",
+"jamaica": "northamerica",
+"mexico": "northamerica",
+"nicaragua": "northamerica",
+"panama": "northamerica",
+"saintkittsandnevis": "northamerica",
+"saintlucia": "northamerica",
+"saintvincentandthegrenadines": "northamerica",
+"trinidadandtobago": "northamerica",
+"usa": "northamerica",
+
+# ----- SOUTH AMERICA -----
+"argentina": "southamerica",
+"bolivia": "southamerica",
+"brazil": "southamerica",
+"chile": "southamerica",
+"colombia": "southamerica",
+"ecuador": "southamerica",
+"guyana": "southamerica",
+"paraguay": "southamerica",
+"peru": "southamerica",
+"suriname": "southamerica",
+"uruguay": "southamerica",
+"venezuela": "southamerica",
+
+# ----- OCEANIA -----
+"australia": "oceania",
+"fiji": "oceania",
+"kiribati": "oceania",
+"marshallislands": "oceania",
+"micronesia": "oceania",
+"nauru": "oceania",
+"newzealand": "oceania",
+"palau": "oceania",
+"papuanewguinea": "oceania",
+"samoa": "oceania",
+"solomonislands": "oceania",
+"tonga": "oceania",
+"tuvalu": "oceania",
+"vanuatu": "oceania"
+}
+
+var borders = {
+# ---- ASIA ----
+"india": ["pakistan", "china", "nepal", "bangladesh", "myanmar", "bhutan"],
+"pakistan": ["india", "afghanistan", "iran", "china"],
+"china": ["india", "pakistan", "nepal", "bhutan", "myanmar", "laos", "vietnam", "mongolia", "northkorea", "russia", "kazakhstan", "kyrgyzstan", "tajikistan"],
+"nepal": ["india", "china"],
+"bangladesh": ["india", "myanmar"],
+"myanmar": ["india", "bangladesh", "china", "laos", "thailand"],
+"thailand": ["myanmar", "laos", "cambodia", "malaysia"],
+"laos": ["china", "myanmar", "thailand", "cambodia", "vietnam"],
+"vietnam": ["china", "laos", "cambodia"],
+"cambodia": ["thailand", "laos", "vietnam"],
+"malaysia": ["thailand"],
+"northkorea": ["china", "southkorea", "russia"],
+"southkorea": ["northkorea"],
+"mongolia": ["china", "russia"],
+"kazakhstan": ["russia", "china", "kyrgyzstan", "uzbekistan", "turkmenistan"],
+"kyrgyzstan": ["kazakhstan", "china", "uzbekistan", "tajikistan"],
+"tajikistan": ["kyrgyzstan", "china", "afghanistan", "uzbekistan"],
+"uzbekistan": ["kazakhstan", "kyrgyzstan", "tajikistan", "afghanistan", "turkmenistan"],
+"turkmenistan": ["kazakhstan", "uzbekistan", "iran", "afghanistan"],
+"afghanistan": ["pakistan", "iran", "turkmenistan", "uzbekistan", "tajikistan", "china"],
+"iran": ["pakistan", "afghanistan", "turkmenistan", "azerbaijan", "armenia", "turkey", "iraq"],
+"iraq": ["iran", "turkey", "syria", "jordan", "saudiarabia", "kuwait"],
+"syria": ["turkey", "iraq", "jordan", "israel", "lebanon"],
+"lebanon": ["syria", "israel"],
+"israel": ["lebanon", "syria", "jordan", "egypt"],
+"jordan": ["israel", "syria", "iraq", "saudiarabia"],
+"saudiarabia": ["jordan", "iraq", "kuwait", "qatar", "unitedarabemirates", "oman", "yemen"],
+"oman": ["saudiarabia", "unitedarabemirates", "yemen"],
+"yemen": ["oman", "saudiarabia"],
+"unitedarabemirates": ["saudiarabia", "oman"],
+"qatar": ["saudiarabia"],
+"kuwait": ["iraq", "saudiarabia"],
+"armenia": ["turkey", "georgia", "azerbaijan", "iran"],
+"azerbaijan": ["armenia", "georgia", "russia", "iran"],
+"georgia": ["russia", "azerbaijan", "armenia", "turkey"],
+"turkiye": ["greece", "bulgaria", "georgia", "armenia", "iran", "iraq", "syria"],
+
+# ---- EUROPE ----
+"france": ["spain", "belgium", "luxembourg", "germany", "switzerland", "italy"],
+"germany": ["france", "netherlands", "belgium", "luxembourg", "switzerland", "austria", "czechrepublic", "poland", "denmark"],
+"spain": ["france", "portugal"],
+"portugal": ["spain"],
+"italy": ["france", "switzerland", "austria", "slovenia"],
+"switzerland": ["france", "germany", "austria", "italy"],
+"austria": ["germany", "czechrepublic", "slovakia", "hungary", "slovenia", "italy", "switzerland"],
+"poland": ["germany", "czechrepublic", "slovakia", "ukraine", "belarus", "lithuania", "russia"],
+"czechrepublic": ["germany", "poland", "slovakia", "austria"],
+"slovakia": ["czechrepublic", "poland", "ukraine", "hungary", "austria"],
+"hungary": ["austria", "slovakia", "ukraine", "romania", "serbia", "croatia", "slovenia"],
+"romania": ["hungary", "ukraine", "moldova", "bulgaria", "serbia"],
+"bulgaria": ["romania", "serbia", "northmacedonia", "greece", "turkey"],
+"greece": ["albania", "northmacedonia", "bulgaria", "turkey"],
+"albania": ["greece", "northmacedonia", "montenegro", "kosovo"],
+"northmacedonia": ["albania", "greece", "bulgaria", "serbia", "kosovo"],
+"serbia": ["hungary", "romania", "bulgaria", "northmacedonia", "kosovo", "montenegro", "bosniaandherzegovina", "croatia"],
+"croatia": ["slovenia", "hungary", "serbia", "bosniaandherzegovina", "montenegro"],
+"slovenia": ["italy", "austria", "hungary", "croatia"],
+"bosniaandherzegovina": ["croatia", "serbia", "montenegro"],
+"montenegro": ["croatia", "bosniaandherzegovina", "serbia", "kosovo", "albania"],
+"kosovo": ["serbia", "montenegro", "albania", "northmacedonia"],
+"belgium": ["france", "netherlands", "germany", "luxembourg"],
+"netherlands": ["belgium", "germany"],
+"luxembourg": ["france", "belgium", "germany"],
+"denmark": ["germany"],
+"norway": ["sweden", "finland", "russia"],
+"sweden": ["norway", "finland"],
+"finland": ["sweden", "norway", "russia"],
+"estonia": ["latvia", "russia"],
+"latvia": ["estonia", "lithuania", "russia"],
+"lithuania": ["latvia", "poland", "belarus", "russia"],
+"belarus": ["poland", "lithuania", "latvia", "russia", "ukraine"],
+"ukraine": ["poland", "slovakia", "hungary", "romania", "moldova", "belarus", "russia"],
+"moldova": ["romania", "ukraine"],
+"russia": ["norway", "finland", "estonia", "latvia", "lithuania", "poland", "belarus", "ukraine", "georgia", "azerbaijan", "kazakhstan", "mongolia", "china", "northkorea"],
+
+# ---- AFRICA ----
+"egypt": ["libya", "sudan", "israel"],
+"libya": ["egypt", "sudan", "chad", "niger", "algeria", "tunisia"],
+"tunisia": ["algeria", "libya"],
+"algeria": ["tunisia", "libya", "niger", "mali", "mauritania", "morocco"],
+"morocco": ["algeria"],
+"mauritania": ["algeria", "mali", "senegal"],
+"mali": ["algeria", "niger", "burkinafaso", "cotedivoire", "guinea", "senegal", "mauritania"],
+"niger": ["algeria", "libya", "chad", "nigeria", "benin", "burkinafaso", "mali"],
+"chad": ["libya", "sudan", "centralafricanrepublic", "cameroon", "nigeria", "niger"],
+"sudan": ["egypt", "libya", "chad", "centralafricanrepublic", "southsudan", "ethiopia", "eritrea"],
+"ethiopia": ["sudan", "southsudan", "kenya", "somalia", "djibouti", "eritrea"],
+"kenya": ["ethiopia", "somalia", "tanzania", "uganda", "southsudan"],
+"uganda": ["kenya", "tanzania", "rwanda", "southsudan", "democraticrepublicofthecongo"],
+"tanzania": ["kenya", "uganda", "rwanda", "burundi", "democraticrepublicofthecongo", "zambia", "malawi", "mozambique"],
+"southafrica": ["namibia", "botswana", "zimbabwe", "mozambique", "lesotho", "eswatini"],
+
+# ---- NORTH AMERICA ----
+"usa": ["canada", "mexico"],
+"canada": ["usa"],
+"mexico": ["usa", "guatemala", "belize"],
+"guatemala": ["mexico", "belize", "honduras", "elsalvador"],
+"belize": ["mexico", "guatemala"],
+"honduras": ["guatemala", "elsalvador", "nicaragua"],
+"elsalvador": ["guatemala", "honduras"],
+"nicaragua": ["honduras", "costarica"],
+"costarica": ["nicaragua", "panama"],
+"panama": ["costarica", "colombia"],
+
+# ---- SOUTH AMERICA ----
+"brazil": ["argentina", "bolivia", "peru", "colombia", "venezuela", "guyana", "suriname", "paraguay", "uruguay"],
+"argentina": ["brazil", "bolivia", "paraguay", "uruguay", "chile"],
+"chile": ["argentina", "bolivia", "peru"],
+"bolivia": ["peru", "chile", "argentina", "paraguay", "brazil"],
+"paraguay": ["bolivia", "argentina", "brazil"],
+"uruguay": ["argentina", "brazil"],
+"peru": ["ecuador", "colombia", "brazil", "bolivia", "chile"],
+"colombia": ["panama", "venezuela", "brazil", "peru", "ecuador"],
+"venezuela": ["colombia", "brazil", "guyana"],
+"ecuador": ["colombia", "peru"],
+
+# ---- OCEANIA ----
+"australia": [],
+"newzealand": []
+}
+
+var current_sprite = []
+var last_country = ""
+
+var FIRST_COLOR = Color("535d6cff")     
+var BORDER_COLOR = Color("e2baecff")    
+var NOT_BORDER_COLOR = Color("b10000ff") 
 
 func _ready():
-	correct_ans()
+	starting_country()
+
+func starting_country():
+	var random_country = country_data.keys().pick_random()
+	print("Starting country:", random_country)
+	create_country(random_country, FIRST_COLOR)
+	last_country = random_country
+
+func create_country(country_name , color):
+	for s in current_sprite:
+		if s.name == country_name:
+			print("Already exist")
+			return
+
+	# Create new sprite
+	var s = Sprite2D.new()
+	var continent_Name = country_data[country_name]
+	var path = "res://seperated countries/" + continent_Name + "/" + country_name + ".png"
+
+	# Load texture correctly
+	s.texture = load(path)
+	s.position = $"World(2)".position
+	s.scale = $"World(2)".scale
 	
-func correct_ans():
-	main_sprite.modulate = Color(0,0,1)
+	add_child(s)
+	s.z_index= 10 
+	s.modulate= color
+	current_sprite.append(s)
+
+func borders_previous(new_country):
+
+	if last_country == "":
+		return false
+	if last_country in borders and new_country in borders[last_country]:
+		return true
+	return false
+
+
+func _on_submitbutton_pressed() -> void:
+	var name = $InputBox.text.to_lower().strip_edges()
+	name=name.replace(" ","")
+	if name == "":
+		return
+
+	# If not a valid country, do nothing
+	if not name in country_data:
+		$InputBox.text = ""   # just clear box
+		return
+		
+	if borders_previous(name):
+		create_country(name, BORDER_COLOR)
+		print(name, " BORDERS ", last_country)
+		last_country = name
+	else:
+		create_country(name, NOT_BORDER_COLOR)
+		print(name, " does NOT border ", last_country)
+		print("game over")
+		await get_tree().create_timer(2.0).timeout
+		reset()
+		
+	
+
+func reset():
+	 # Remove all country sprites
+	for s in current_sprite:
+		s.queue_free()
+
+	# Clear the list
+	current_sprite.clear()
+
+	# Reset previous country
+	last_country = ""
+	print("Game reset")
+	starting_country()
+	

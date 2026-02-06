@@ -1,9 +1,27 @@
 [gd_scene format=3 uid="uid://ds6jg5p7tg18a"]
 
 [ext_resource type="Script" uid="uid://c0wu05iy5vpje" path="res://geonerds.gd" id="1_rtr7l"]
+[ext_resource type="Texture2D" uid="uid://b36ns48f6tdj7" path="res://world (2).png" id="2_3p5tw"]
 
 [node name="Node2D" type="Node2D" unique_id=1669328160]
 script = ExtResource("1_rtr7l")
 
+[node name="Submitbutton" type="Button" parent="." unique_id=1949523355]
+offset_left = -554.0
+offset_top = -181.0
+offset_right = -354.0
+offset_bottom = -84.0
+
+[node name="InputBox" type="LineEdit" parent="." unique_id=784775352]
+offset_left = -617.0
+offset_top = -60.0
+offset_right = -266.0
+offset_bottom = 208.0
+
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1348370569]
-zoom = Vector2(0.275, 0.275)
+zoom = Vector2(0.22, 0.22)
+
+[node name="World(2)" type="Sprite2D" parent="." unique_id=2042167482]
+texture = ExtResource("2_3p5tw")
+
+[connection signal="pressed" from="Submitbutton" to="." method="_on_submitbutton_pressed"]

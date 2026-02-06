@@ -2,6 +2,7 @@
 
 [ext_resource type="FontFile" uid="uid://brbqhcm4j8uh" path="res://Sugar Cake.otf" id="1_7vrkn"]
 [ext_resource type="Texture2D" uid="uid://lq3kpskoq6rg" path="res://volume.png" id="2_fu7sn"]
+[ext_resource type="Texture2D" uid="uid://cgaxlebhss1nm" path="res://main_menu.png" id="3_fu7sn"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jix8l"]
 bg_color = Color(0.6979711, 0, 0, 1)
@@ -81,3 +82,9 @@ offset_right = 145.0
 offset_bottom = -45.0
 grow_horizontal = 2
 grow_vertical = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1733464624]
+z_index = -1
+position = Vector2(574.49994, 323.50003)
+scale = Vector2(0.2818448, 0.24010362)
+texture = ExtResource("3_fu7sn")

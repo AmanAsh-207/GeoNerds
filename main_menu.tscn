@@ -3,13 +3,16 @@
 [ext_resource type="FontFile" uid="uid://brbqhcm4j8uh" path="res://Sugar Cake.otf" id="1_7vrkn"]
 [ext_resource type="Texture2D" uid="uid://lq3kpskoq6rg" path="res://volume.png" id="2_fu7sn"]
 [ext_resource type="Texture2D" uid="uid://cgaxlebhss1nm" path="res://main_menu.png" id="3_fu7sn"]
+[ext_resource type="FontFile" uid="uid://dpal6lw36owve" path="res://Honeydew Pineapple.otf" id="3_jix8l"]
+[ext_resource type="Texture2D" uid="uid://cramxqlryjxg6" path="res://New Piskel-2.png (3).png" id="5_nlkkf"]
+[ext_resource type="Texture2D" uid="uid://wiiuoce72fpv" path="res://New Piskel-1.png (1).png" id="6_qe12f"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jix8l"]
 bg_color = Color(0.6979711, 0, 0, 1)
 skew = Vector2(1.955, 0.145)
 border_color = Color(0.17765072, 0.16966358, 0, 1)
-shadow_size = 3
-shadow_offset = Vector2(10.545, 0.93)
+shadow_size = 8
+shadow_offset = Vector2(14.32, 0.93)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_glbon"]
 bg_color = Color(0.7889274, 0.11871656, 0.14302473, 1)
@@ -23,6 +26,20 @@ shadow_color = Color(0.07449722, 0.07449722, 0.07449722, 1)
 shadow_size = 57
 shadow_offset = Vector2(42.155, 17.645)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nlkkf"]
+bg_color = Color(0.3784, 0.58709335, 0.86, 0.5686275)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8qtwp"]
+bg_color = Color(0.98, 0.16660002, 0.24793997, 0.52156866)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
 [node name="main_menu" type="Control" unique_id=348545031]
 layout_mode = 3
 anchors_preset = 15
@@ -34,26 +51,27 @@ grow_vertical = 2
 [node name="Camera2D" type="Camera2D" parent="." unique_id=916396912]
 position = Vector2(575.995, 324.01)
 
-[node name="Button" type="Button" parent="." unique_id=52549009]
+[node name="start" type="Button" parent="." unique_id=52549009]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -146.0
-offset_top = -74.0
-offset_right = 146.0
-offset_bottom = 74.0
+offset_left = -118.0
+offset_top = -58.0
+offset_right = 174.0
+offset_bottom = 90.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.8, 0.8)
 theme_override_colors/font_color = Color(0.8745098, 0.8745098, 0.8745098, 1)
 theme_override_fonts/font = ExtResource("1_7vrkn")
 theme_override_font_sizes/font_size = 90
 theme_override_styles/normal = SubResource("StyleBoxFlat_jix8l")
 text = " START"
 
-[node name="Button2" type="Button" parent="." unique_id=1043985623]
+[node name="volume" type="Button" parent="." unique_id=1043985623]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.95100003
@@ -68,23 +86,75 @@ grow_horizontal = 0
 scale = Vector2(0.06, 0.06)
 theme_override_styles/normal = SubResource("StyleBoxFlat_glbon")
 icon = ExtResource("2_fu7sn")
+icon_alignment = 1
 
-[node name="Button3" type="Button" parent="." unique_id=1180814461]
+[node name="easy" type="Button" parent="." unique_id=1180814461]
+visible = false
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -145.0
-offset_top = -101.0
-offset_right = 145.0
-offset_bottom = -45.0
+offset_left = -231.0
+offset_top = -106.0
+offset_right = -41.0
+offset_bottom = -40.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_colors/font_color = Color(4.235506e-06, 0.7459448, 0.99266285, 1)
+theme_override_fonts/font = ExtResource("3_jix8l")
+theme_override_font_sizes/font_size = 47
+theme_override_styles/normal = SubResource("StyleBoxFlat_nlkkf")
+text = "Easy"
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1733464624]
+[node name="hard" type="Button" parent="." unique_id=23272619]
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 41.0
+offset_top = -106.0
+offset_right = 230.99817
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.81, 0, 0.05399995, 1)
+theme_override_fonts/font = ExtResource("3_jix8l")
+theme_override_font_sizes/font_size = 47
+theme_override_styles/normal = SubResource("StyleBoxFlat_8qtwp")
+text = "Hard"
+
+[node name="background" type="Sprite2D" parent="." unique_id=1733464624]
 z_index = -1
 position = Vector2(574.49994, 323.50003)
 scale = Vector2(0.2818448, 0.24010362)
 texture = ExtResource("3_fu7sn")
+
+[node name="title" type="Node" parent="." unique_id=801358984]
+
+[node name="geo" type="Sprite2D" parent="title" unique_id=246735967]
+position = Vector2(217, 170)
+scale = Vector2(0.27222222, 0.26666668)
+texture = ExtResource("5_nlkkf")
+
+[node name="nerds" type="Sprite2D" parent="title" unique_id=1094793956]
+position = Vector2(289, 176)
+scale = Vector2(0.36203703, 0.40092593)
+texture = ExtResource("6_qe12f")
+
+[node name="Label" type="Label" parent="." unique_id=1406487451]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 9.0
+offset_top = -47.0
+offset_right = 443.0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("1_7vrkn")
+theme_override_font_sizes/font_size = 32
+text = "Made by: u/AffectionateFriend85"

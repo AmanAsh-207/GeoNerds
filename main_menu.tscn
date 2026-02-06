@@ -7,6 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://cramxqlryjxg6" path="res://New Piskel-2.png (3).png" id="5_nlkkf"]
 [ext_resource type="Texture2D" uid="uid://wiiuoce72fpv" path="res://New Piskel-1.png (1).png" id="6_qe12f"]
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nlkkf"]
+texture = ExtResource("3_fu7sn")
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jix8l"]
 bg_color = Color(0.6979711, 0, 0, 1)
 skew = Vector2(1.955, 0.145)
@@ -14,8 +17,46 @@ border_color = Color(0.17765072, 0.16966358, 0, 1)
 shadow_size = 8
 shadow_offset = Vector2(14.32, 0.93)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qe12f"]
+bg_color = Color(0.85, 0, 0, 1)
+skew = Vector2(1.955, 0.145)
+border_color = Color(0.17765072, 0.16966358, 0, 1)
+shadow_size = 8
+shadow_offset = Vector2(14.32, 0.93)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dy7ct"]
+bg_color = Color(0.80538696, 2.1418184e-06, 9.62615e-07, 1)
+skew = Vector2(1.955, 0.145)
+border_color = Color(0.17765072, 0.16966358, 0, 1)
+shadow_size = 8
+shadow_offset = Vector2(14.32, 0.93)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_glbon"]
 bg_color = Color(0.7889274, 0.11871656, 0.14302473, 1)
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 500
+corner_radius_top_right = 500
+corner_radius_bottom_right = 500
+corner_radius_bottom_left = 500
+corner_detail = 20
+shadow_color = Color(0.07449722, 0.07449722, 0.07449722, 1)
+shadow_size = 57
+shadow_offset = Vector2(42.155, 17.645)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0o4t1"]
+bg_color = Color(0.97, 0.18785664, 0.1746, 1)
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 500
+corner_radius_top_right = 500
+corner_radius_bottom_right = 500
+corner_radius_bottom_left = 500
+corner_detail = 20
+shadow_color = Color(0.07449722, 0.07449722, 0.07449722, 1)
+shadow_size = 57
+shadow_offset = Vector2(42.155, 17.645)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0k4wn"]
+bg_color = Color(0.91514, 0.16294378, 0.18133146, 1)
 border_color = Color(1, 1, 1, 1)
 corner_radius_top_left = 500
 corner_radius_top_right = 500
@@ -48,6 +89,15 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="Panel" type="Panel" parent="." unique_id=887102288]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_nlkkf")
+
 [node name="Camera2D" type="Camera2D" parent="." unique_id=916396912]
 position = Vector2(575.995, 324.01)
 
@@ -66,9 +116,12 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.8, 0.8)
 theme_override_colors/font_color = Color(0.8745098, 0.8745098, 0.8745098, 1)
+theme_override_constants/outline_size = 21
 theme_override_fonts/font = ExtResource("1_7vrkn")
 theme_override_font_sizes/font_size = 90
 theme_override_styles/normal = SubResource("StyleBoxFlat_jix8l")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_qe12f")
+theme_override_styles/hover = SubResource("StyleBoxFlat_dy7ct")
 text = " START"
 
 [node name="volume" type="Button" parent="." unique_id=1043985623]
@@ -85,6 +138,8 @@ offset_bottom = 595.2533
 grow_horizontal = 0
 scale = Vector2(0.06, 0.06)
 theme_override_styles/normal = SubResource("StyleBoxFlat_glbon")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_0o4t1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0k4wn")
 icon = ExtResource("2_fu7sn")
 icon_alignment = 1
 
@@ -127,12 +182,6 @@ theme_override_fonts/font = ExtResource("3_jix8l")
 theme_override_font_sizes/font_size = 47
 theme_override_styles/normal = SubResource("StyleBoxFlat_8qtwp")
 text = "Hard"
-
-[node name="background" type="Sprite2D" parent="." unique_id=1733464624]
-z_index = -1
-position = Vector2(574.49994, 323.50003)
-scale = Vector2(0.2818448, 0.24010362)
-texture = ExtResource("3_fu7sn")
 
 [node name="title" type="Node" parent="." unique_id=801358984]
 

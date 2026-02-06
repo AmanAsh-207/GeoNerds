@@ -1,0 +1,88 @@
+[gd_scene format=3 uid="uid://b512boxvx20j4"]
+
+[ext_resource type="FontFile" uid="uid://brbqhcm4j8uh" path="res://Sugar Cake.otf" id="1_7vrkn"]
+[ext_resource type="Script" uid="uid://dwkexda2cqnud" path="res://main_menu.gd" id="1_jix8l"]
+[ext_resource type="Texture2D" uid="uid://lq3kpskoq6rg" path="res://volume.png" id="2_fu7sn"]
+[ext_resource type="Script" uid="uid://csi0aswwciiyb" path="res://volume.gd" id="3_fu7sn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jix8l"]
+bg_color = Color(0.6979711, 0, 0, 1)
+skew = Vector2(1.955, 0.145)
+border_color = Color(0.17765072, 0.16966358, 0, 1)
+shadow_size = 3
+shadow_offset = Vector2(10.545, 0.93)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_glbon"]
+bg_color = Color(0.7889274, 0.11871656, 0.14302473, 1)
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 500
+corner_radius_top_right = 500
+corner_radius_bottom_right = 500
+corner_radius_bottom_left = 500
+corner_detail = 20
+shadow_color = Color(0.07449722, 0.07449722, 0.07449722, 1)
+shadow_size = 57
+shadow_offset = Vector2(42.155, 17.645)
+
+[node name="main_menu" type="Control" unique_id=348545031]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jix8l")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=916396912]
+position = Vector2(575.995, 324.01)
+
+[node name="Button" type="Button" parent="." unique_id=52549009]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -146.0
+offset_top = -74.0
+offset_right = 146.0
+offset_bottom = 74.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.8745098, 0.8745098, 0.8745098, 1)
+theme_override_fonts/font = ExtResource("1_7vrkn")
+theme_override_font_sizes/font_size = 90
+theme_override_styles/normal = SubResource("StyleBoxFlat_jix8l")
+text = " START"
+
+[node name="Button2" type="Button" parent="." unique_id=1043985623 node_paths=PackedStringArray("button_2")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.95100003
+anchor_top = 0.026
+anchor_right = 0.984
+anchor_bottom = 0.085
+offset_left = 0.44799805
+offset_top = 0.15200043
+offset_right = 582.43396
+offset_bottom = 595.2533
+grow_horizontal = 0
+scale = Vector2(0.06, 0.06)
+theme_override_styles/normal = SubResource("StyleBoxFlat_glbon")
+icon = ExtResource("2_fu7sn")
+script = ExtResource("3_fu7sn")
+button_2 = NodePath(".")
+
+[node name="Button3" type="Button" parent="." unique_id=1180814461]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -145.0
+offset_top = -101.0
+offset_right = 145.0
+offset_bottom = -45.0
+grow_horizontal = 2
+grow_vertical = 0

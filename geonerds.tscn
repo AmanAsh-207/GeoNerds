@@ -1,445 +1,227 @@
 [gd_scene format=3 uid="uid://ds6jg5p7tg18a"]
 
-[ext_resource type="Texture2D" path="res://seperated countries/usa.png" id="1_dke4l"]
 [ext_resource type="Script" uid="uid://c0wu05iy5vpje" path="res://geonerds.gd" id="1_rtr7l"]
-[ext_resource type="Texture2D" path="res://seperated countries/uzbekistan.png" id="2_rtr7l"]
-[ext_resource type="Texture2D" path="res://seperated countries/vietnam.png" id="3_jnbpa"]
-[ext_resource type="Texture2D" path="res://seperated countries/venezuela.png" id="4_upg52"]
-[ext_resource type="Texture2D" path="res://seperated countries/vuba.png" id="5_nla3t"]
-[ext_resource type="Texture2D" path="res://seperated countries/mexico.png" id="6_ob4fa"]
-[ext_resource type="Texture2D" path="res://seperated countries/kazakshtan.png" id="7_y74wa"]
-[ext_resource type="Texture2D" path="res://seperated countries/afghanistan.png" id="9_6x3x0"]
-[ext_resource type="Texture2D" path="res://seperated countries/albania.png" id="10_4b1pg"]
-[ext_resource type="Texture2D" path="res://seperated countries/argentina.png" id="11_uct5r"]
-[ext_resource type="Texture2D" path="res://seperated countries/armenia.png" id="12_l6c6a"]
-[ext_resource type="Texture2D" path="res://seperated countries/australia.png" id="13_xqajc"]
-[ext_resource type="Texture2D" path="res://seperated countries/austria.png" id="14_7s8sw"]
-[ext_resource type="Texture2D" path="res://seperated countries/azerbaijan.png" id="15_o535l"]
-[ext_resource type="Texture2D" path="res://seperated countries/bahamas.png" id="16_8dicq"]
-[ext_resource type="Texture2D" path="res://seperated countries/bahrain.png" id="17_db2n6"]
-[ext_resource type="Texture2D" path="res://seperated countries/bangladesh.png" id="18_bah41"]
-[ext_resource type="Texture2D" path="res://seperated countries/belarus.png" id="19_ynm3x"]
-[ext_resource type="Texture2D" path="res://seperated countries/belgium.png" id="20_88wn7"]
-[ext_resource type="Texture2D" path="res://seperated countries/belize.png" id="21_1prdd"]
-[ext_resource type="Texture2D" path="res://seperated countries/bhutan.png" id="22_1x203"]
-[ext_resource type="Texture2D" path="res://seperated countries/bolivia.png" id="23_0el4b"]
-[ext_resource type="Texture2D" path="res://seperated countries/bosniaandherzegovina.png" id="24_0cudc"]
-[ext_resource type="Texture2D" path="res://seperated countries/brazil.png" id="25_l6bu3"]
-[ext_resource type="Texture2D" path="res://seperated countries/brunei.png" id="26_1rtej"]
-[ext_resource type="Texture2D" path="res://seperated countries/bulgaria.png" id="27_w42vt"]
-[ext_resource type="Texture2D" path="res://seperated countries/cambodia.png" id="28_r8ifh"]
-[ext_resource type="Texture2D" path="res://seperated countries/canada.png" id="29_ycok2"]
-[ext_resource type="Texture2D" path="res://seperated countries/chilie.png" id="30_ljr2f"]
-[ext_resource type="Texture2D" path="res://seperated countries/china.png" id="31_wli1r"]
-[ext_resource type="Texture2D" path="res://seperated countries/colombia.png" id="32_3sp1p"]
-[ext_resource type="Texture2D" path="res://seperated countries/costarica.png" id="33_yjgpr"]
-[ext_resource type="Texture2D" path="res://seperated countries/croatia.png" id="34_n6hqs"]
-[ext_resource type="Texture2D" path="res://seperated countries/cyprus.png" id="35_wqg13"]
-[ext_resource type="Texture2D" path="res://seperated countries/czechia.png" id="36_th7lm"]
-[ext_resource type="Texture2D" path="res://seperated countries/denmark.png" id="37_srqr4"]
-[ext_resource type="Texture2D" path="res://seperated countries/dominica.png" id="38_vytxe"]
-[ext_resource type="Texture2D" path="res://seperated countries/dominicanrepublic.png" id="39_627gs"]
-[ext_resource type="Texture2D" path="res://seperated countries/ecuador.png" id="40_rj7h1"]
-[ext_resource type="Texture2D" path="res://seperated countries/elsalvador.png" id="41_rswq6"]
-[ext_resource type="Texture2D" path="res://seperated countries/estonia.png" id="42_n1j2x"]
-[ext_resource type="Texture2D" path="res://seperated countries/finland.png" id="43_3wp5b"]
-[ext_resource type="Texture2D" path="res://seperated countries/france.png" id="44_mwaou"]
-[ext_resource type="Texture2D" path="res://seperated countries/algeria.png" id="45_vytxe"]
-[ext_resource type="Texture2D" path="res://seperated countries/angola.png" id="46_627gs"]
-[ext_resource type="Texture2D" path="res://seperated countries/benin.png" id="47_rj7h1"]
-[ext_resource type="Texture2D" path="res://seperated countries/botswana.png" id="48_rswq6"]
-[ext_resource type="Texture2D" path="res://seperated countries/burkinafaso.png" id="49_n1j2x"]
-[ext_resource type="Texture2D" path="res://seperated countries/burundi.png" id="50_3wp5b"]
-[ext_resource type="Texture2D" path="res://seperated countries/caboverde.png" id="51_mwaou"]
-[ext_resource type="Texture2D" path="res://seperated countries/cameroon.png" id="52_jap83"]
-[ext_resource type="Texture2D" path="res://seperated countries/centralafricanrepublic.png" id="53_vsahe"]
-[ext_resource type="Texture2D" path="res://seperated countries/chad.png" id="54_b36ct"]
-[ext_resource type="Texture2D" path="res://seperated countries/comoros.png" id="55_h3uey"]
-[ext_resource type="Texture2D" path="res://seperated countries/cotedlvoire.png" id="56_m0goe"]
-[ext_resource type="Texture2D" path="res://seperated countries/djibouti.png" id="57_g0ciu"]
-[ext_resource type="Texture2D" path="res://seperated countries/egypt.png" id="58_8de5d"]
-[ext_resource type="Texture2D" path="res://seperated countries/equatorial.png" id="59_dxrbw"]
-[ext_resource type="Texture2D" path="res://seperated countries/eritrea.png" id="60_fts48"]
-[ext_resource type="Texture2D" path="res://seperated countries/eswatini.png" id="61_xh2k5"]
-[ext_resource type="Texture2D" path="res://seperated countries/ethiopia.png" id="62_jhyy0"]
-[ext_resource type="Texture2D" path="res://seperated countries/gabon.png" id="63_ky658"]
-[ext_resource type="Texture2D" path="res://seperated countries/georgia.png" id="64_fyqre"]
-[ext_resource type="Texture2D" path="res://seperated countries/germany.png" id="65_wtmxo"]
-[ext_resource type="Texture2D" path="res://seperated countries/ghana.png" id="66_wkb2k"]
-[ext_resource type="Texture2D" path="res://seperated countries/greece.png" id="67_xyldd"]
-[ext_resource type="Texture2D" path="res://seperated countries/grenada.png" id="68_r6jsf"]
-[ext_resource type="Texture2D" path="res://seperated countries/guatemala.png" id="69_uvcmf"]
-[ext_resource type="Texture2D" path="res://seperated countries/guinea.png" id="70_slces"]
-[ext_resource type="Texture2D" path="res://seperated countries/guineabissau.png" id="71_s4ksv"]
-[ext_resource type="Texture2D" path="res://seperated countries/guyana.png" id="72_csafo"]
-[ext_resource type="Texture2D" path="res://seperated countries/haiti.png" id="73_1w0tr"]
-[ext_resource type="Texture2D" path="res://seperated countries/honduras.png" id="74_b36ct"]
-[ext_resource type="Texture2D" path="res://seperated countries/hungary.png" id="75_h3uey"]
-[ext_resource type="Texture2D" path="res://seperated countries/iceland.png" id="76_m0goe"]
-[ext_resource type="Texture2D" path="res://seperated countries/indonesia.png" id="77_g0ciu"]
-[ext_resource type="Texture2D" path="res://seperated countries/iran.png" id="78_8de5d"]
-[ext_resource type="Texture2D" path="res://seperated countries/iraq.png" id="79_dxrbw"]
-[ext_resource type="Texture2D" path="res://seperated countries/ireland.png" id="80_fts48"]
-[ext_resource type="Texture2D" path="res://seperated countries/israel.png" id="81_xh2k5"]
-[ext_resource type="Texture2D" path="res://seperated countries/italy.png" id="82_jhyy0"]
-[ext_resource type="Texture2D" path="res://seperated countries/jamaica.png" id="83_uvcmf"]
-[ext_resource type="Texture2D" path="res://seperated countries/japan.png" id="84_slces"]
-[ext_resource type="Texture2D" path="res://seperated countries/jordan.png" id="85_s4ksv"]
-[ext_resource type="Texture2D" path="res://seperated countries/kenya.png" id="86_csafo"]
-[ext_resource type="Texture2D" path="res://seperated countries/kosovo.png" id="87_1w0tr"]
-[ext_resource type="Texture2D" path="res://seperated countries/kuwait.png" id="88_jyrwl"]
-[ext_resource type="Texture2D" path="res://seperated countries/kyrgyzstan.png" id="89_qa042"]
-[ext_resource type="Texture2D" path="res://seperated countries/laos.png" id="90_ygycr"]
-[ext_resource type="Texture2D" path="res://seperated countries/latvia.png" id="91_3d51x"]
-[ext_resource type="Texture2D" path="res://seperated countries/lebanon.png" id="92_xu7gx"]
-[ext_resource type="Texture2D" path="res://seperated countries/lesotho.png" id="93_0m1kv"]
-[ext_resource type="Texture2D" path="res://seperated countries/liberia.png" id="94_dn72j"]
-[ext_resource type="Texture2D" path="res://seperated countries/libya.png" id="95_ru16g"]
-[ext_resource type="Texture2D" path="res://seperated countries/lithuania.png" id="96_t7kwi"]
-[ext_resource type="Texture2D" path="res://seperated countries/luxembourg.png" id="97_mckpg"]
-[ext_resource type="Texture2D" path="res://seperated countries/madagascar.png" id="98_mckpg"]
-[ext_resource type="Texture2D" path="res://seperated countries/malawi.png" id="99_cg533"]
-[ext_resource type="Texture2D" path="res://seperated countries/malaysia.png" id="100_nn7r7"]
-[ext_resource type="Texture2D" path="res://seperated countries/mali.png" id="101_aj3dj"]
-[ext_resource type="Texture2D" path="res://seperated countries/malta.png" id="102_yj7ly"]
-[ext_resource type="Texture2D" path="res://seperated countries/mauritania.png" id="103_jiiw3"]
-[ext_resource type="Texture2D" path="res://seperated countries/mauritius.png" id="104_xvk1j"]
-[ext_resource type="Texture2D" path="res://seperated countries/moldova.png" id="105_usix1"]
-[ext_resource type="Texture2D" path="res://seperated countries/mongolia.png" id="106_tp1tn"]
-[ext_resource type="Texture2D" path="res://seperated countries/montenegro.png" id="107_ym8cn"]
-[ext_resource type="Texture2D" path="res://seperated countries/morocco.png" id="108_pepe1"]
-[ext_resource type="Texture2D" path="res://seperated countries/mozambique.png" id="109_m8rju"]
-[ext_resource type="Texture2D" path="res://seperated countries/myanmar.png" id="110_yxw4b"]
 
 [node name="Node2D" type="Node2D" unique_id=1669328160]
 script = ExtResource("1_rtr7l")
 
 [node name="USA" type="Sprite2D" parent="." unique_id=757323698]
-texture = ExtResource("1_dke4l")
 
 [node name="Uzbekistan" type="Sprite2D" parent="." unique_id=1082197025]
-texture = ExtResource("2_rtr7l")
 
 [node name="Vietnam" type="Sprite2D" parent="." unique_id=931345480]
-texture = ExtResource("3_jnbpa")
 
 [node name="Venezuela" type="Sprite2D" parent="." unique_id=1722415211]
-texture = ExtResource("4_upg52")
 
 [node name="Cuba" type="Sprite2D" parent="." unique_id=2020765044]
-texture = ExtResource("5_nla3t")
 
 [node name="Mexico" type="Sprite2D" parent="." unique_id=1685456164]
-texture = ExtResource("6_ob4fa")
 
 [node name="Kazakstan" type="Sprite2D" parent="." unique_id=868752882]
-texture = ExtResource("7_y74wa")
 
 [node name="Afghanistan" type="Sprite2D" parent="." unique_id=1416184422]
-texture = ExtResource("9_6x3x0")
 
 [node name="Albania" type="Sprite2D" parent="." unique_id=1104366253]
-texture = ExtResource("10_4b1pg")
 
 [node name="Argentina" type="Sprite2D" parent="." unique_id=1463258774]
-texture = ExtResource("11_uct5r")
 
 [node name="Armenia" type="Sprite2D" parent="." unique_id=1686843318]
-texture = ExtResource("12_l6c6a")
 
 [node name="Australia" type="Sprite2D" parent="." unique_id=796374679]
-texture = ExtResource("13_xqajc")
 
 [node name="Austria" type="Sprite2D" parent="." unique_id=2621251]
-texture = ExtResource("14_7s8sw")
 
 [node name="Azerbaijan" type="Sprite2D" parent="." unique_id=1792536705]
-texture = ExtResource("15_o535l")
 
 [node name="bahamas" type="Sprite2D" parent="." unique_id=167042822]
-texture = ExtResource("16_8dicq")
 
 [node name="Bahrain" type="Sprite2D" parent="." unique_id=871030293]
-texture = ExtResource("17_db2n6")
 
 [node name="Bangladesh" type="Sprite2D" parent="." unique_id=1893546357]
-texture = ExtResource("18_bah41")
 
 [node name="Belarus" type="Sprite2D" parent="." unique_id=1111860446]
-texture = ExtResource("19_ynm3x")
 
 [node name="Belgium" type="Sprite2D" parent="." unique_id=34802049]
-texture = ExtResource("20_88wn7")
 
 [node name="Belize" type="Sprite2D" parent="." unique_id=1963554043]
-texture = ExtResource("21_1prdd")
 
 [node name="Bhutan" type="Sprite2D" parent="." unique_id=1990639334]
-texture = ExtResource("22_1x203")
 
 [node name="Bolivia" type="Sprite2D" parent="." unique_id=1227937596]
-texture = ExtResource("23_0el4b")
 
 [node name="Bosnia_And_Herzegovina" type="Sprite2D" parent="." unique_id=1609417998]
-texture = ExtResource("24_0cudc")
 
 [node name="Brazil" type="Sprite2D" parent="." unique_id=413529194]
-texture = ExtResource("25_l6bu3")
 
 [node name="Brunei" type="Sprite2D" parent="." unique_id=595488731]
-texture = ExtResource("26_1rtej")
 
 [node name="Bulgaria" type="Sprite2D" parent="." unique_id=282972148]
-texture = ExtResource("27_w42vt")
 
 [node name="Cambodia" type="Sprite2D" parent="." unique_id=271090593]
-texture = ExtResource("28_r8ifh")
 
 [node name="Canada" type="Sprite2D" parent="." unique_id=144641479]
-texture = ExtResource("29_ycok2")
 
 [node name="Chilie" type="Sprite2D" parent="." unique_id=1919094499]
-texture = ExtResource("30_ljr2f")
 
 [node name="China" type="Sprite2D" parent="." unique_id=783711890]
-texture = ExtResource("31_wli1r")
 
 [node name="Columbia" type="Sprite2D" parent="." unique_id=2013221468]
-texture = ExtResource("32_3sp1p")
 
 [node name="Costa_Rica" type="Sprite2D" parent="." unique_id=2058230594]
-texture = ExtResource("33_yjgpr")
 
 [node name="Croatia" type="Sprite2D" parent="." unique_id=684141224]
-texture = ExtResource("34_n6hqs")
 
 [node name="Cyprus" type="Sprite2D" parent="." unique_id=1794618848]
-texture = ExtResource("35_wqg13")
 
 [node name="Czechia" type="Sprite2D" parent="." unique_id=745431256]
-texture = ExtResource("36_th7lm")
 
 [node name="Denmark" type="Sprite2D" parent="." unique_id=1454057267]
-texture = ExtResource("37_srqr4")
 
 [node name="Dominica" type="Sprite2D" parent="." unique_id=1871120088]
-texture = ExtResource("38_vytxe")
 
 [node name="Dominican_Republic" type="Sprite2D" parent="." unique_id=1791731701]
-texture = ExtResource("39_627gs")
 
 [node name="Ecuador" type="Sprite2D" parent="." unique_id=1941549202]
-texture = ExtResource("40_rj7h1")
 
 [node name="El_Salvador" type="Sprite2D" parent="." unique_id=1187865518]
-texture = ExtResource("41_rswq6")
 
 [node name="Estonia" type="Sprite2D" parent="." unique_id=852817357]
-texture = ExtResource("42_n1j2x")
 
 [node name="Finland" type="Sprite2D" parent="." unique_id=1967674631]
-texture = ExtResource("43_3wp5b")
 
 [node name="France" type="Sprite2D" parent="." unique_id=573228730]
-texture = ExtResource("44_mwaou")
 
 [node name="Algeria" type="Sprite2D" parent="." unique_id=1703945725]
-texture = ExtResource("45_vytxe")
 
 [node name="Angola" type="Sprite2D" parent="." unique_id=807005922]
-texture = ExtResource("46_627gs")
 
 [node name="Benin" type="Sprite2D" parent="." unique_id=1599089061]
-texture = ExtResource("47_rj7h1")
 
 [node name="Botswana" type="Sprite2D" parent="." unique_id=1178466464]
-texture = ExtResource("48_rswq6")
 
 [node name="BurkinaFaso" type="Sprite2D" parent="." unique_id=54941060]
-texture = ExtResource("49_n1j2x")
 
 [node name="Burundi" type="Sprite2D" parent="." unique_id=622436602]
-texture = ExtResource("50_3wp5b")
 
 [node name="Cabo_Verde" type="Sprite2D" parent="." unique_id=2027838960]
-texture = ExtResource("51_mwaou")
 
 [node name="Cameroon" type="Sprite2D" parent="." unique_id=523502011]
-texture = ExtResource("52_jap83")
 
 [node name="Central_African_Republic" type="Sprite2D" parent="." unique_id=1736439537]
-texture = ExtResource("53_vsahe")
 
 [node name="Chad" type="Sprite2D" parent="." unique_id=1877482175]
-texture = ExtResource("54_b36ct")
 
 [node name="Comoros" type="Sprite2D" parent="." unique_id=1685411774]
-texture = ExtResource("55_h3uey")
 
 [node name="Ivory_Coast" type="Sprite2D" parent="." unique_id=585213611]
-texture = ExtResource("56_m0goe")
 
 [node name="Djibouti" type="Sprite2D" parent="." unique_id=1951216375]
-texture = ExtResource("57_g0ciu")
 
 [node name="Egypt" type="Sprite2D" parent="." unique_id=1932727160]
-texture = ExtResource("58_8de5d")
 
 [node name="Equatorial_Guinea" type="Sprite2D" parent="." unique_id=428115121]
-texture = ExtResource("59_dxrbw")
 
 [node name="Eritrea" type="Sprite2D" parent="." unique_id=1573009036]
-texture = ExtResource("60_fts48")
 
 [node name="Eswatini" type="Sprite2D" parent="." unique_id=725320129]
-texture = ExtResource("61_xh2k5")
 
 [node name="Ethiopia" type="Sprite2D" parent="." unique_id=607029620]
-texture = ExtResource("62_jhyy0")
 
 [node name="Gabon" type="Sprite2D" parent="." unique_id=696500010]
-texture = ExtResource("63_ky658")
 
 [node name="Georgia" type="Sprite2D" parent="." unique_id=612299810]
-texture = ExtResource("64_fyqre")
 
 [node name="Germany" type="Sprite2D" parent="." unique_id=1907328590]
-texture = ExtResource("65_wtmxo")
 
 [node name="Ghana" type="Sprite2D" parent="." unique_id=1775824737]
-texture = ExtResource("66_wkb2k")
 
 [node name="Greece" type="Sprite2D" parent="." unique_id=21624747]
-texture = ExtResource("67_xyldd")
 
 [node name="Grenada" type="Sprite2D" parent="." unique_id=765974955]
-texture = ExtResource("68_r6jsf")
 
 [node name="Guatemala" type="Sprite2D" parent="." unique_id=737539588]
-texture = ExtResource("69_uvcmf")
 
 [node name="Guinea" type="Sprite2D" parent="." unique_id=193732158]
-texture = ExtResource("70_slces")
 
 [node name="Guinea_Bissau" type="Sprite2D" parent="." unique_id=64950873]
-texture = ExtResource("71_s4ksv")
 
 [node name="Guyana" type="Sprite2D" parent="." unique_id=1596655034]
-texture = ExtResource("72_csafo")
 
 [node name="Haiti" type="Sprite2D" parent="." unique_id=2034878497]
-texture = ExtResource("73_1w0tr")
 
 [node name="Honduras" type="Sprite2D" parent="." unique_id=954716323]
-texture = ExtResource("74_b36ct")
 
 [node name="Hungary" type="Sprite2D" parent="." unique_id=1668661608]
-texture = ExtResource("75_h3uey")
 
 [node name="Iceland" type="Sprite2D" parent="." unique_id=29333847]
-texture = ExtResource("76_m0goe")
 
 [node name="Indonesia" type="Sprite2D" parent="." unique_id=880005180]
-texture = ExtResource("77_g0ciu")
 
 [node name="Iran" type="Sprite2D" parent="." unique_id=111590625]
-texture = ExtResource("78_8de5d")
 
 [node name="Iraq" type="Sprite2D" parent="." unique_id=2146587532]
-texture = ExtResource("79_dxrbw")
 
 [node name="Ireland" type="Sprite2D" parent="." unique_id=2043525994]
-texture = ExtResource("80_fts48")
 
 [node name="Israel" type="Sprite2D" parent="." unique_id=1264919478]
-texture = ExtResource("81_xh2k5")
 
 [node name="Italy" type="Sprite2D" parent="." unique_id=1798185759]
-texture = ExtResource("82_jhyy0")
 
 [node name="Jamaica" type="Sprite2D" parent="." unique_id=2037885231]
-texture = ExtResource("83_uvcmf")
 
 [node name="Japan" type="Sprite2D" parent="." unique_id=708853656]
-texture = ExtResource("84_slces")
 
 [node name="Jordan" type="Sprite2D" parent="." unique_id=1347856776]
-texture = ExtResource("85_s4ksv")
 
 [node name="Kenya" type="Sprite2D" parent="." unique_id=506469904]
-texture = ExtResource("86_csafo")
 
 [node name="kosovo" type="Sprite2D" parent="." unique_id=164376334]
-texture = ExtResource("87_1w0tr")
 
 [node name="Kuwait" type="Sprite2D" parent="." unique_id=378909501]
-texture = ExtResource("88_jyrwl")
 
 [node name="Kyrgyzstan" type="Sprite2D" parent="." unique_id=19440892]
-texture = ExtResource("89_qa042")
 
 [node name="Laos" type="Sprite2D" parent="." unique_id=175206132]
-texture = ExtResource("90_ygycr")
 
 [node name="Latvia" type="Sprite2D" parent="." unique_id=436734974]
-texture = ExtResource("91_3d51x")
 
 [node name="Lebanon" type="Sprite2D" parent="." unique_id=1468838857]
-texture = ExtResource("92_xu7gx")
 
 [node name="Lesotho" type="Sprite2D" parent="." unique_id=111198476]
-texture = ExtResource("93_0m1kv")
 
 [node name="Liberia" type="Sprite2D" parent="." unique_id=813184263]
-texture = ExtResource("94_dn72j")
 
 [node name="Libya" type="Sprite2D" parent="." unique_id=155028430]
-texture = ExtResource("95_ru16g")
 
 [node name="Lithuania" type="Sprite2D" parent="." unique_id=2055375735]
-texture = ExtResource("96_t7kwi")
 
 [node name="Luxembourg" type="Sprite2D" parent="." unique_id=340863124]
-texture = ExtResource("97_mckpg")
 
 [node name="Madagascar" type="Sprite2D" parent="." unique_id=2061983304]
-texture = ExtResource("98_mckpg")
 
 [node name="malawi" type="Sprite2D" parent="." unique_id=1192437718]
-texture = ExtResource("99_cg533")
 
 [node name="Malaysia" type="Sprite2D" parent="." unique_id=527722860]
-texture = ExtResource("100_nn7r7")
 
 [node name="Mali" type="Sprite2D" parent="." unique_id=1139309031]
-texture = ExtResource("101_aj3dj")
 
 [node name="Malta" type="Sprite2D" parent="." unique_id=2043554836]
-texture = ExtResource("102_yj7ly")
 
 [node name="Mauritania" type="Sprite2D" parent="." unique_id=600437128]
-texture = ExtResource("103_jiiw3")
 
 [node name="Mauritius" type="Sprite2D" parent="." unique_id=2116274459]
-texture = ExtResource("104_xvk1j")
 
 [node name="Moldova" type="Sprite2D" parent="." unique_id=1345817945]
-texture = ExtResource("105_usix1")
 
 [node name="Mongolia" type="Sprite2D" parent="." unique_id=873572038]
-texture = ExtResource("106_tp1tn")
 
 [node name="Montenegro" type="Sprite2D" parent="." unique_id=1590890004]
-texture = ExtResource("107_ym8cn")
 
 [node name="Morocco" type="Sprite2D" parent="." unique_id=1956604392]
-texture = ExtResource("108_pepe1")
 
 [node name="Mozambique" type="Sprite2D" parent="." unique_id=760453205]
-texture = ExtResource("109_m8rju")
 
 [node name="Myanmar" type="Sprite2D" parent="." unique_id=862031704]
-texture = ExtResource("110_yxw4b")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1348370569]
 zoom = Vector2(0.275, 0.275)

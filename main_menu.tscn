@@ -1,6 +1,7 @@
-[gd_scene format=3 uid="uid://b512boxvx20j4"]
+[gd_scene format=3 uid="uid://bjyxkeq3tei47"]
 
 [ext_resource type="FontFile" uid="uid://brbqhcm4j8uh" path="res://Sugar Cake.otf" id="1_7vrkn"]
+[ext_resource type="Script" uid="uid://daqiw2xpf6nsb" path="res://main_menu.gd" id="1_qe12f"]
 [ext_resource type="Texture2D" uid="uid://lq3kpskoq6rg" path="res://volume.png" id="2_fu7sn"]
 [ext_resource type="Texture2D" uid="uid://cgaxlebhss1nm" path="res://main_menu.png" id="3_fu7sn"]
 [ext_resource type="FontFile" uid="uid://dpal6lw36owve" path="res://Honeydew Pineapple.otf" id="3_jix8l"]
@@ -88,6 +89,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_qe12f")
 
 [node name="Panel" type="Panel" parent="." unique_id=887102288]
 layout_mode = 1
@@ -207,3 +209,13 @@ grow_vertical = 0
 theme_override_fonts/font = ExtResource("1_7vrkn")
 theme_override_font_sizes/font_size = 32
 text = "Made by: u/AffectionateFriend85"
+
+[node name="ModeButton" type="Button" parent="." unique_id=1104385467]
+layout_mode = 0
+offset_left = 544.0
+offset_top = 508.0
+offset_right = 601.0
+offset_bottom = 559.0
+
+[connection signal="pressed" from="start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="ModeButton" to="." method="_on_mode_selector_pressed"]

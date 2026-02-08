@@ -240,10 +240,10 @@ var borders = {
 "lebanon": ["syria", "israel"],
 "israel": ["palestine","lebanon", "syria", "jordan", "egypt"],
 "jordan": ["israel", "syria", "iraq", "saudiarabia"],
-"saudiarabia": ["jordan", "iraq", "kuwait", "qatar", "unitedarabemirates", "oman", "yemen","bahrain"],
+"saudiarabia": ["jordan", "iraq", "kuwait", "qatar", "uae", "oman", "yemen","bahrain"],
 "oman": ["saudiarabia", "unitedarabemirates", "yemen"],
 "yemen": ["oman", "saudiarabia"],
-"unitedarabemirates": ["saudiarabia", "oman"],
+"uae": ["saudiarabia", "oman"],
 "qatar": ["saudiarabia"],
 "kuwait": ["iraq", "saudiarabia"],
 "armenia": ["turkey", "georgia", "azerbaijan", "iran"],
@@ -252,7 +252,7 @@ var borders = {
 "turkiye": ["greece", "bulgaria", "georgia", "armenia", "iran", "iraq", "syria"],
 
 # ---- EUROPE ----
-"france": ["spain", "belgium", "luxembourg", "germany", "switzerland", "italy"],
+"france": ["spain", "belgium", "luxembourg", "germany", "switzerland", "italy","monaco"],
 "germany": ["france", "netherlands", "belgium", "luxembourg", "switzerland", "austria", "czechrepublic", "poland", "denmark"],
 "spain": ["france", "portugal"],
 "portugal": ["spain"],
@@ -337,6 +337,10 @@ var borders = {
 
 var current_sprite = []
 var last_country = ""
+var selected_country = []
+
+var game_mode = "easy"
+
 
 var FIRST_COLOR = Color("535d6cff")     
 var BORDER_COLOR = Color("e2baecff")    

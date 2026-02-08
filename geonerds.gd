@@ -112,8 +112,8 @@ var country_data = {
 "centralafricanrepublic": "africa",
 "chad": "africa",
 "comoros": "africa",
-"democraticrepublicofthecongo": "africa",
-"republicofthecongo": "africa",
+"democraticrepublicofcongo": "africa",
+"republicofcongo": "africa",
 "cotedlvoire": "africa",
 "djibouti": "africa",
 "egypt": "africa",
@@ -253,7 +253,7 @@ var borders = {
 "turkiye": ["greece", "bulgaria", "georgia", "armenia", "iran", "iraq", "syria"],
 
 # ---- EUROPE ----
-"france": ["spain", "belgium", "luxembourg", "germany", "switzerland", "italy","monaco"],
+"france": ["spain", "belgium", "luxembourg", "germany", "switzerland", "italy","monaco","andorra"],
 "germany": ["france", "netherlands", "belgium", "luxembourg", "switzerland", "austria", "czechrepublic", "poland", "denmark"],
 "spain": ["france", "portugal"],
 "portugal": ["spain"],
@@ -382,6 +382,9 @@ var borders = {
 "australia": [],
 "newzealand": []
 }
+@onready var cam: Camera2D = $Camera2D
+
+
 
 var current_sprite = []
 var last_country = ""
@@ -402,6 +405,38 @@ func starting_country():
 	print("Starting country:", random_country)
 	create_country(random_country, FIRST_COLOR)
 	last_country = random_country
+	selected_country.append(random_country)
+
+func zoom_to_country(sprite):
+
+	var target_pos = sprite.get_global_position()
+
+	var tween = create_tween()
+
+	tween.set_parallel(false)
+
+	tween.tween_property(cam, "zoom", target_pos, 0.4)
+
+	tween.tween_property(cam, "zoom", Vector2(0.6, 0.6), 0.4)
+
+
+func _input(event):
+
+	if event is InputEventMouseButton:
+
+		var mouse_pos = get_global_mouse_position()
+
+		if event.button_index == MOUSE_BUTTON_WHEEL_UP:
+
+			cam.position = mouse_pos
+			cam.zoom *= 0.9
+			cam.zoom = cam.zoom.clamp(Vector2(0.4,0.4), Vector2(2,2))
+
+		elif event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
+
+			cam.position = mouse_pos
+			cam.zoom *= 1.1
+			cam.zoom = cam.zoom.clamp(Vector2(0.4,0.4), Vector2(2,2))
 
 func create_country(country_name , color):
 	for s in current_sprite:
@@ -411,18 +446,20 @@ func create_country(country_name , color):
 
 	# Create new sprite
 	var s = Sprite2D.new()
+	s.name = country_name
 	var continent_Name = country_data[country_name]
 	var path = "res://seperated countries/" + continent_Name + "/" + country_name + ".png"
 
 	# Load texture correctly
 	s.texture = load(path)
-	s.position = $"World(2)".position
-	s.scale = $"World(2)".scale
+	#s.position = $"World(2)".position
+	#s.scale = $"World(2)".scale
 	
 	add_child(s)
 	s.z_index= 10 
 	s.modulate= color
 	current_sprite.append(s)
+	zoom_to_country(s)
 
 func borders_previous(new_country):
 
@@ -497,6 +534,9 @@ func _on_submitbutton_pressed() -> void:
 	$InputBox.text = ""
 
 func reset():
+	cam.zoom = Vector2(0.23,0.23)
+	cam.position = Vector2(0,0)
+
 	 # Remove all country sprites
 	for s in current_sprite:
 		s.queue_free()

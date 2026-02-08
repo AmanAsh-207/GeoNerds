@@ -99,6 +99,7 @@ grow_vertical = 2
 script = ExtResource("1_qe12f")
 
 [node name="easy" type="Button" parent="." unique_id=1180814461]
+visible = false
 z_index = 1
 layout_mode = 1
 anchors_preset = 7
@@ -118,7 +119,6 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_nlkkf")
 text = "Easy"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=916396912]
-visible = false
 position = Vector2(575.995, 324.01)
 
 [node name="background" type="Panel" parent="." unique_id=887102288]
@@ -126,6 +126,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 5.0
+offset_bottom = 5.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_nlkkf")
@@ -182,10 +184,9 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -1.0
-offset_top = -648.0
-offset_right = 576.0
-offset_bottom = 2.0
+offset_top = -647.0
+offset_right = 577.0
+offset_bottom = 3.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_colors/font_color = Color(0.81, 0, 0.05399995, 1)
@@ -268,6 +269,24 @@ offset_left = 544.0
 offset_top = 508.0
 offset_right = 601.0
 offset_bottom = 559.0
+
+[node name="red" type="ColorRect" parent="." unique_id=1826832232]
+visible = false
+z_index = 1
+layout_mode = 0
+offset_left = 576.0
+offset_top = 1.0
+offset_right = 1151.0
+offset_bottom = 653.0
+color = Color(0.7372549, 0.32941177, 0.39607844, 1)
+
+[node name="Blue" type="ColorRect" parent="." unique_id=1618317458]
+visible = false
+z_index = 1
+layout_mode = 0
+offset_right = 575.0
+offset_bottom = 652.0
+color = Color(0.4392157, 0.5764706, 0.7490196, 1)
 
 [connection signal="pressed" from="easy" to="." method="_on_easy_pressed"]
 [connection signal="pressed" from="compass" to="." method="_on_start_pressed"]

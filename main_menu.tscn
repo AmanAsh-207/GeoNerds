@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bjyxkeq3tei47"]
+[gd_scene format=3 uid="uid://7sqwcd7nfgo2"]
 
 [ext_resource type="FontFile" uid="uid://brbqhcm4j8uh" path="res://Sugar Cake.otf" id="1_7vrkn"]
 [ext_resource type="Script" uid="uid://daqiw2xpf6nsb" path="res://main_menu.gd" id="1_qe12f"]
@@ -8,6 +8,13 @@
 [ext_resource type="Texture2D" uid="uid://bhe6axgudmu2q" path="res://dial.png" id="4_8qtwp"]
 [ext_resource type="Texture2D" uid="uid://cramxqlryjxg6" path="res://New Piskel-2.png (3).png" id="5_nlkkf"]
 [ext_resource type="Texture2D" uid="uid://wiiuoce72fpv" path="res://New Piskel-1.png (1).png" id="6_qe12f"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nlkkf"]
+bg_color = Color(0.3784, 0.58709335, 0.86, 0.5686275)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nlkkf"]
 texture = ExtResource("3_fu7sn")
@@ -33,11 +40,12 @@ border_color = Color(0.17765072, 0.16966358, 0, 1)
 shadow_size = 8
 shadow_offset = Vector2(14.32, 0.93)
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qe12f"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8qtwp"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dy7ct"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8qtwp"]
+bg_color = Color(0.98, 0.16660002, 0.24793997, 0.52156866)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_glbon"]
 bg_color = Color(0.7889274, 0.11871656, 0.14302473, 1)
@@ -75,19 +83,11 @@ shadow_color = Color(0.07449722, 0.07449722, 0.07449722, 1)
 shadow_size = 57
 shadow_offset = Vector2(42.155, 17.645)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nlkkf"]
-bg_color = Color(0.3784, 0.58709335, 0.86, 0.5686275)
-corner_radius_top_left = 15
-corner_radius_top_right = 15
-corner_radius_bottom_right = 15
-corner_radius_bottom_left = 15
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qe12f"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8qtwp"]
-bg_color = Color(0.98, 0.16660002, 0.24793997, 0.52156866)
-corner_radius_top_left = 15
-corner_radius_top_right = 15
-corner_radius_bottom_right = 15
-corner_radius_bottom_left = 15
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8qtwp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dy7ct"]
 
 [node name="main_menu" type="Control" unique_id=348545031]
 layout_mode = 3
@@ -97,6 +97,25 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_qe12f")
+
+[node name="easy" type="Button" parent="." unique_id=1180814461]
+z_index = 1
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -572.0
+offset_top = -646.0
+offset_right = 2.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(4.235506e-06, 0.7459448, 0.99266285, 1)
+theme_override_fonts/font = ExtResource("3_jix8l")
+theme_override_font_sizes/font_size = 47
+theme_override_styles/normal = SubResource("StyleBoxFlat_nlkkf")
+text = "Easy"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=916396912]
 visible = false
@@ -112,6 +131,7 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_nlkkf")
 
 [node name="compass" type="Button" parent="." unique_id=898426446]
+z_index = 2
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -153,17 +173,81 @@ position = Vector2(145.72125, 68.48999)
 scale = Vector2(0.05625, 0.05625)
 texture = ExtResource("4_8qtwp")
 
-[node name="start" type="Button" parent="." unique_id=52549009]
+[node name="hard" type="Button" parent="." unique_id=23272619]
+visible = false
+z_index = 1
 layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = -648.0
+offset_right = 576.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.81, 0, 0.05399995, 1)
+theme_override_fonts/font = ExtResource("3_jix8l")
+theme_override_font_sizes/font_size = 47
+theme_override_styles/normal = SubResource("StyleBoxFlat_8qtwp")
+text = "Hard"
+
+[node name="Node2D" type="Node2D" parent="." unique_id=479780851]
+
+[node name="geo" type="Sprite2D" parent="Node2D" unique_id=246735967]
+position = Vector2(217, 170)
+scale = Vector2(0.27222222, 0.26666668)
+texture = ExtResource("5_nlkkf")
+
+[node name="nerds" type="Sprite2D" parent="Node2D" unique_id=1094793956]
+position = Vector2(289, 176)
+scale = Vector2(0.36203703, 0.40092593)
+texture = ExtResource("6_qe12f")
+
+[node name="credits" type="Label" parent="Node2D" unique_id=1406487451]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 9.0
+offset_top = 601.0
+offset_right = 443.0
+offset_bottom = 648.0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("1_7vrkn")
+theme_override_font_sizes/font_size = 32
+text = "Made by: u/AffectionateFriend85"
+
+[node name="volume" type="Button" parent="Node2D" unique_id=1043985623]
+anchors_preset = -1
+anchor_left = 0.95100003
+anchor_top = 0.026
+anchor_right = 0.984
+anchor_bottom = 0.085
+offset_left = 1096.0
+offset_top = 17.0
+offset_right = 1677.986
+offset_bottom = 612.1013
+grow_horizontal = 0
+scale = Vector2(0.06, 0.06)
+theme_override_styles/normal = SubResource("StyleBoxFlat_glbon")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_0o4t1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0k4wn")
+icon = ExtResource("2_fu7sn")
+icon_alignment = 1
+
+[node name="start" type="Button" parent="Node2D" unique_id=52549009]
+z_index = 2
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -146.0
-offset_top = -74.0
-offset_right = 146.0
-offset_bottom = 74.0
+offset_left = 430.0
+offset_top = 250.0
+offset_right = 722.0
+offset_bottom = 398.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.8, 0.8)
@@ -178,97 +262,17 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_8qtwp")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_dy7ct")
 text = " START"
 
-[node name="volume" type="Button" parent="." unique_id=1043985623]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.95100003
-anchor_top = 0.026
-anchor_right = 0.984
-anchor_bottom = 0.085
-offset_left = 0.44799805
-offset_top = 0.15200043
-offset_right = 582.43396
-offset_bottom = 595.2533
-grow_horizontal = 0
-scale = Vector2(0.06, 0.06)
-theme_override_styles/normal = SubResource("StyleBoxFlat_glbon")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_0o4t1")
-theme_override_styles/hover = SubResource("StyleBoxFlat_0k4wn")
-icon = ExtResource("2_fu7sn")
-icon_alignment = 1
-
-[node name="easy" type="Button" parent="." unique_id=1180814461]
+[node name="difficulty_button" type="Button" parent="Node2D" unique_id=1104385467]
 visible = false
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -231.0
-offset_top = -141.0
-offset_right = -41.0
-offset_bottom = -75.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_colors/font_color = Color(4.235506e-06, 0.7459448, 0.99266285, 1)
-theme_override_fonts/font = ExtResource("3_jix8l")
-theme_override_font_sizes/font_size = 47
-theme_override_styles/normal = SubResource("StyleBoxFlat_nlkkf")
-text = "Easy"
-
-[node name="hard" type="Button" parent="." unique_id=23272619]
-visible = false
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = 41.0
-offset_top = -141.0
-offset_right = 230.99817
-offset_bottom = -75.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_colors/font_color = Color(0.81, 0, 0.05399995, 1)
-theme_override_fonts/font = ExtResource("3_jix8l")
-theme_override_font_sizes/font_size = 47
-theme_override_styles/normal = SubResource("StyleBoxFlat_8qtwp")
-text = "Hard"
-
-[node name="title" type="Node" parent="." unique_id=801358984]
-
-[node name="geo" type="Sprite2D" parent="title" unique_id=246735967]
-position = Vector2(217, 170)
-scale = Vector2(0.27222222, 0.26666668)
-texture = ExtResource("5_nlkkf")
-
-[node name="nerds" type="Sprite2D" parent="title" unique_id=1094793956]
-position = Vector2(289, 176)
-scale = Vector2(0.36203703, 0.40092593)
-texture = ExtResource("6_qe12f")
-
-[node name="credits" type="Label" parent="." unique_id=1406487451]
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 9.0
-offset_top = -47.0
-offset_right = 443.0
-grow_vertical = 0
-theme_override_fonts/font = ExtResource("1_7vrkn")
-theme_override_font_sizes/font_size = 32
-text = "Made by: u/AffectionateFriend85"
-
-[node name="difficulty button" type="Button" parent="." unique_id=1104385467]
-layout_mode = 0
 offset_left = 544.0
 offset_top = 508.0
 offset_right = 601.0
 offset_bottom = 559.0
 
+[connection signal="pressed" from="easy" to="." method="_on_easy_pressed"]
 [connection signal="pressed" from="compass" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="start" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="difficulty button" to="." method="_on_mode_selector_pressed"]
+[connection signal="pressed" from="hard" to="." method="_on_hard_pressed"]
+[connection signal="hidden" from="Node2D/geo" to="." method="_on_geo_hidden"]
+[connection signal="visibility_changed" from="Node2D/geo" to="." method="_on_geo_visibility_changed"]
+[connection signal="pressed" from="Node2D/start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Node2D/difficulty_button" to="." method="_on_mode_selector_pressed"]

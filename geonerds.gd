@@ -387,8 +387,6 @@ var current_sprite = []
 var last_country = ""
 var selected_country = []
 
-var game_mode = "easy"
-
 
 var FIRST_COLOR = Color("535d6cff")     
 var BORDER_COLOR = Color("e2baecff")    
@@ -398,6 +396,8 @@ func _ready():
 	starting_country()
 
 func starting_country():
+	selected_country.clear()
+	current_sprite.clear()
 	var random_country = country_data.keys().pick_random()
 	print("Starting country:", random_country)
 	create_country(random_country, FIRST_COLOR)
@@ -432,6 +432,23 @@ func borders_previous(new_country):
 		return true
 	return false
 
+func is_valid_hard_mode(new_country):
+
+	# Must border the last country
+	if not borders_previous(new_country):
+		return false
+
+	# Must NOT border any earlier chosen country
+	for c in selected_country:
+
+		if c == last_country:
+			continue
+
+		if c in borders and new_country in borders[c]:
+			print(new_country, "already borders", c)
+			return false
+
+	return true
 
 func _on_submitbutton_pressed() -> void:
 	var name = $InputBox.text.to_lower().strip_edges()
@@ -444,18 +461,40 @@ func _on_submitbutton_pressed() -> void:
 		$InputBox.text = ""   # just clear box
 		return
 		
-	if borders_previous(name):
-		create_country(name, BORDER_COLOR)
-		print(name, " BORDERS ", last_country)
-		last_country = name
+	if GameSettings.game_mode == "hard":
+
+		if is_valid_hard_mode(name):
+
+			create_country(name, BORDER_COLOR)
+			print("Valid move in HARD MODE")
+
+		else:
+
+			create_country(name, NOT_BORDER_COLOR)
+			print("INVALID move in HARD MODE - Game Over")
+			await get_tree().create_timer(2.0).timeout
+			reset()
+			return
+
+
+
+	# ---------- EASY MODE ----------
 	else:
-		create_country(name, NOT_BORDER_COLOR)
-		print(name, " does NOT border ", last_country)
-		print("game over")
-		await get_tree().create_timer(2.0).timeout
-		reset()
-		
-	
+		if borders_previous(name):
+			create_country(name, BORDER_COLOR)
+			print("Correct move in EASY MODE")
+
+		else:
+			create_country(name, NOT_BORDER_COLOR)
+			print("Wrong move in EASY MODE - but no reset")
+
+
+
+	# Save progress
+	last_country = name
+	selected_country.append(name)
+
+	$InputBox.text = ""
 
 func reset():
 	 # Remove all country sprites

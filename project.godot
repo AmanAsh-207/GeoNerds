@@ -22,3 +22,7 @@ config/icon="uid://cgaxlebhss1nm"
 [autoload]
 
 GameSettings="*uid://dig4aaw6f48da"
+
+[display]
+
+window/stretch/mode="canvas_items"

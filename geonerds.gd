@@ -239,16 +239,17 @@ var borders = {
 "syria": ["turkey", "iraq", "jordan", "israel", "lebanon"],
 "lebanon": ["syria", "israel"],
 "israel": ["palestine","lebanon", "syria", "jordan", "egypt"],
+"palestine" : ["israel","jordan","egypt"],
 "jordan": ["israel", "syria", "iraq", "saudiarabia"],
 "saudiarabia": ["jordan", "iraq", "kuwait", "qatar", "uae", "oman", "yemen","bahrain"],
-"oman": ["saudiarabia", "unitedarabemirates", "yemen"],
+"oman": ["saudiarabia", "uae", "yemen"],
 "yemen": ["oman", "saudiarabia"],
 "uae": ["saudiarabia", "oman"],
 "qatar": ["saudiarabia"],
 "kuwait": ["iraq", "saudiarabia"],
-"armenia": ["turkey", "georgia", "azerbaijan", "iran"],
+"armenia": ["turkiye", "georgia", "azerbaijan", "iran"],
 "azerbaijan": ["armenia", "georgia", "russia", "iran"],
-"georgia": ["russia", "azerbaijan", "armenia", "turkey"],
+"georgia": ["russia", "azerbaijan", "armenia", "turkiye"],
 "turkiye": ["greece", "bulgaria", "georgia", "armenia", "iran", "iraq", "syria"],
 
 # ---- EUROPE ----
@@ -288,7 +289,13 @@ var borders = {
 "ukraine": ["poland", "slovakia", "hungary", "romania", "moldova", "belarus", "russia"],
 "moldova": ["romania", "ukraine"],
 "russia": ["norway", "finland", "estonia", "latvia", "lithuania", "poland", "belarus", "ukraine", "georgia", "azerbaijan", "kazakhstan", "mongolia", "china", "northkorea"],
-
+"andorra": ["france", "spain"],
+"liechtenstein": ["switzerland", "austria"],
+"sanmarino": ["italy"],
+"vaticancity": ["italy"],
+"iceland": [],
+"ireland": ["unitedkingdom"],
+"uk": ["ireland"],
 # ---- AFRICA ----
 "egypt": ["libya", "sudan", "israel"],
 "libya": ["egypt", "sudan", "chad", "niger", "algeria", "tunisia"],
@@ -305,6 +312,47 @@ var borders = {
 "uganda": ["kenya", "tanzania", "rwanda", "southsudan", "democraticrepublicofthecongo"],
 "tanzania": ["kenya", "uganda", "rwanda", "burundi", "democraticrepublicofthecongo", "zambia", "malawi", "mozambique"],
 "southafrica": ["namibia", "botswana", "zimbabwe", "mozambique", "lesotho", "eswatini"],
+"centralafricanrepublic": ["chad", "sudan", "southsudan", "democraticrepublicofthecongo", "republicofthecongo", "cameroon"],
+"democraticrepublicofthecongo": ["centralafricanrepublic", "southsudan", "uganda", "rwanda", "burundi", "tanzania", "zambia", "angola", "republicofthecongo"],
+"republicofthecongo": ["cameroon", "centralafricanrepublic", "democraticrepublicofthecongo", "angola", "gabon"],
+"cameroon": ["nigeria", "chad", "centralafricanrepublic", "republicofthecongo", "gabon", "equatorialguinea"],
+"gabon": ["cameroon", "republicofthecongo", "equatorialguinea"],
+"equatorialguinea": ["cameroon", "gabon"],
+"nigeria": ["benin", "niger", "chad", "cameroon"],
+"benin": ["nigeria", "niger", "burkinafaso", "togo"],
+"togo": ["ghana", "burkinafaso", "benin"],
+"ghana": ["togo", "burkinafaso", "cotedivoire"],
+"cotedivoire": ["mali", "burkinafaso", "ghana", "guinea", "liberia"],
+"liberia": ["cotedivoire", "guinea", "sierraleone"],
+"sierraleone": ["guinea", "liberia"],
+"guinea": ["senegal", "mali", "cotedivoire", "liberia", "sierraleone", "guineabissau"],
+"guineabissau": ["senegal", "guinea"],
+"senegal": ["mauritania", "mali", "guinea", "guineabissau", "gambia"],
+"gambia": ["senegal"],
+"burkinafaso": ["mali", "niger", "benin", "togo", "ghana", "cotedivoire"],
+"southsudan": ["sudan", "ethiopia", "kenya", "uganda", "democraticrepublicofthecongo", "centralafricanrepublic"],
+"eritrea": ["sudan", "ethiopia", "djibouti"],
+"djibouti": ["eritrea", "ethiopia", "somalia"],
+"somalia": ["djibouti", "ethiopia", "kenya"],
+"rwanda": ["uganda", "tanzania", "burundi", "democraticrepublicofthecongo"],
+"burundi": ["rwanda", "tanzania", "democraticrepublicofthecongo"],
+"angola": ["namibia", "zambia", "democraticrepublicofthecongo", "republicofthecongo"],
+"zambia": ["angola", "democraticrepublicofthecongo", "tanzania", "malawi", "mozambique", "zimbabwe", "botswana", "namibia"],
+"zimbabwe": ["southafrica", "botswana", "zambia", "mozambique"],
+"botswana": ["southafrica", "namibia", "zambia", "zimbabwe"],
+"namibia": ["southafrica", "botswana", "zambia", "angola"],
+"mozambique": ["tanzania", "malawi", "zambia", "zimbabwe", "southafrica", "eswatini"],
+"malawi": ["tanzania", "zambia", "mozambique"],
+"lesotho": ["southafrica"],
+"eswatini": ["southafrica", "mozambique"],
+"madagascar": [],
+"comoros": [],
+"seychelles": [],
+"mauritius": [],
+"saotomeandprincipe": [],
+"caboverde": [],
+
+
 
 # ---- NORTH AMERICA ----
 "usa": ["canada", "mexico"],
@@ -339,8 +387,6 @@ var current_sprite = []
 var last_country = ""
 var selected_country = []
 
-var game_mode = "easy"
-
 
 var FIRST_COLOR = Color("535d6cff")     
 var BORDER_COLOR = Color("e2baecff")    
@@ -350,6 +396,8 @@ func _ready():
 	starting_country()
 
 func starting_country():
+	selected_country.clear()
+	current_sprite.clear()
 	var random_country = country_data.keys().pick_random()
 	print("Starting country:", random_country)
 	create_country(random_country, FIRST_COLOR)
@@ -384,6 +432,23 @@ func borders_previous(new_country):
 		return true
 	return false
 
+func is_valid_hard_mode(new_country):
+
+	# Must border the last country
+	if not borders_previous(new_country):
+		return false
+
+	# Must NOT border any earlier chosen country
+	for c in selected_country:
+
+		if c == last_country:
+			continue
+
+		if c in borders and new_country in borders[c]:
+			print(new_country, "already borders", c)
+			return false
+
+	return true
 
 func _on_submitbutton_pressed() -> void:
 	var name = $InputBox.text.to_lower().strip_edges()
@@ -396,18 +461,40 @@ func _on_submitbutton_pressed() -> void:
 		$InputBox.text = ""   # just clear box
 		return
 		
-	if borders_previous(name):
-		create_country(name, BORDER_COLOR)
-		print(name, " BORDERS ", last_country)
-		last_country = name
+	if GameSettings.game_mode == "hard":
+
+		if is_valid_hard_mode(name):
+
+			create_country(name, BORDER_COLOR)
+			print("Valid move in HARD MODE")
+
+		else:
+
+			create_country(name, NOT_BORDER_COLOR)
+			print("INVALID move in HARD MODE - Game Over")
+			await get_tree().create_timer(2.0).timeout
+			reset()
+			return
+
+
+
+	# ---------- EASY MODE ----------
 	else:
-		create_country(name, NOT_BORDER_COLOR)
-		print(name, " does NOT border ", last_country)
-		print("game over")
-		await get_tree().create_timer(2.0).timeout
-		reset()
-		
-	
+		if borders_previous(name):
+			create_country(name, BORDER_COLOR)
+			print("Correct move in EASY MODE")
+
+		else:
+			create_country(name, NOT_BORDER_COLOR)
+			print("Wrong move in EASY MODE - but no reset")
+
+
+
+	# Save progress
+	last_country = name
+	selected_country.append(name)
+
+	$InputBox.text = ""
 
 func reset():
 	 # Remove all country sprites

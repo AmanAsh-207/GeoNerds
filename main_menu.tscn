@@ -1,10 +1,11 @@
-[gd_scene format=3 uid="uid://7sqwcd7nfgo2"]
+[gd_scene format=3 uid="uid://bjyxkeq3tei47"]
 
 [ext_resource type="FontFile" uid="uid://brbqhcm4j8uh" path="res://Sugar Cake.otf" id="1_7vrkn"]
-[ext_resource type="Script" path="res://main_menu.gd" id="1_qe12f"]
+[ext_resource type="Script" uid="uid://daqiw2xpf6nsb" path="res://main_menu.gd" id="1_qe12f"]
 [ext_resource type="Texture2D" uid="uid://lq3kpskoq6rg" path="res://volume.png" id="2_fu7sn"]
 [ext_resource type="Texture2D" uid="uid://cgaxlebhss1nm" path="res://main_menu.png" id="3_fu7sn"]
 [ext_resource type="FontFile" uid="uid://dpal6lw36owve" path="res://Honeydew Pineapple.otf" id="3_jix8l"]
+[ext_resource type="Texture2D" uid="uid://bhe6axgudmu2q" path="res://dial.png" id="4_8qtwp"]
 [ext_resource type="Texture2D" uid="uid://cramxqlryjxg6" path="res://New Piskel-2.png (3).png" id="5_nlkkf"]
 [ext_resource type="Texture2D" uid="uid://wiiuoce72fpv" path="res://New Piskel-1.png (1).png" id="6_qe12f"]
 
@@ -97,7 +98,11 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_qe12f")
 
-[node name="Panel" type="Panel" parent="." unique_id=887102288]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=916396912]
+visible = false
+position = Vector2(575.995, 324.01)
+
+[node name="background" type="Panel" parent="." unique_id=887102288]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -105,9 +110,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_nlkkf")
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=916396912]
-position = Vector2(575.995, 324.01)
 
 [node name="compass" type="Button" parent="." unique_id=898426446]
 layout_mode = 1
@@ -132,6 +134,24 @@ theme_override_font_sizes/font_size = 90
 theme_override_styles/normal = SubResource("StyleBoxFlat_jix8l")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_qe12f")
 theme_override_styles/hover = SubResource("StyleBoxFlat_dy7ct")
+
+[node name="pointer" type="Polygon2D" parent="compass" unique_id=1966282621]
+position = Vector2(-101.77875, 12.23999)
+scale = Vector2(1.188569, 1.169883)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(361.77954, -12.821808, 435.39752, -23.506622, 372.2964, 11.753296, 355.46942, 5.342407)
+uv = PackedVector2Array(360, -8.749939, 435.7212, -21.509918, 368.75, 13.750061)
+
+[node name="pointer outline" type="Polygon2D" parent="compass" unique_id=57503233]
+position = Vector2(-30.528715, 9.739984)
+color = Color(0.82947975, 0.8294798, 0.82947975, 1)
+polygon = PackedVector2Array(360, -8.749939, 435.7212, -21.509918, 368.75, 13.750061, 353.74994, 7.5)
+uv = PackedVector2Array(360, -8.749939, 435.7212, -21.509918, 368.75, 13.750061)
+
+[node name="dial" type="Sprite2D" parent="compass" unique_id=121424517]
+position = Vector2(145.72125, 68.48999)
+scale = Vector2(0.05625, 0.05625)
+texture = ExtResource("4_8qtwp")
 
 [node name="start" type="Button" parent="." unique_id=52549009]
 layout_mode = 1
@@ -227,7 +247,7 @@ position = Vector2(289, 176)
 scale = Vector2(0.36203703, 0.40092593)
 texture = ExtResource("6_qe12f")
 
-[node name="Label" type="Label" parent="." unique_id=1406487451]
+[node name="credits" type="Label" parent="." unique_id=1406487451]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -240,15 +260,13 @@ theme_override_fonts/font = ExtResource("1_7vrkn")
 theme_override_font_sizes/font_size = 32
 text = "Made by: u/AffectionateFriend85"
 
-[node name="ModeButton" type="Button" parent="." unique_id=1104385467]
+[node name="difficulty button" type="Button" parent="." unique_id=1104385467]
 layout_mode = 0
 offset_left = 544.0
 offset_top = 508.0
 offset_right = 601.0
 offset_bottom = 559.0
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=121424517]
-
 [connection signal="pressed" from="compass" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="start" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="ModeButton" to="." method="_on_mode_selector_pressed"]
+[connection signal="pressed" from="difficulty button" to="." method="_on_mode_selector_pressed"]

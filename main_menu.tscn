@@ -178,6 +178,7 @@ icon = ExtResource("2_fu7sn")
 icon_alignment = 1
 
 [node name="easy" type="Button" parent="." unique_id=1180814461]
+visible = false
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -197,6 +198,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_nlkkf")
 text = "Easy"
 
 [node name="hard" type="Button" parent="." unique_id=23272619]
+visible = false
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5

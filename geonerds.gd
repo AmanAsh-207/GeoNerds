@@ -382,9 +382,8 @@ var borders = {
 "australia": [],
 "newzealand": []
 }
-@onready var cam: Camera2D = $Camera2D
 
-
+@onready var cam: Camera2D = $MapContainer/Camera2D
 
 var current_sprite = []
 var last_country = ""
@@ -395,8 +394,19 @@ var FIRST_COLOR = Color("535d6cff")
 var BORDER_COLOR = Color("e2baecff")    
 var NOT_BORDER_COLOR = Color("b10000ff") 
 
+const MIN_ZOOM = Vector2(0.23, 0.23)
+const MAX_ZOOM = Vector2(2, 2)
+
+var first_zoom = false
+var dragging = false
+var drag_start = Vector2()
+var cam_start = Vector2() 
+
+
 func _ready():
 	starting_country()
+
+
 
 func starting_country():
 	selected_country.clear()
@@ -407,59 +417,69 @@ func starting_country():
 	last_country = random_country
 	selected_country.append(random_country)
 
-func zoom_to_country(sprite):
-
-	var target_pos = sprite.get_global_position()
-
-	var tween = create_tween()
-
-	tween.set_parallel(false)
-
-	tween.tween_property(cam, "zoom", target_pos, 0.4)
-
-	tween.tween_property(cam, "zoom", Vector2(0.6, 0.6), 0.4)
 
 
 func _input(event):
 
+	# -------- DRAGGING LOGIC --------
 	if event is InputEventMouseButton:
 
-		var mouse_pos = get_global_mouse_position()
+		if event.button_index == MOUSE_BUTTON_LEFT:
+			dragging = event.pressed
 
+
+		# -------- ZOOM LOGIC --------
 		if event.button_index == MOUSE_BUTTON_WHEEL_UP:
-
-			cam.position = mouse_pos
 			cam.zoom *= 0.9
-			cam.zoom = cam.zoom.clamp(Vector2(0.4,0.4), Vector2(2,2))
+			cam.zoom = cam.zoom.clamp(MIN_ZOOM, MAX_ZOOM)
 
 		elif event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
-
-			cam.position = mouse_pos
 			cam.zoom *= 1.1
-			cam.zoom = cam.zoom.clamp(Vector2(0.4,0.4), Vector2(2,2))
+			cam.zoom = cam.zoom.clamp(MIN_ZOOM, MAX_ZOOM)
+
+		# When fully zoomed out → return to center
+		if cam.zoom == MIN_ZOOM:
+			reset_camera_to_center()
+
+
+	# -------- ACTUAL DRAG MOVEMENT --------
+	elif event is InputEventMouseMotion and dragging:
+
+		# Use RELATIVE movement for smoothness
+		cam.position -= event.relative / cam.zoom
+
+
+func reset_camera_to_center():
+	var tween = create_tween()
+	tween.tween_property(cam, "position", Vector2.ZERO, 0.4)
+
+
 
 func create_country(country_name , color):
+
 	for s in current_sprite:
 		if s.name == country_name:
 			print("Already exist")
 			return
 
-	# Create new sprite
 	var s = Sprite2D.new()
 	s.name = country_name
+
 	var continent_Name = country_data[country_name]
 	var path = "res://seperated countries/" + continent_Name + "/" + country_name + ".png"
 
-	# Load texture correctly
 	s.texture = load(path)
-	#s.position = $"World(2)".position
-	#s.scale = $"World(2)".scale
-	
+
+	# Put sprite at center (or wherever your map system places them)
+	s.position = Vector2.ZERO
+
 	add_child(s)
-	s.z_index= 10 
-	s.modulate= color
+
+	s.z_index = 10 
+	s.modulate = color
+
 	current_sprite.append(s)
-	zoom_to_country(s)
+
 
 func borders_previous(new_country):
 
@@ -534,7 +554,7 @@ func _on_submitbutton_pressed() -> void:
 	$InputBox.text = ""
 
 func reset():
-	cam.zoom = Vector2(0.23,0.23)
+	cam.zoom = Vector2(0.2,0.2)
 	cam.position = Vector2(0,0)
 
 	 # Remove all country sprites

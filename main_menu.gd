@@ -3,7 +3,7 @@ extends Control
 
 func _ready():
 	# Update mode button text when menu opens
-	$ModeButton.text = "Mode: " + GameSettings.game_mode.to_upper()
+	$difficulty_button.text = "Mode: " + GameSettings.game_mode.to_upper()
 
 func _on_mode_selector_pressed() -> void:
 	if GameSettings.game_mode == "easy":

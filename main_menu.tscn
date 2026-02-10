@@ -92,6 +92,32 @@ bg_color = Color(0.1634, 0.4072099, 0.86, 0.6862745)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g8g3n"]
 bg_color = Color(3.272891e-06, 0.37366807, 0.9943151, 0.5294118)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8u0te"]
+bg_color = Color(0.026000006, 0.3223999, 0.52, 0.7372549)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_blend = true
+corner_radius_top_left = 35
+corner_radius_top_right = 35
+corner_radius_bottom_right = 35
+corner_radius_bottom_left = 35
+corner_detail = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oiatc"]
+bg_color = Color(0.76, 0.060799986, 0.072453156, 0.5411765)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_blend = true
+corner_radius_top_left = 35
+corner_radius_top_right = 35
+corner_radius_bottom_right = 35
+corner_radius_bottom_left = 35
+corner_detail = 20
+
 [node name="main_menu" type="Control" unique_id=348545031]
 layout_mode = 3
 anchors_preset = 15
@@ -118,6 +144,7 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_nlkkf")
 
 [node name="compass" type="Button" parent="." unique_id=898426446]
+visible = false
 z_index = 2
 layout_mode = 1
 anchors_preset = 8
@@ -177,6 +204,7 @@ text = "  Choose
 Difficulty"
 
 [node name="Node2D" type="Node2D" parent="." unique_id=479780851]
+visible = false
 
 [node name="geo" type="Sprite2D" parent="Node2D" unique_id=246735967]
 position = Vector2(217, 170)
@@ -245,12 +273,12 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_dy7ct")
 text = " START"
 
 [node name="hard" type="Button" parent="." unique_id=115003591]
-visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = -200.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.71147215, 0.0083932085, 1.92523e-07, 1)
@@ -264,11 +292,11 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_iotk1")
 text = "HARD"
 
 [node name="easy" type="Button" parent="." unique_id=1226209148]
-visible = false
 layout_mode = 1
 anchors_preset = -1
-anchor_right = 0.499
+anchor_right = 0.5
 anchor_bottom = 1.0
+offset_top = -200.0
 offset_right = 0.15197754
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.0766748, 0.24247259, 1, 1)
@@ -280,6 +308,46 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_w44g7")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_cm266")
 theme_override_styles/hover = SubResource("StyleBoxFlat_g8g3n")
 text = "EASY"
+
+[node name="info_easy" type="Label" parent="." unique_id=1451283140]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 103.0
+offset_top = -39.0
+offset_right = 475.0
+offset_bottom = 248.0
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_8u0te")
+text = "
+djfkdsjfks
+dkfldsfj
+dkjfldjfldk\\fdk
+fdklfjkd
+
+fdfjdlsfjd"
+horizontal_alignment = 1
+
+[node name="info_hard" type="Label" parent="." unique_id=1263009653]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 679.0
+offset_top = -39.0
+offset_right = 1051.0
+offset_bottom = 248.0
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_oiatc")
+text = "
+djfkdsjfks
+dkfldsfj
+dkjfldjfldk\\fdk
+fdklfjkd
+
+fdfjdlsfjd"
+horizontal_alignment = 1
 
 [connection signal="pressed" from="compass" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Node2D/start" to="." method="_on_start_pressed"]

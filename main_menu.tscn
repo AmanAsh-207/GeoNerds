@@ -83,6 +83,7 @@ bg_color = Color(0.34, 0.0884, 0.0884, 0.7490196)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iotk1"]
 bg_color = Color(0.51, 0.1326, 0.1326, 0.7490196)
 
+<<<<<<< Updated upstream
 [sub_resource type="Animation" id="Animation_qe12f"]
 length = 0.001
 tracks/0/type = "value"
@@ -179,6 +180,10 @@ bg_color = Color(3.272891e-06, 0.37366807, 0.9943151, 0.5294118)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8u0te"]
 bg_color = Color(0.026000006, 0.3223999, 0.52, 0.7372549)
+=======
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oiatc"]
+bg_color = Color(0.76, 0.060799986, 0.072453156, 0.5411765)
+>>>>>>> Stashed changes
 border_width_left = 5
 border_width_top = 5
 border_width_right = 5
@@ -190,8 +195,17 @@ corner_radius_bottom_right = 35
 corner_radius_bottom_left = 35
 corner_detail = 20
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oiatc"]
-bg_color = Color(0.76, 0.060799986, 0.072453156, 0.5411765)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w44g7"]
+bg_color = Color(0, 0.2860001, 0.78, 0.5294118)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cm266"]
+bg_color = Color(0.1634, 0.4072099, 0.86, 0.6862745)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g8g3n"]
+bg_color = Color(3.272891e-06, 0.37366807, 0.9943151, 0.5294118)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8u0te"]
+bg_color = Color(0.026000006, 0.3223999, 0.52, 0.7372549)
 border_width_left = 5
 border_width_top = 5
 border_width_right = 5
@@ -229,7 +243,6 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_nlkkf")
 
 [node name="compass" type="Button" parent="." unique_id=898426446]
-visible = false
 z_index = 2
 layout_mode = 1
 anchors_preset = 8
@@ -289,7 +302,6 @@ text = "  Choose
 Difficulty"
 
 [node name="Node2D" type="Node2D" parent="." unique_id=479780851]
-visible = false
 
 [node name="geo" type="Sprite2D" parent="Node2D" unique_id=246735967]
 position = Vector2(217, 170)
@@ -358,6 +370,7 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_dy7ct")
 text = " START"
 
 [node name="hard" type="Button" parent="." unique_id=115003591]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
@@ -376,10 +389,34 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_j5v2v")
 theme_override_styles/hover = SubResource("StyleBoxFlat_iotk1")
 text = "HARD"
 
+<<<<<<< Updated upstream
 [node name="AnimationPlayer" type="AnimationPlayer" parent="hard" unique_id=1371653721]
 libraries/ = SubResource("AnimationLibrary_dy7ct")
+=======
+[node name="info_hard" type="Label" parent="hard" unique_id=1263009653]
+visible = false
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 103.0
+offset_top = 61.0
+offset_right = 475.0
+offset_bottom = 348.0
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_oiatc")
+text = "
+djfkdsjfks
+dkfldsfj
+dkjfldjfldk\\fdk
+fdklfjkd
+
+fdfjdlsfjd"
+horizontal_alignment = 1
+>>>>>>> Stashed changes
 
 [node name="easy" type="Button" parent="." unique_id=1226209148]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.5
@@ -397,37 +434,18 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_cm266")
 theme_override_styles/hover = SubResource("StyleBoxFlat_g8g3n")
 text = "EASY"
 
-[node name="info_easy" type="Label" parent="." unique_id=1451283140]
+[node name="info_easy" type="Label" parent="easy" unique_id=1451283140]
+visible = false
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
 offset_left = 103.0
-offset_top = -39.0
+offset_top = 61.0
 offset_right = 475.0
-offset_bottom = 248.0
+offset_bottom = 348.0
 grow_vertical = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_8u0te")
-text = "
-djfkdsjfks
-dkfldsfj
-dkjfldjfldk\\fdk
-fdklfjkd
-
-fdfjdlsfjd"
-horizontal_alignment = 1
-
-[node name="info_hard" type="Label" parent="." unique_id=1263009653]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 679.0
-offset_top = -39.0
-offset_right = 1051.0
-offset_bottom = 248.0
-grow_vertical = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_oiatc")
 text = "
 djfkdsjfks
 dkfldsfj

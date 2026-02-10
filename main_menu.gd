@@ -2,6 +2,7 @@ extends Control
 
 @onready var offWale: Node2D = $Node2D
 
+@onready var animation_player: AnimationPlayer = $hard/AnimationPlayer
 
 @onready var hard: Button = $hard
 @onready var easy: Button = $easy
@@ -20,28 +21,14 @@ func _process(delta):
 	if is_spinning:
 		compass.rotation_degrees += spin_speed * delta
 
-#func _on_mode_selector_pressed() -> void:
-	#if GameSettings.game_mode == "easy":
-		#GameSettings.game_mode = "hard"
-		#$difficulty_button.text = "Mode: HARD"
-	#else:
-		#GameSettings.game_mode = "easy"
-		#$difficulty_button.text = "Mode: EASY"
-
-	
-
-
 func stop_and_select(target_angle, mode):
 	is_spinning = false
-
 	var tween = create_tween()
 	tween.tween_property(compass, "rotation_degrees", target_angle, 1).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN)
-
 	await tween.finished
-
 	GameSettings.game_mode = mode
-	
-		
+	if mode == "hard":
+		animation_player.play("SlideLeft")
 	await get_tree().create_timer(1.0).timeout
 	get_tree().change_scene_to_file("res://geonerds.tscn")
  

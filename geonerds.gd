@@ -543,7 +543,8 @@ func _on_submitbutton_pressed() -> void:
 
 		else:
 			create_country(name, NOT_BORDER_COLOR)
-			print("Wrong move in EASY MODE - but no reset")
+			print("Wrong move in EASY MODE")
+			reset()
 
 
 

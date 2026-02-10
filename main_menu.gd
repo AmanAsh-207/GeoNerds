@@ -2,7 +2,7 @@ extends Control
 
 @onready var offWale: Node2D = $Node2D
 
-@onready var animation_player: AnimationPlayer = $hard/AnimationPlayer
+
 
 @onready var hard: Button = $hard
 @onready var easy: Button = $easy
@@ -11,6 +11,7 @@ extends Control
 @onready var pointer: Polygon2D = $compass/pointer
 @onready var pointer_outline: Polygon2D = $"compass/pointer outline"
 @onready var dial: Sprite2D = $compass/dial
+@onready var text_difficulty_choose: Label = $text_difficulty_choose
 
 var is_spinning = false
 var spin_speed = 300
@@ -27,8 +28,6 @@ func stop_and_select(target_angle, mode):
 	tween.tween_property(compass, "rotation_degrees", target_angle, 1).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN)
 	await tween.finished
 	GameSettings.game_mode = mode
-	if mode == "hard":
-		animation_player.play("SlideLeft")
 	await get_tree().create_timer(1.0).timeout
 	get_tree().change_scene_to_file("res://geonerds.tscn")
  
@@ -42,6 +41,10 @@ func _on_start_pressed() -> void:
 	hard.visible = true
 	easy.visible = true 
 	is_spinning = true
+	text_difficulty_choose.visible = true
+	#compass.get_theme_stylebox("normal").shadow_size = 0
+	
+	
 	#await get_tree().create_timer(5.0).timeout
 	#get_tree().change_scene_to_file("res://geonerds.tscn")
 

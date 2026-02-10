@@ -13,10 +13,33 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8uhbq"]
 shader = ExtResource("4_qynu5")
-shader_parameter/blur_strength = 3.3770001604075
+shader_parameter/blur_strength = 2.400000114
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p3muq"]
-bg_color = Color(0.26, 0.26, 0.26, 0.7921569)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qynu5"]
+bg_color = Color(0.72, 0.06479999, 0.07571983, 0.7490196)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_blend = true
+corner_radius_top_left = 35
+corner_radius_top_right = 35
+corner_radius_bottom_right = 35
+corner_radius_bottom_left = 35
+corner_detail = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8uhbq"]
+bg_color = Color(0.026000006, 0.3223999, 0.52, 0.8862745)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_blend = true
+corner_radius_top_left = 35
+corner_radius_top_right = 35
+corner_radius_bottom_right = 35
+corner_radius_bottom_left = 35
+corner_detail = 20
 
 [node name="Node2D" type="Node2D" unique_id=1669328160]
 script = ExtResource("1_rtr7l")
@@ -28,18 +51,6 @@ texture = ExtResource("2_3p5tw")
 
 [node name="Camera2D" type="Camera2D" parent="MapContainer" unique_id=1348370569]
 zoom = Vector2(0.277, 0.255)
-
-[node name="Submitbutton" type="Button" parent="." unique_id=1949523355]
-offset_left = -554.0
-offset_top = -181.0
-offset_right = -354.0
-offset_bottom = -84.0
-
-[node name="InputBox" type="LineEdit" parent="." unique_id=784775352]
-offset_left = -617.0
-offset_top = -60.0
-offset_right = -266.0
-offset_bottom = 208.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=859696896]
 
@@ -61,6 +72,7 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_8uhbq")
 icon = ExtResource("3_kyqsu")
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1132596596]
+visible = false
 material = SubResource("ShaderMaterial_8uhbq")
 anchors_preset = 15
 anchor_right = 1.0
@@ -68,10 +80,68 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Panel" type="Panel" parent="." unique_id=2066905451]
-visible = false
-offset_right = 1152.0
-offset_bottom = 648.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_p3muq")
+[node name="Submitbutton" type="Button" parent="CanvasLayer" unique_id=1949523355]
+offset_left = 739.0
+offset_top = 599.0
+offset_right = 780.0
+offset_bottom = 634.0
 
-[connection signal="pressed" from="Submitbutton" to="." method="_on_submitbutton_pressed"]
+[node name="InputBox" type="LineEdit" parent="CanvasLayer" unique_id=784775352]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -159.5
+offset_top = -49.0
+offset_right = 159.5
+offset_bottom = -13.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 20
+text = "st vincent and grenadines"
+
+[node name="info_hard" type="Label" parent="." unique_id=377618113]
+visible = false
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 21.0
+offset_top = 432.0
+offset_right = 327.0
+offset_bottom = 621.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_qynu5")
+text = "
+djfkdsjfks
+dkfldsfj
+dkjfldjfldk\\fdk
+fdklfjkd
+
+fdfjdlsfjd"
+horizontal_alignment = 1
+
+[node name="info_easy" type="Label" parent="." unique_id=66439495]
+visible = false
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 21.0
+offset_top = 429.0
+offset_right = 328.0
+offset_bottom = 621.0
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_8uhbq")
+text = "
+djfkdsjfks
+dkfldsfj
+dkjfldjfldk\\fdk
+fdklfjkd
+
+fdfjdlsfjd"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="CanvasLayer/Submitbutton" to="." method="_on_submitbutton_pressed"]

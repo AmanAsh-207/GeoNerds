@@ -24,6 +24,6 @@ offset_bottom = 208.0
 texture = ExtResource("2_3p5tw")
 
 [node name="Camera2D" type="Camera2D" parent="MapContainer" unique_id=1348370569]
-zoom = Vector2(0.22, 0.22)
+zoom = Vector2(0.26, 0.24)
 
 [connection signal="pressed" from="Submitbutton" to="." method="_on_submitbutton_pressed"]

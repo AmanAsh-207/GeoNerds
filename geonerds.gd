@@ -394,7 +394,7 @@ var FIRST_COLOR = Color("535d6cff")
 var BORDER_COLOR = Color("e2baecff")    
 var NOT_BORDER_COLOR = Color("b10000ff") 
 
-const MIN_ZOOM = Vector2(0.23, 0.23)
+const MIN_ZOOM = Vector2(0.26, 0.24)
 const MAX_ZOOM = Vector2(2, 2)
 
 var first_zoom = false
@@ -429,11 +429,11 @@ func _input(event):
 
 
 		# -------- ZOOM LOGIC --------
-		if event.button_index == MOUSE_BUTTON_WHEEL_UP:
+		if event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
 			cam.zoom *= 0.9
 			cam.zoom = cam.zoom.clamp(MIN_ZOOM, MAX_ZOOM)
 
-		elif event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
+		elif event.button_index == MOUSE_BUTTON_WHEEL_UP:
 			cam.zoom *= 1.1
 			cam.zoom = cam.zoom.clamp(MIN_ZOOM, MAX_ZOOM)
 
@@ -555,7 +555,7 @@ func _on_submitbutton_pressed() -> void:
 	$InputBox.text = ""
 
 func reset():
-	cam.zoom = Vector2(0.2,0.2)
+	cam.zoom = Vector2(0.26,0.24)
 	cam.position = Vector2(0,0)
 
 	 # Remove all country sprites

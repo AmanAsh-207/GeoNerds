@@ -26,4 +26,10 @@ texture = ExtResource("2_3p5tw")
 [node name="Camera2D" type="Camera2D" parent="MapContainer" unique_id=1348370569]
 zoom = Vector2(0.26, 0.24)
 
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=859696896]
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=914881493]
+offset_right = 40.0
+offset_bottom = 23.0
+
 [connection signal="pressed" from="Submitbutton" to="." method="_on_submitbutton_pressed"]

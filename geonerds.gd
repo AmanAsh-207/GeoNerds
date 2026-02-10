@@ -383,6 +383,9 @@ var borders = {
 "newzealand": []
 }
 
+@onready var label: Label = $CanvasLayer/Label
+
+
 @onready var cam: Camera2D = $MapContainer/Camera2D
 
 var current_sprite = []
@@ -405,6 +408,14 @@ var cam_start = Vector2()
 
 func _ready():
 	starting_country()
+	label.text = "Score: 0"
+	label.add_theme_font_size_override("font_size", 32)
+	
+var score = 0
+
+func add_score():
+	score += 1
+	label.text = "Score: " + str(score)
 
 
 
@@ -521,7 +532,7 @@ func _on_submitbutton_pressed() -> void:
 	if GameSettings.game_mode == "hard":
 
 		if is_valid_hard_mode(name):
-
+			add_score()
 			create_country(name, BORDER_COLOR)
 			print("Valid move in HARD MODE")
 
@@ -538,12 +549,14 @@ func _on_submitbutton_pressed() -> void:
 	# ---------- EASY MODE ----------
 	else:
 		if borders_previous(name):
+			add_score()
 			create_country(name, BORDER_COLOR)
 			print("Correct move in EASY MODE")
 
 		else:
 			create_country(name, NOT_BORDER_COLOR)
 			print("Wrong move in EASY MODE")
+			await get_tree().create_timer(2.0).timeout
 			reset()
 
 
@@ -557,7 +570,7 @@ func _on_submitbutton_pressed() -> void:
 func reset():
 	cam.zoom = Vector2(0.26,0.24)
 	cam.position = Vector2(0,0)
-
+	label.text = "0" 
 	 # Remove all country sprites
 	for s in current_sprite:
 		s.queue_free()

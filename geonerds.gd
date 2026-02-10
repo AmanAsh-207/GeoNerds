@@ -114,7 +114,7 @@ var country_data = {
 "comoros": "africa",
 "democraticrepublicofcongo": "africa",
 "republicofcongo": "africa",
-"cotedlvoire": "africa",
+"cotedivoire": "africa",
 "djibouti": "africa",
 "egypt": "africa",
 "equatorialguinea": "africa",

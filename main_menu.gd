@@ -2,11 +2,6 @@ extends Control
 
 @onready var offWale: Node2D = $Node2D
 
-func _ready():
-	# Update mode button text when menu opens
-	$difficulty_button.text = "Mode: " + GameSettings.game_mode.to_upper()
-
-
 
 @onready var hard: Button = $hard
 @onready var easy: Button = $easy
@@ -19,11 +14,8 @@ func _ready():
 var is_spinning = false
 var spin_speed = 300
 
+@onready var start: Button = $Node2D/start
 
-#func _ready():
-	## Update mode button text when menu opens
-	#$Node2D/difficulty_button.text = "Mode: " + GameSettings.game_mode.to_upper()
-#
 func _process(delta):
 	if is_spinning:
 		compass.rotation_degrees += spin_speed * delta
@@ -36,16 +28,7 @@ func _process(delta):
 		#GameSettings.game_mode = "easy"
 		#$difficulty_button.text = "Mode: EASY"
 
-func _on_start_pressed() -> void:
-	pointer.visible = true
-	pointer_outline.visible = true
-	dial.visible = true 
-	offWale.visible = false
-	hard.visible = true
-	easy.visible = true 
-	is_spinning = true
-	#await get_tree().create_timer(5.0).timeout
-	#get_tree().change_scene_to_file("res://geonerds.tscn")
+	
 
 
 func stop_and_select(target_angle, mode):
@@ -63,10 +46,21 @@ func stop_and_select(target_angle, mode):
 	get_tree().change_scene_to_file("res://geonerds.tscn")
  
 
-func _on_easy_pressed() -> void:
-		stop_and_select(-45, "easy")
 
+func _on_start_pressed() -> void:
+	pointer.visible = true
+	pointer_outline.visible = true
+	dial.visible = true 
+	offWale.visible = false
+	hard.visible = true
+	easy.visible = true 
+	is_spinning = true
+	#await get_tree().create_timer(5.0).timeout
+	#get_tree().change_scene_to_file("res://geonerds.tscn")
 
 
 func _on_hard_pressed() -> void:
 	stop_and_select(45, "hard")
+
+func _on_easy_pressed() -> void:
+	stop_and_select(-145, "easy")

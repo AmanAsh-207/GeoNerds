@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bhe6axgudmu2q" path="res://dial.png" id="4_8qtwp"]
 [ext_resource type="Texture2D" uid="uid://cramxqlryjxg6" path="res://New Piskel-2.png (3).png" id="5_nlkkf"]
 [ext_resource type="Texture2D" uid="uid://wiiuoce72fpv" path="res://New Piskel-1.png (1).png" id="6_qe12f"]
+[ext_resource type="FontFile" uid="uid://dyreg5bx2jhms" path="res://Minecraft.ttf" id="8_8qtwp"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nlkkf"]
 texture = ExtResource("3_fu7sn")
@@ -15,6 +16,8 @@ texture = ExtResource("3_fu7sn")
 bg_color = Color(0.6979711, 0, 0, 1)
 skew = Vector2(1.955, 0.145)
 border_color = Color(0.17765072, 0.16966358, 0, 1)
+corner_radius_top_right = 15
+corner_radius_bottom_left = 15
 shadow_size = 6
 shadow_offset = Vector2(14.32, 0.93)
 
@@ -283,7 +286,8 @@ offset_top = -200.0
 theme_override_colors/font_color = Color(0.71147215, 0.0083932085, 1.92523e-07, 1)
 theme_override_colors/font_pressed_color = Color(0.97, 0.016166652, 0, 1)
 theme_override_colors/font_hover_color = Color(0.85, 0.014166653, 0, 1)
-theme_override_constants/outline_size = 15
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("8_8qtwp")
 theme_override_font_sizes/font_size = 43
 theme_override_styles/normal = SubResource("StyleBoxFlat_8qtwp")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_j5v2v")
@@ -322,7 +326,8 @@ offset_right = -1.0
 theme_override_colors/font_color = Color(0.078431375, 0.24313726, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.21176471, 0.41960785, 1, 1)
 theme_override_colors/font_hover_color = Color(0.21960784, 0.40392157, 1, 1)
-theme_override_constants/outline_size = 15
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("8_8qtwp")
 theme_override_font_sizes/font_size = 43
 theme_override_styles/normal = SubResource("StyleBoxFlat_w44g7")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_cm266")

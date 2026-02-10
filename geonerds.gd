@@ -397,7 +397,7 @@ var FIRST_COLOR = Color("535d6cff")
 var BORDER_COLOR = Color("e2baecff")    
 var NOT_BORDER_COLOR = Color("b10000ff") 
 
-const MIN_ZOOM = Vector2(0.26, 0.24)
+const MIN_ZOOM = Vector2(0.227, 0.255)
 const MAX_ZOOM = Vector2(2, 2)
 
 var first_zoom = false
@@ -451,6 +451,32 @@ func _input(event):
 		# When fully zoomed out → return to center
 		if cam.zoom == MIN_ZOOM:
 			reset_camera_to_center()
+
+#func _input(event):
+#
+	#if event is InputEventMouseButton:
+		#if event.button_index == MOUSE_BUTTON_LEFT:
+			#dragging = event.pressed
+		#
+		#var mouse_pos = cam.get_global_mouse_position()
+#
+		#if event.button_index == MOUSE_BUTTON_WHEEL_UP:
+#
+			#var old_zoom = cam.zoom
+			#var new_zoom = (cam.zoom * 0.9).clamp(MIN_ZOOM, MAX_ZOOM)
+#
+			#cam.position += (mouse_pos - cam.position) * (1 - new_zoom.x / old_zoom.x)
+			#cam.zoom = new_zoom
+#
+#
+		#elif event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
+#
+			#var old_zoom = cam.zoom
+			#var new_zoom = (cam.zoom * 1.1).clamp(MIN_ZOOM, MAX_ZOOM)
+#
+			#cam.position += (mouse_pos - cam.position) * (1 - new_zoom.x / old_zoom.x)
+			#cam.zoom = new_zoom
+
 
 
 	# -------- ACTUAL DRAG MOVEMENT --------

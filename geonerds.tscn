@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://c0wu05iy5vpje" path="res://geonerds.gd" id="1_rtr7l"]
 [ext_resource type="Texture2D" uid="uid://b36ns48f6tdj7" path="res://world (2).png" id="2_3p5tw"]
 [ext_resource type="Texture2D" uid="uid://dfxrpre1rqg03" path="res://INFO.png" id="3_kyqsu"]
-[ext_resource type="Shader" uid="uid://c7wdaupf8da5b" path="res://blureffect.gdshader" id="4_qynu5"]
+[ext_resource type="Shader" path="res://blureffect.gdshader" id="4_qynu5"]
 [ext_resource type="Texture2D" uid="uid://cmx6mlj38w7yp" path="res://593713e5-3a82-49c0-8304-4f7a76ea902a.jpg" id="5_8uhbq"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kyqsu"]
@@ -185,5 +185,11 @@ fdklfjkd
 
 fdfjdlsfjd"
 horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="CanvasLayer" unique_id=62972702]
+offset_left = 378.0
+offset_top = 14.0
+offset_right = 435.0
+offset_bottom = 37.0
 
 [connection signal="pressed" from="CanvasLayer/Submitbutton" to="." method="_on_submitbutton_pressed"]

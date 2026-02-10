@@ -91,8 +91,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 5.0
-offset_bottom = 5.0
+offset_left = -2.0
+offset_top = -1.0
+offset_right = -2.0
+offset_bottom = -1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_nlkkf")
@@ -105,15 +107,15 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -146.00002
-offset_top = -74.00001
-offset_right = 146.00002
-offset_bottom = 74.00001
+offset_left = -146.0
+offset_top = -76.000015
+offset_right = 146.0
+offset_bottom = 72.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.8, 0.8)
 pivot_offset = Vector2(-3.265, 0)
-pivot_offset_ratio = Vector2(0.515, 0.48)
+pivot_offset_ratio = Vector2(0.51, 0.51)
 theme_override_colors/font_color = Color(0.8745098, 0.8745098, 0.8745098, 1)
 theme_override_constants/outline_size = 21
 theme_override_fonts/font = ExtResource("1_7vrkn")
@@ -146,13 +148,14 @@ texture = ExtResource("4_8qtwp")
 [node name="text_difficulty_choose" type="Label" parent="compass" unique_id=91076778]
 visible = false
 layout_mode = 0
-offset_left = 114.47125
-offset_top = 47.23999
-offset_right = 206.93707
-offset_bottom = 110.594025
-scale = Vector2(0.82, 0.82)
+offset_left = 111.97124
+offset_top = 47.239975
+offset_right = 171.97124
+offset_bottom = 94.239975
+scale = Vector2(1.165, 1.165)
 theme_override_fonts/font = ExtResource("1_7vrkn")
-text = " Choose
+theme_override_font_sizes/font_size = 15
+text = "  Choose
 Difficulty"
 
 [node name="Node2D" type="Node2D" parent="." unique_id=479780851]
@@ -222,47 +225,6 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_qe12f")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_8qtwp")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_dy7ct")
 text = " START"
-
-[node name="credits2" type="Label" parent="Node2D" unique_id=1788187871]
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 9.0
-offset_top = 601.0
-offset_right = 443.0
-offset_bottom = 648.0
-grow_vertical = 0
-theme_override_fonts/font = ExtResource("1_7vrkn")
-theme_override_font_sizes/font_size = 32
-text = "Made by: u/AffectionateFriend85"
-
-[node name="geo2" type="Sprite2D" parent="Node2D" unique_id=129766711]
-position = Vector2(217, 170)
-scale = Vector2(0.27222222, 0.26666668)
-texture = ExtResource("5_nlkkf")
-
-[node name="nerds2" type="Sprite2D" parent="Node2D" unique_id=1079732938]
-position = Vector2(289, 176)
-scale = Vector2(0.36203703, 0.40092593)
-texture = ExtResource("6_qe12f")
-
-[node name="red" type="ColorRect" parent="." unique_id=1826832232]
-visible = false
-z_index = 1
-layout_mode = 0
-offset_left = 576.0
-offset_top = 1.0
-offset_right = 1151.0
-offset_bottom = 653.0
-color = Color(0.7372549, 0.32941177, 0.39607844, 1)
-
-[node name="Blue" type="ColorRect" parent="." unique_id=1618317458]
-visible = false
-z_index = 1
-layout_mode = 0
-offset_right = 575.0
-offset_bottom = 652.0
-color = Color(0.4392157, 0.5764706, 0.7490196, 1)
 
 [node name="hard" type="Button" parent="." unique_id=115003591]
 visible = false

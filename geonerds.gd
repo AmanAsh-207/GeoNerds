@@ -384,10 +384,7 @@ var borders = {
 }
 
 @onready var label: Label = $CanvasLayer/Label
-@onready var label_2: Label = $CanvasLayer/Label2
 
-var default_zoom = Vector2()
-var default_position = Vector2()
 
 @onready var cam: Camera2D = $MapContainer/Camera2D
 
@@ -410,12 +407,9 @@ var cam_start = Vector2()
 
 
 func _ready():
-	default_zoom = cam.zoom
-	default_position = cam.position
 	starting_country()
 	label.text = "Score: 0"
 	label.add_theme_font_size_override("font_size", 32)
-	label_2.add_theme_font_size_override("font_size",16)
 	
 var score = 0
 
@@ -432,17 +426,11 @@ func starting_country():
 	print("Starting country:", random_country)
 	create_country(random_country, FIRST_COLOR)
 	last_country = random_country
-	label_2.text = "Guess the Neighbouring country of " + last_country
 	selected_country.append(random_country)
 
 
 
 func _input(event):
-
-	# Block map interaction only when mouse is over UI elements
-	if event is InputEventMouseButton or event is InputEventMouseMotion:
-		if get_viewport().gui_get_hovered_control() != null:
-			return
 
 	# -------- DRAGGING LOGIC --------
 	if event is InputEventMouseButton:
@@ -450,49 +438,57 @@ func _input(event):
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			dragging = event.pressed
 
+
+		# -------- ZOOM LOGIC --------
 		if event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
-
-			var new_zoom = cam.zoom * 0.9
-			clamp_camera_to_viewport()
-			# Only apply if still above MIN_ZOOM
-			if new_zoom.x >= MIN_ZOOM.x and new_zoom.y >= MIN_ZOOM.y:
-				cam.zoom = new_zoom
-
+			cam.zoom *= 0.9
+			cam.zoom = cam.zoom.clamp(MIN_ZOOM, MAX_ZOOM)
 
 		elif event.button_index == MOUSE_BUTTON_WHEEL_UP:
+			cam.zoom *= 1.1
+			cam.zoom = cam.zoom.clamp(MIN_ZOOM, MAX_ZOOM)
 
-			var new_zoom = cam.zoom * 1.1
-			clamp_camera_to_viewport()
-			# Only apply if still below MAX_ZOOM
-			if new_zoom.x <= MAX_ZOOM.x and new_zoom.y <= MAX_ZOOM.y:
-				cam.zoom = new_zoom
+		# When fully zoomed out → return to center
+		if cam.zoom == MIN_ZOOM:
+			reset_camera_to_center()
+
+#func _input(event):
+#
+	#if event is InputEventMouseButton:
+		#if event.button_index == MOUSE_BUTTON_LEFT:
+			#dragging = event.pressed
+		#
+		#var mouse_pos = cam.get_global_mouse_position()
+#
+		#if event.button_index == MOUSE_BUTTON_WHEEL_UP:
+#
+			#var old_zoom = cam.zoom
+			#var new_zoom = (cam.zoom * 0.9).clamp(MIN_ZOOM, MAX_ZOOM)
+#
+			#cam.position += (mouse_pos - cam.position) * (1 - new_zoom.x / old_zoom.x)
+			#cam.zoom = new_zoom
+#
+#
+		#elif event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
+#
+			#var old_zoom = cam.zoom
+			#var new_zoom = (cam.zoom * 1.1).clamp(MIN_ZOOM, MAX_ZOOM)
+#
+			#cam.position += (mouse_pos - cam.position) * (1 - new_zoom.x / old_zoom.x)
+			#cam.zoom = new_zoom
+
+
 
 	# -------- ACTUAL DRAG MOVEMENT --------
 	elif event is InputEventMouseMotion and dragging:
+
+		# Use RELATIVE movement for smoothness
 		cam.position -= event.relative / cam.zoom
-	clamp_camera_to_viewport()
-	
-func clamp_camera_to_viewport():
 
-	var viewport_size = get_viewport_rect().size
 
-	# Size of visible area in world units
-	var view_w = viewport_size.x / cam.zoom.x
-	var view_h = viewport_size.y / cam.zoom.y
-
-	# Define map boundaries (assuming your whole map is centered at 0,0)
-	var map_min = Vector2(-2100, -1300)   # adjust to your real map size
-	var map_max = Vector2(2100, 1300)
-
-	# Limit camera so the view never leaves the map
-	var min_x = map_min.x + view_w / 2
-	var max_x = map_max.x - view_w / 2
-
-	var min_y = map_min.y + view_h / 2
-	var max_y = map_max.y - view_h / 2
-
-	cam.position.x = clamp(cam.position.x, min_x, max_x)
-	cam.position.y = clamp(cam.position.y, min_y, max_y)
+func reset_camera_to_center():
+	var tween = create_tween()
+	tween.tween_property(cam, "position", Vector2.ZERO, 0.4)
 
 
 
@@ -549,18 +545,18 @@ func is_valid_hard_mode(new_country):
 	return true
 
 func _on_submitbutton_pressed() -> void:
-	var name = $CanvasLayer/InputBox.text.to_lower().strip_edges()
+	var name = $InputBox.text.to_lower().strip_edges()
 	name=name.replace(" ","")
 	if name == "":
 		return
 
 	# If not a valid country, do nothing
 	if not name in country_data:
-		$CanvasLayer/InputBox.text = ""   # just clear box
+		$InputBox.text = ""   # just clear box
 		return
 		
 	if GameSettings.game_mode == "hard":
-		label_2.text = "Guess the Neighbouring country of " + name
+
 		if is_valid_hard_mode(name):
 			add_score()
 			create_country(name, BORDER_COLOR)
@@ -578,7 +574,6 @@ func _on_submitbutton_pressed() -> void:
 
 	# ---------- EASY MODE ----------
 	else:
-		label_2.text = "Guess the Neighbouring country of " + name
 		if borders_previous(name):
 			add_score()
 			create_country(name, BORDER_COLOR)
@@ -596,11 +591,11 @@ func _on_submitbutton_pressed() -> void:
 	last_country = name
 	selected_country.append(name)
 
-	$CanvasLayer/InputBox.text = ""
+	$InputBox.text = ""
 
 func reset():
-	cam.zoom = default_zoom
-	cam.position = default_position
+	cam.zoom = Vector2(0.26,0.24)
+	cam.position = Vector2(0,0)
 	label.text = "0" 
 	 # Remove all country sprites
 	for s in current_sprite:

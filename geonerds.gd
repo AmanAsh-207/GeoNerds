@@ -417,6 +417,7 @@ func _ready():
 	label.text = "Score: 0"
 	label.add_theme_font_size_override("font_size", 32)
 	label_2.add_theme_font_size_override("font_size",16)
+	input_box.text_submitted.connect(_on_submitbutton_pressed)
 
 	
 var score = 0
@@ -549,7 +550,7 @@ func is_valid_hard_mode(new_country):
 
 	return true
 
-func _on_submitbutton_pressed() -> void:
+func _on_submitbutton_pressed(_text = "") -> void:
 	var name = $CanvasLayer/InputBox.text.to_lower().strip_edges()
 	name=name.replace(" ","")
 	if name == "":

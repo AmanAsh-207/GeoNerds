@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://c0wu05iy5vpje" path="res://geonerds.gd" id="1_rtr7l"]
 [ext_resource type="Texture2D" uid="uid://b36ns48f6tdj7" path="res://world (2).png" id="2_3p5tw"]
 [ext_resource type="Texture2D" uid="uid://dfxrpre1rqg03" path="res://INFO.png" id="3_kyqsu"]
-[ext_resource type="Shader" uid="uid://c7wdaupf8da5b" path="res://blureffect.gdshader" id="4_qynu5"]
+[ext_resource type="Shader" path="res://blureffect.gdshader" id="4_qynu5"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kyqsu"]
 
@@ -100,6 +100,10 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_font_sizes/font_size = 20
 text = "st vincent and grenadines"
+
+[node name="Label2" type="Label" parent="CanvasLayer" unique_id=1863372192]
+offset_right = 40.0
+offset_bottom = 23.0
 
 [node name="info_hard" type="Label" parent="." unique_id=377618113]
 visible = false

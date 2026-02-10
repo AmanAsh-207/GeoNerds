@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://bn16s24ii782o"]
+
+[ext_resource type="Texture2D" uid="uid://b36ns48f6tdj7" path="res://world (2).png" id="1_ns2g7"]
+[ext_resource type="Texture2D" uid="uid://b0cpji4belo0d" path="res://seperated countries/asia/india.png" id="2_np2q8"]
+[ext_resource type="Texture2D" uid="uid://bk8j1ikoif3ed" path="res://seperated countries/asia/kazakhstan.png" id="3_pb1d3"]
+[ext_resource type="Texture2D" uid="uid://3h3mlurgrs43" path="res://seperated countries/asia/pakistan.png" id="4_w2fk4"]
+[ext_resource type="Texture2D" uid="uid://d2cbvdc7dcdjj" path="res://seperated countries/asia/russia.png" id="5_fv7rp"]
+[ext_resource type="Texture2D" uid="uid://cmx6mlj38w7yp" path="res://593713e5-3a82-49c0-8304-4f7a76ea902a.jpg" id="6_a16kd"]
+[ext_resource type="Texture2D" uid="uid://bf0pkg2k8l3jn" path="res://seperated countries/africa/algeria.png" id="7_jgms2"]
+[ext_resource type="Texture2D" uid="uid://bcxckj015rin0" path="res://seperated countries/africa/benin.png" id="8_cqwa8"]
+[ext_resource type="Texture2D" uid="uid://clo28pa8mglcr" path="res://seperated countries/africa/togo.png" id="9_pc8en"]
+
+[node name="Node2D" type="Node2D" unique_id=1387427]
+
+[node name="World(2)" type="Sprite2D" parent="." unique_id=1082760559]
+self_modulate = Color(1.0278012, 1.2103635, 1.4190066, 1)
+texture = ExtResource("1_ns2g7")
+
+[node name="India" type="Sprite2D" parent="." unique_id=485782630]
+self_modulate = Color(0, 1.6543838, 1.6543838, 1)
+texture = ExtResource("2_np2q8")
+
+[node name="Kazakhstan" type="Sprite2D" parent="." unique_id=1204190264]
+self_modulate = Color(0.70157456, 9.739702e-06, 0.016379802, 1)
+texture = ExtResource("3_pb1d3")
+
+[node name="Pakistan" type="Sprite2D" parent="." unique_id=266178966]
+self_modulate = Color(0, 1.1003247, 0.9932084, 1)
+texture = ExtResource("4_w2fk4")
+
+[node name="Russia" type="Sprite2D" parent="." unique_id=433618641]
+self_modulate = Color(0.35448635, 0.5262012, 0.7666019, 1)
+texture = ExtResource("5_fv7rp")
+
+[node name="593713e53a8249c083044f7a76Ea902a" type="Sprite2D" parent="." unique_id=998569294]
+self_modulate = Color(0.4117647, 0.4117647, 0.4117647, 1)
+z_index = -29
+position = Vector2(5, 5)
+texture = ExtResource("6_a16kd")
+
+[node name="Algeria" type="Sprite2D" parent="." unique_id=1171975179]
+self_modulate = Color(0.699077, 1.0743514, 1.3076304, 1)
+texture = ExtResource("7_jgms2")
+
+[node name="Benin" type="Sprite2D" parent="." unique_id=2019117888]
+self_modulate = Color(0, 0.5019608, 0.5019608, 1)
+texture = ExtResource("8_cqwa8")
+
+[node name="Togo" type="Sprite2D" parent="." unique_id=18411116]
+self_modulate = Color(0, 1.563, 1.414, 1)
+texture = ExtResource("9_pc8en")

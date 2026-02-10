@@ -397,9 +397,9 @@ var last_country = ""
 var selected_country = []
 
 
-var FIRST_COLOR = Color("535d6cff")     
-var BORDER_COLOR = Color("e2baecff")    
-var NOT_BORDER_COLOR = Color("b10000ff") 
+var FIRST_COLOR = Color(0.0, 1.654, 1.654)
+var BORDER_COLOR = Color(0.0, 1.1, 0.993)
+var NOT_BORDER_COLOR = Color("b30004") 
 
 const MIN_ZOOM = Vector2(0.227, 0.255)
 const MAX_ZOOM = Vector2(2, 2)

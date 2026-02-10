@@ -11,6 +11,9 @@ extends Control
 @onready var easy: Button = $easy
 
 @onready var compass: Button = $compass
+@onready var pointer: Polygon2D = $compass/pointer
+@onready var pointer_outline: Polygon2D = $"compass/pointer outline"
+@onready var dial: Sprite2D = $compass/dial
 
 var is_spinning = false
 var spin_speed = 300
@@ -33,6 +36,9 @@ func _process(delta):
 		#$difficulty_button.text = "Mode: EASY"
 
 func _on_start_pressed() -> void:
+	pointer.visible = true
+	pointer_outline.visible = true
+	dial.visible = true 
 	offWale.visible = false
 	hard.visible = true
 	easy.visible = true 
@@ -45,7 +51,7 @@ func stop_and_select(target_angle, mode):
 	is_spinning = false
 
 	var tween = create_tween()
-	tween.tween_property(compass, "rotation_degrees", target_angle, 1).set_trans(Tween.TRANS_BACK)
+	tween.tween_property(compass, "rotation_degrees", target_angle, 1).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN)
 
 	await tween.finished
 

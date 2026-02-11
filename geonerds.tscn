@@ -195,11 +195,13 @@ offset_bottom = -18.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_colors/font_color = Color(0.02, 0.02, 0.02, 1)
+theme_override_colors/caret_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_jnbpa")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_p3muq")
-placeholder_text = "Write your country name here.."
+placeholder_text = "Write country name here...."
 max_length = 35
+keep_editing_on_text_submit = true
 emoji_menu_enabled = false
 
 [node name="info_hard" type="Label" parent="CanvasLayer" unique_id=377618113]
@@ -309,6 +311,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_rr2kv")
 text = "PLAY AGAIN"
 
 [node name="exit" type="Button" parent="CanvasLayer" unique_id=349383683]
+visible = false
 offset_left = 1103.0
 offset_top = 19.0
 offset_right = 1615.0

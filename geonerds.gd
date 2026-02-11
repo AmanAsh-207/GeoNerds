@@ -384,6 +384,8 @@ var borders = {
 }
 @onready var input_box: LineEdit = $CanvasLayer/InputBox
 
+@onready var label_3: Label = $CanvasLayer/Label3
+
 @onready var label: Label = $CanvasLayer/Label
 @onready var label_2: Label = $CanvasLayer/Label2
 var default_zoom = Vector2()
@@ -560,7 +562,10 @@ func _on_submitbutton_pressed(_text = "") -> void:
 
 	# If not a valid country, do nothing
 	if not name in country_data:
-		$CanvasLayer/InputBox.text = ""   # just clear box
+		$CanvasLayer/InputBox.text = "" 
+		label_3.text = "Invalid"
+		await get_tree().create_timer(1.5).timeout
+		label_3.text = ""
 		return
 		
 	if GameSettings.game_mode == "hard":
@@ -569,13 +574,18 @@ func _on_submitbutton_pressed(_text = "") -> void:
 			add_score()
 			label_2.text = "Guess the Neighbouring country of " + name
 			create_country(name, BORDER_COLOR)
+			label_3.text = "Correct :)"
+			await get_tree().create_timer(1.5).timeout
+			label_3.text = ""
 			print("Valid move in HARD MODE")
 
 		else:
 
 			create_country(name, NOT_BORDER_COLOR)
 			print("INVALID move in HARD MODE - Game Over")
+			label_3.text = "Wrong! :("
 			await get_tree().create_timer(1.0).timeout
+			label_3.text = ""
 			game_Over()
 			return
 
@@ -587,12 +597,17 @@ func _on_submitbutton_pressed(_text = "") -> void:
 			add_score()
 			label_2.text = "Guess the Neighbouring country of " + name
 			create_country(name, BORDER_COLOR)
+			label_3.text = "Correct :)"
+			await get_tree().create_timer(1.5).timeout
+			label_3.text = ""
 			print("Correct move in EASY MODE")
 
 		else:
 			create_country(name, NOT_BORDER_COLOR)
 			print("Wrong move in EASY MODE")
+			label_3.text = "Wrong! :("
 			await get_tree().create_timer(1.0).timeout
+			label_3.text = ""
 			game_Over()
 
 

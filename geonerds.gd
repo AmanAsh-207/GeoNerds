@@ -415,7 +415,8 @@ func _ready():
 	default_position = cam.position
 	starting_country()
 	label.text = "Score: 0"
-	label.add_theme_font_size_override("font_size", 32)
+	start_color_pair_cycle()
+	label.add_theme_font_size_override("font_size", 16)
 	label_2.add_theme_font_size_override("font_size",16)
 	input_box.text_submitted.connect(_on_submitbutton_pressed)
 
@@ -617,3 +618,69 @@ func reset():
 	print("Game reset")
 	starting_country()
 	
+@onready var info_hard: Label = $CanvasLayer/info_hard
+@onready var info_easy: Label = $CanvasLayer/info_easy
+
+var infoOn = false
+func _on_button_pressed() -> void:
+	if infoOn == false:
+		infoOn = true
+		if GameSettings.game_mode == "hard":
+			info_hard.visible = true
+		elif GameSettings.game_mode == "easy":
+			info_easy.visible = true
+	else:
+		infoOn = false
+		if GameSettings.game_mode == "hard":
+			info_hard.visible = false
+		elif GameSettings.game_mode == "easy":
+			info_easy.visible = false
+			
+			
+@onready var game_over: Label = $CanvasLayer/game_over
+@onready var game_over_2: Label = $CanvasLayer/game_over2
+var pair_index =0 
+var color_pairs = [
+	[Color(0.0, 1.453, 1.698), Color("004ccb")],
+	
+	[Color(0.591, 0.607, 1.059), Color("0044b3")],
+	
+	[Color(0.75, 0.969, 7.326), Color("006a75")],
+	
+	[Color(0.0, 0.693, 2.068), Color("0044b3")],
+	
+	[Color(0.651, 0.938, 1.12), Color("0044b3")],
+	
+	[Color("6d7980"),Color("006a73")],
+]
+func start_color_pair_cycle():
+	var timer = Timer.new()
+	timer.wait_time = 1.0
+	timer.autostart = true
+	timer.one_shot = false
+	add_child(timer)
+	timer.timeout.connect(_on_pair_timer_timeout)
+func _on_pair_timer_timeout():
+	var pair = color_pairs[pair_index]
+
+	game_over.add_theme_color_override("font_color",pair[0])
+	game_over_2.add_theme_color_override("font_color",pair[1])
+	
+	pair_index += 1
+	if pair_index >= color_pairs.size():
+		pair_index = 0
+
+	
+@onready var submitbutton: Button = $CanvasLayer/Submitbutton
+@onready var color_rect: ColorRect = $CanvasLayer/ColorRect
+@onready var button: Button = $CanvasLayer/Button
+
+func game_Over()->void:
+	color_rect.visible = true
+	game_over.visible = true
+	game_over_2.visible = true
+	submitbutton.visible = false
+	input_box.visible = false
+	label.visible = false
+	label_2.visible = false
+	button.visible = false

@@ -651,7 +651,6 @@ var color_pairs = [
 	
 	[Color(0.651, 0.938, 1.12), Color("0044b3")],
 	
-	[Color("6d7980"),Color("006a73")],
 ]
 func start_color_pair_cycle():
 	var timer = Timer.new()

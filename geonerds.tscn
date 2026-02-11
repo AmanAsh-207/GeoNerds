@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://c0wu05iy5vpje" path="res://geonerds.gd" id="1_rtr7l"]
 [ext_resource type="Texture2D" uid="uid://b36ns48f6tdj7" path="res://world (2).png" id="2_3p5tw"]
 [ext_resource type="Texture2D" uid="uid://dfxrpre1rqg03" path="res://INFO.png" id="3_kyqsu"]
-[ext_resource type="Shader" path="res://blureffect.gdshader" id="4_qynu5"]
+[ext_resource type="Shader" uid="uid://c7wdaupf8da5b" path="res://blureffect.gdshader" id="4_qynu5"]
 [ext_resource type="Texture2D" uid="uid://cmx6mlj38w7yp" path="res://593713e5-3a82-49c0-8304-4f7a76ea902a.jpg" id="5_8uhbq"]
 [ext_resource type="FontFile" uid="uid://dyreg5bx2jhms" path="res://Minecraft.ttf" id="6_p3muq"]
 
@@ -27,17 +27,17 @@ shader = ExtResource("4_qynu5")
 shader_parameter/blur_strength = 2.400000114
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p3muq"]
-bg_color = Color(0, 0.26399976, 0.99, 1)
+bg_color = Color(0.62, 0, 0.020666648, 1)
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dke4l"]
-bg_color = Color(0.0007344271, 0.11652895, 0.5011297, 1)
+bg_color = Color(0.87, 0, 0.028999973, 1)
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rtr7l"]
-bg_color = Color(0.0019397655, 0.20201272, 0.77828485, 1)
+bg_color = Color(0.81, 0, 0.026999975, 1)
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 
@@ -138,7 +138,7 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = 140.0
-offset_top = -53.0
+offset_top = -54.0
 offset_right = 197.0
 offset_bottom = -18.0
 grow_horizontal = 2
@@ -224,7 +224,6 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_upg52")
 horizontal_alignment = 1
 
 [node name="game_over" type="Label" parent="CanvasLayer" unique_id=323428740]
-visible = false
 z_index = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -234,13 +233,12 @@ offset_top = 55.0
 offset_right = 388.0
 offset_bottom = 183.0
 grow_horizontal = 2
-theme_override_colors/font_color = Color(0, 0.29929343, 0.7977293, 1)
+theme_override_colors/font_color = Color(0, 1.453, 1.698, 1)
 theme_override_fonts/font = ExtResource("6_p3muq")
 theme_override_font_sizes/font_size = 128
 text = "GAME OVER"
 
 [node name="game_over2" type="Label" parent="CanvasLayer" unique_id=1002694100]
-visible = false
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -253,6 +251,16 @@ theme_override_colors/font_color = Color(0, 0.29929343, 0.7977293, 1)
 theme_override_fonts/font = ExtResource("6_p3muq")
 theme_override_font_sizes/font_size = 128
 text = "GAME OVER"
+
+[node name="play_again" type="Button" parent="CanvasLayer" unique_id=692213905]
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="exit" type="Button" parent="CanvasLayer" unique_id=349383683]
+offset_left = 1090.0
+offset_top = 9.0
+offset_right = 1140.0
+offset_bottom = 59.0
 
 [connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Submitbutton" to="." method="_on_submitbutton_pressed"]

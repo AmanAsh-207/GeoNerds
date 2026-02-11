@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://c0wu05iy5vpje" path="res://geonerds.gd" id="1_rtr7l"]
 [ext_resource type="Texture2D" uid="uid://b36ns48f6tdj7" path="res://world (2).png" id="2_3p5tw"]
 [ext_resource type="Texture2D" uid="uid://dfxrpre1rqg03" path="res://INFO.png" id="3_kyqsu"]
-[ext_resource type="Shader" uid="uid://c7wdaupf8da5b" path="res://blureffect.gdshader" id="4_qynu5"]
+[ext_resource type="Shader" path="res://blureffect.gdshader" id="4_qynu5"]
 [ext_resource type="Texture2D" uid="uid://cmx6mlj38w7yp" path="res://593713e5-3a82-49c0-8304-4f7a76ea902a.jpg" id="5_8uhbq"]
 [ext_resource type="FontFile" uid="uid://dyreg5bx2jhms" path="res://Minecraft.ttf" id="6_p3muq"]
 [ext_resource type="Texture2D" uid="uid://0sn3qkm74mew" path="res://delete-button.png" id="7_dke4l"]
@@ -257,6 +257,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_upg52")
 horizontal_alignment = 1
 
 [node name="game_over" type="Label" parent="CanvasLayer" unique_id=323428740]
+visible = false
 z_index = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -272,6 +273,7 @@ theme_override_font_sizes/font_size = 128
 text = "GAME OVER"
 
 [node name="game_over2" type="Label" parent="CanvasLayer" unique_id=1002694100]
+visible = false
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -286,6 +288,7 @@ theme_override_font_sizes/font_size = 128
 text = "GAME OVER"
 
 [node name="play_again" type="Button" parent="CanvasLayer" unique_id=692213905]
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -306,6 +309,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_rr2kv")
 text = "PLAY AGAIN"
 
 [node name="exit" type="Button" parent="CanvasLayer" unique_id=349383683]
+visible = false
 offset_left = 1121.0
 offset_top = 85.00001
 offset_right = 1633.0
@@ -317,6 +321,7 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_nla3t")
 icon = ExtResource("7_dke4l")
 
 [node name="play_again2" type="Label" parent="CanvasLayer" unique_id=1511240768]
+visible = false
 self_modulate = Color(0.0003890233, 0.033391003, 0.021534562, 1)
 offset_left = 472.0
 offset_top = 451.0

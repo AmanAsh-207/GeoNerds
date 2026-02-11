@@ -48,15 +48,12 @@ shadow_offset = Vector2(42.155, 17.645)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0o4t1"]
 bg_color = Color(0.97, 0.18785664, 0.1746, 1)
-border_color = Color(1, 1, 1, 1)
+bg_color = Color(0.68, 0.13169332, 0.12240001, 1)
 corner_radius_top_left = 500
 corner_radius_top_right = 500
 corner_radius_bottom_right = 500
 corner_radius_bottom_left = 500
 corner_detail = 20
-shadow_color = Color(0.07449722, 0.07449722, 0.07449722, 1)
-shadow_size = 57
-shadow_offset = Vector2(42.155, 17.645)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0k4wn"]
 bg_color = Color(0.91514, 0.16294378, 0.18133146, 1)
@@ -238,10 +235,10 @@ anchor_left = 0.95100003
 anchor_top = 0.026
 anchor_right = 0.984
 anchor_bottom = 0.085
-offset_left = 1096.0
-offset_top = 17.0
-offset_right = 1677.986
-offset_bottom = 612.1013
+offset_left = 1092.9191
+offset_top = 15.0
+offset_right = 1777.6011
+offset_bottom = 676.76794
 grow_horizontal = 0
 scale = Vector2(0.06, 0.06)
 theme_override_styles/normal = SubResource("StyleBoxFlat_glbon")

@@ -575,8 +575,8 @@ func _on_submitbutton_pressed(_text = "") -> void:
 
 			create_country(name, NOT_BORDER_COLOR)
 			print("INVALID move in HARD MODE - Game Over")
-			await get_tree().create_timer(2.0).timeout
-			reset()
+			await get_tree().create_timer(1.0).timeout
+			game_Over()
 			return
 
 
@@ -592,8 +592,8 @@ func _on_submitbutton_pressed(_text = "") -> void:
 		else:
 			create_country(name, NOT_BORDER_COLOR)
 			print("Wrong move in EASY MODE")
-			await get_tree().create_timer(2.0).timeout
-			reset()
+			await get_tree().create_timer(1.0).timeout
+			game_Over()
 
 
 
@@ -674,16 +674,22 @@ func _on_pair_timer_timeout():
 @onready var submitbutton: Button = $CanvasLayer/Submitbutton
 @onready var color_rect: ColorRect = $CanvasLayer/ColorRect
 @onready var button: Button = $CanvasLayer/Button
+@onready var exit: Button = $CanvasLayer/exit
+@onready var play_again: Button = $CanvasLayer/play_again
 
 func Check_Color_Of_Submit_Button():
 	if GameSettings.game_mode == "easy":
 		submitbutton.get_theme_stylebox("normal").bg_color = Color("0043fc")
 		submitbutton.get_theme_stylebox("pressed").bg_color = Color("001e80")
 		submitbutton.get_theme_stylebox("hover").bg_color = Color("0034c6")
+		label.get_theme_stylebox("normal").border_color = Color(0.149, 0.367, 1.084)
+		label_2.get_theme_stylebox("normal").border_color = Color(0.149, 0.367, 1.084)
 	else:
 		submitbutton.get_theme_stylebox("normal").bg_color = Color("9e0005")
 		submitbutton.get_theme_stylebox("pressed").bg_color = Color("de0007")
 		submitbutton.get_theme_stylebox("hover").bg_color = Color("cf0007")
+		label.get_theme_stylebox("normal").border_color = Color("d41e42")
+		label_2.get_theme_stylebox("normal").border_color = Color("d41e42")
 
 func game_Over()->void:
 	color_rect.visible = true
@@ -694,3 +700,9 @@ func game_Over()->void:
 	label.visible = false
 	label_2.visible = false
 	button.visible = false
+	exit.visible = true
+	play_again.visible = true
+	
+
+func _on_exit_pressed() -> void:
+	get_tree().change_scene_to_file("res://main_menu.tscn")

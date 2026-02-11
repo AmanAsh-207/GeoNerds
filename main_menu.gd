@@ -2,6 +2,7 @@ extends Control
 
 @onready var offWale: Node2D = $Node2D
 
+@onready var volume: Button = $Node2D/volume
 
 
 @onready var hard: Button = $hard
@@ -58,6 +59,7 @@ func _on_start_pressed() -> void:
 	easy.visible = true 
 	is_spinning = true
 	text_difficulty_choose.visible = true
+	
 	#compass.get_theme_stylebox("normal").shadow_size = 0
 	
 	

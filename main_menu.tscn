@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cramxqlryjxg6" path="res://New Piskel-2.png (3).png" id="5_nlkkf"]
 [ext_resource type="Texture2D" uid="uid://wiiuoce72fpv" path="res://New Piskel-1.png (1).png" id="6_qe12f"]
 [ext_resource type="FontFile" uid="uid://dyreg5bx2jhms" path="res://Minecraft.ttf" id="8_8qtwp"]
+[ext_resource type="Script" uid="uid://csi0aswwciiyb" path="res://volume.gd" id="8_dy7ct"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nlkkf"]
 texture = ExtResource("3_fu7sn")
@@ -245,6 +246,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_0o4t1")
 theme_override_styles/hover = SubResource("StyleBoxFlat_0k4wn")
 icon = ExtResource("2_fu7sn")
 icon_alignment = 1
+script = ExtResource("8_dy7ct")
 
 [node name="start" type="Button" parent="Node2D" unique_id=1382311528]
 z_index = 2
@@ -352,6 +354,7 @@ fdfjdlsfjd"
 horizontal_alignment = 1
 
 [connection signal="pressed" from="compass" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Node2D/volume" to="Node2D/volume" method="_on_pressed"]
 [connection signal="pressed" from="Node2D/start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="hard" to="." method="_on_hard_pressed"]
 [connection signal="pressed" from="easy" to="." method="_on_easy_pressed"]

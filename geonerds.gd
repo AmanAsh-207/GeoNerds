@@ -676,6 +676,7 @@ func _on_pair_timer_timeout():
 @onready var button: Button = $CanvasLayer/Button
 @onready var exit: Button = $CanvasLayer/exit
 @onready var play_again: Button = $CanvasLayer/play_again
+@onready var play_again_2: Label = $CanvasLayer/play_again2
 
 func Check_Color_Of_Submit_Button():
 	if GameSettings.game_mode == "easy":
@@ -702,7 +703,12 @@ func game_Over()->void:
 	button.visible = false
 	exit.visible = true
 	play_again.visible = true
+	play_again_2.visible = true
 	
 
 func _on_exit_pressed() -> void:
 	get_tree().change_scene_to_file("res://main_menu.tscn")
+
+
+func _on_play_again_pressed() -> void:
+	get_tree().change_scene_to_file("res://geonerds.tscn")

@@ -47,7 +47,7 @@ shadow_size = 57
 shadow_offset = Vector2(42.155, 17.645)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0o4t1"]
-bg_color = Color(0.68, 0.13169332, 0.12240001, 1)
+bg_color = Color(0.76, 0.14718664, 0.1368, 1)
 corner_radius_top_left = 500
 corner_radius_top_right = 500
 corner_radius_bottom_right = 500
@@ -263,6 +263,7 @@ scale = Vector2(0.8, 0.8)
 pivot_offset = Vector2(-3.265, 0)
 pivot_offset_ratio = Vector2(0.515, 0.48)
 theme_override_colors/font_color = Color(0.8745098, 0.8745098, 0.8745098, 1)
+theme_override_colors/font_hover_color = Color(17.994186, 17.994186, 17.994186, 1)
 theme_override_constants/outline_size = 21
 theme_override_fonts/font = ExtResource("1_7vrkn")
 theme_override_font_sizes/font_size = 90

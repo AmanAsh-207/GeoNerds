@@ -107,7 +107,6 @@ zoom = Vector2(0.277, 0.255)
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=859696896]
 
 [node name="Label" type="Label" parent="CanvasLayer" unique_id=914881493]
-visible = false
 offset_right = 89.0
 offset_bottom = 37.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_nla3t")
@@ -124,6 +123,7 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_8uhbq")
 icon = ExtResource("3_kyqsu")
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1132596596]
+visible = false
 material = SubResource("ShaderMaterial_8uhbq")
 anchors_preset = 15
 anchor_right = 1.0
@@ -132,7 +132,6 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Submitbutton" type="Button" parent="CanvasLayer" unique_id=1949523355]
-visible = false
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -151,7 +150,6 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_rtr7l")
 text = "Enter"
 
 [node name="InputBox" type="LineEdit" parent="CanvasLayer" unique_id=784775352]
-visible = false
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -215,7 +213,6 @@ fdfjdlsfjd"
 horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="CanvasLayer" unique_id=62972702]
-visible = false
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -227,6 +224,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_upg52")
 horizontal_alignment = 1
 
 [node name="game_over" type="Label" parent="CanvasLayer" unique_id=323428740]
+visible = false
 z_index = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -242,6 +240,7 @@ theme_override_font_sizes/font_size = 128
 text = "GAME OVER"
 
 [node name="game_over2" type="Label" parent="CanvasLayer" unique_id=1002694100]
+visible = false
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -256,6 +255,7 @@ theme_override_font_sizes/font_size = 128
 text = "GAME OVER"
 
 [node name="game_over3" type="Label" parent="CanvasLayer" unique_id=53348990]
+visible = false
 z_index = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -271,6 +271,7 @@ theme_override_font_sizes/font_size = 128
 text = "GAME OVER"
 
 [node name="game_over4" type="Label" parent="CanvasLayer" unique_id=924995546]
+visible = false
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -285,6 +286,7 @@ theme_override_font_sizes/font_size = 128
 text = "GAME OVER"
 
 [node name="game_over5" type="Label" parent="CanvasLayer" unique_id=63488422]
+visible = false
 z_index = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -300,6 +302,7 @@ theme_override_font_sizes/font_size = 128
 text = "GAME OVER"
 
 [node name="game_over6" type="Label" parent="CanvasLayer" unique_id=1686225508]
+visible = false
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -314,6 +317,7 @@ theme_override_font_sizes/font_size = 128
 text = "GAME OVER"
 
 [node name="game_over7" type="Label" parent="CanvasLayer" unique_id=1459866448]
+visible = false
 z_index = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -329,6 +333,7 @@ theme_override_font_sizes/font_size = 128
 text = "GAME OVER"
 
 [node name="game_over8" type="Label" parent="CanvasLayer" unique_id=2067756268]
+visible = false
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -343,6 +348,7 @@ theme_override_font_sizes/font_size = 128
 text = "GAME OVER"
 
 [node name="game_over9" type="Label" parent="CanvasLayer" unique_id=1228888080]
+visible = false
 z_index = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -358,6 +364,7 @@ theme_override_font_sizes/font_size = 128
 text = "GAME OVER"
 
 [node name="game_over10" type="Label" parent="CanvasLayer" unique_id=67627287]
+visible = false
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -372,6 +379,7 @@ theme_override_font_sizes/font_size = 128
 text = "GAME OVER"
 
 [node name="game_over11" type="Label" parent="CanvasLayer" unique_id=1726427454]
+visible = false
 z_index = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -387,6 +395,7 @@ theme_override_font_sizes/font_size = 128
 text = "GAME OVER"
 
 [node name="game_over12" type="Label" parent="CanvasLayer" unique_id=1372686841]
+visible = false
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5

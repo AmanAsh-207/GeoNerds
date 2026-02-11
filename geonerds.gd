@@ -419,6 +419,7 @@ func _ready():
 	label.add_theme_font_size_override("font_size", 16)
 	label_2.add_theme_font_size_override("font_size",16)
 	input_box.text_submitted.connect(_on_submitbutton_pressed)
+	Check_Color_Of_Submit_Button()
 
 	
 var score = 0
@@ -651,7 +652,6 @@ var color_pairs = [
 	
 	[Color(0.651, 0.938, 1.12), Color("0044b3")],
 	
-	[Color("6d7980"),Color("006a73")],
 ]
 func start_color_pair_cycle():
 	var timer = Timer.new()
@@ -674,6 +674,16 @@ func _on_pair_timer_timeout():
 @onready var submitbutton: Button = $CanvasLayer/Submitbutton
 @onready var color_rect: ColorRect = $CanvasLayer/ColorRect
 @onready var button: Button = $CanvasLayer/Button
+
+func Check_Color_Of_Submit_Button():
+	if GameSettings.game_mode == "easy":
+		submitbutton.get_theme_stylebox("normal").bg_color = Color("0043fc")
+		submitbutton.get_theme_stylebox("pressed").bg_color = Color("001e80")
+		submitbutton.get_theme_stylebox("hover").bg_color = Color("0034c6")
+	else:
+		submitbutton.get_theme_stylebox("normal").bg_color = Color("9e0005")
+		submitbutton.get_theme_stylebox("pressed").bg_color = Color("de0007")
+		submitbutton.get_theme_stylebox("hover").bg_color = Color("cf0007")
 
 func game_Over()->void:
 	color_rect.visible = true

@@ -186,7 +186,6 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_qe12f")
 theme_override_styles/hover = SubResource("StyleBoxFlat_dy7ct")
 
 [node name="pointer" type="Polygon2D" parent="compass" unique_id=1966282621]
-visible = false
 position = Vector2(-101.77875, 12.23999)
 scale = Vector2(1.188569, 1.169883)
 color = Color(0, 0, 0, 1)
@@ -194,10 +193,9 @@ polygon = PackedVector2Array(361.77954, -12.821808, 435.39752, -23.506622, 372.2
 uv = PackedVector2Array(360, -8.749939, 435.7212, -21.509918, 368.75, 13.750061)
 
 [node name="pointer outline" type="Polygon2D" parent="compass" unique_id=57503233]
-visible = false
 position = Vector2(-30.528715, 9.739984)
 color = Color(0.82947975, 0.8294798, 0.82947975, 1)
-polygon = PackedVector2Array(360, -8.749939, 435.7212, -21.509918, 368.75, 13.750061, 353.74994, 7.5)
+polygon = PackedVector2Array(361.615, -9.859955, 435.7212, -21.509918, 370.365, 12.640045, 354.115, 7.640045)
 uv = PackedVector2Array(360, -8.749939, 435.7212, -21.509918, 368.75, 13.750061)
 
 [node name="dial" type="Sprite2D" parent="compass" unique_id=121424517]

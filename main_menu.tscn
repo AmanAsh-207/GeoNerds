@@ -305,13 +305,12 @@ offset_right = 475.0
 offset_bottom = 348.0
 grow_vertical = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_oiatc")
-text = "
-djfkdsjfks
-dkfldsfj
-dkjfldjfldk\\fdk
-fdklfjkd
+text = "GAMERULES:
 
-fdfjdlsfjd"
+guess the next country 
+sharing unique border with 
+the previous country to 
+make the longest chain."
 horizontal_alignment = 1
 
 [node name="easy" type="Button" parent="." unique_id=598737001]
@@ -346,13 +345,12 @@ offset_right = 476.0
 offset_bottom = 348.0
 grow_vertical = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_8u0te")
-text = "
-djfkdsjfks
-dkfldsfj
-dkjfldjfldk\\fdk
-fdklfjkd
+text = "GAMERULES:
 
-fdfjdlsfjd"
+Guess the next country 
+from the previous country 
+and make the longest 
+chain."
 horizontal_alignment = 1
 
 [node name="OnClick" type="AudioStreamPlayer" parent="." unique_id=2102547122]

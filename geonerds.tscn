@@ -352,6 +352,7 @@ grow_horizontal = 2
 grow_vertical = 0
 
 [node name="score" type="Node2D" parent="CanvasLayer" unique_id=1809240460]
+visible = false
 position = Vector2(178, 70)
 
 [node name="your_score_is" type="Label" parent="CanvasLayer/score" unique_id=1974945413]

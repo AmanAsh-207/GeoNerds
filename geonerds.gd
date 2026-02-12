@@ -384,6 +384,11 @@ var borders = {
 }
 @onready var input_box: LineEdit = $CanvasLayer/InputBox
 
+@onready var correct_answer_sound_effect: AudioStreamPlayer = $Correct_Answer_Sound_Effect
+@onready var wrong_answer: AudioStreamPlayer = $WrongAnswer
+
+
+
 @onready var label_3: Label = $CanvasLayer/Label3
 
 @onready var label: Label = $CanvasLayer/Label
@@ -413,7 +418,7 @@ var cam_start = Vector2()
 
 
 func _ready():
-	MusicManager.play_music(preload("res://music/geonerds bgm.mp3"))
+	
 
 	default_zoom = cam.zoom
 	default_position = cam.position
@@ -569,11 +574,12 @@ func _on_submitbutton_pressed(_text = "") -> void:
 		await get_tree().create_timer(1.5).timeout
 		label_3.text = ""
 		return
-		
+	$CanvasLayer/InputBox.text = ""
 	if GameSettings.game_mode == "hard":
-
+	
 		if is_valid_hard_mode(name):
 			add_score()
+			correct_answer_sound_effect.play()
 			label_2.text = "Guess the Neighbouring country of " + name
 			create_country(name, BORDER_COLOR)
 			label_3.text = "Correct :)"
@@ -582,7 +588,7 @@ func _on_submitbutton_pressed(_text = "") -> void:
 			print("Valid move in HARD MODE")
 
 		else:
-
+			wrong_answer.play()
 			create_country(name, NOT_BORDER_COLOR)
 			print("INVALID move in HARD MODE - Game Over")
 			label_3.text = "Wrong! :("
@@ -596,6 +602,7 @@ func _on_submitbutton_pressed(_text = "") -> void:
 	# ---------- EASY MODE ----------
 	else:
 		if borders_previous(name):
+			correct_answer_sound_effect.play()
 			add_score()
 			label_2.text = "Guess the Neighbouring country of " + name
 			create_country(name, BORDER_COLOR)
@@ -605,6 +612,7 @@ func _on_submitbutton_pressed(_text = "") -> void:
 			print("Correct move in EASY MODE")
 
 		else:
+			wrong_answer.play()
 			create_country(name, NOT_BORDER_COLOR)
 			print("Wrong move in EASY MODE")
 			label_3.text = "Wrong! :("
@@ -618,7 +626,7 @@ func _on_submitbutton_pressed(_text = "") -> void:
 	last_country = name
 	selected_country.append(name)
 
-	$CanvasLayer/InputBox.text = ""
+	
 
 func reset():
 	cam.zoom = default_zoom

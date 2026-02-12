@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://cmx6mlj38w7yp" path="res://593713e5-3a82-49c0-8304-4f7a76ea902a.jpg" id="5_8uhbq"]
 [ext_resource type="FontFile" uid="uid://dyreg5bx2jhms" path="res://Minecraft.ttf" id="6_p3muq"]
 [ext_resource type="Texture2D" uid="uid://0sn3qkm74mew" path="res://delete-button.png" id="7_dke4l"]
+[ext_resource type="AudioStream" uid="uid://c15u0lvxd60j0" path="res://music/Right_Answer_Sound_Effect_V1.mp3.mp3" id="8_rtr7l"]
+[ext_resource type="AudioStream" uid="uid://bpht6qqvbo08f" path="res://music/WrongAnswer.mp3.mp3" id="9_jnbpa"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nla3t"]
 content_margin_left = 10.0
@@ -347,6 +349,14 @@ offset_right = 56.0
 offset_bottom = -59.0
 grow_horizontal = 2
 grow_vertical = 0
+
+[node name="Correct_Answer_Sound_Effect" type="AudioStreamPlayer" parent="." unique_id=1574759489]
+stream = ExtResource("8_rtr7l")
+volume_db = -20.0
+
+[node name="WrongAnswer" type="AudioStreamPlayer" parent="." unique_id=1188968921]
+stream = ExtResource("9_jnbpa")
+volume_db = -10.0
 
 [connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Submitbutton" to="." method="_on_submitbutton_pressed"]

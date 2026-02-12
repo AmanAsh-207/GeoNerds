@@ -1,6 +1,7 @@
 extends Button
 
 var is_muted = false
+@onready var on_click: AudioStreamPlayer = $"../../OnClick"
 
 var icon_on
 var icon_off
@@ -21,7 +22,8 @@ func _process(delta: float) -> void:
 
 func _on_pressed() -> void:
 	is_muted = !is_muted
-
+	on_click.play()
+	await get_tree().create_timer(0.25).timeout
 	if is_muted:
 		icon = icon_off
 		AudioServer.set_bus_mute(0, true)

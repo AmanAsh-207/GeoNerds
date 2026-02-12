@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://wiiuoce72fpv" path="res://New Piskel-1.png (1).png" id="6_qe12f"]
 [ext_resource type="FontFile" uid="uid://dyreg5bx2jhms" path="res://Minecraft.ttf" id="8_8qtwp"]
 [ext_resource type="Script" uid="uid://csi0aswwciiyb" path="res://volume.gd" id="8_dy7ct"]
+[ext_resource type="AudioStream" uid="uid://bwssd3me0ggq7" path="res://music/On_Click.mp3.mp3" id="10_0o4t1"]
+[ext_resource type="AudioStream" uid="uid://da34woh5akcab" path="res://music/CompassStarting.mp3.mp3" id="11_0k4wn"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nlkkf"]
 texture = ExtResource("3_fu7sn")
@@ -211,11 +213,6 @@ position = Vector2(217, 170)
 scale = Vector2(0.27222222, 0.26666668)
 texture = ExtResource("5_nlkkf")
 
-[node name="geo2" type="Sprite2D" parent="Node2D" unique_id=21169184]
-position = Vector2(1067, 682.00006)
-scale = Vector2(0.27222222, 0.26666668)
-texture = ExtResource("5_nlkkf")
-
 [node name="nerds" type="Sprite2D" parent="Node2D" unique_id=1094793956]
 position = Vector2(289, 176)
 scale = Vector2(0.36203703, 0.40092593)
@@ -357,6 +354,12 @@ fdklfjkd
 
 fdfjdlsfjd"
 horizontal_alignment = 1
+
+[node name="OnClick" type="AudioStreamPlayer" parent="." unique_id=2102547122]
+stream = ExtResource("10_0o4t1")
+
+[node name="CompassStarting" type="AudioStreamPlayer" parent="." unique_id=2099445529]
+stream = ExtResource("11_0k4wn")
 
 [connection signal="pressed" from="compass" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Node2D/volume" to="Node2D/volume" method="_on_pressed"]

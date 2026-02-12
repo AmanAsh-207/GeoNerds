@@ -19,8 +19,7 @@ var spin_speed = 500
 
 @onready var start: Button = $Node2D/start
 
-func _ready() -> void:
-	MusicManager.play_music(preload("res://music/geonerds bgm.mp3"))
+
 
 
 
@@ -56,8 +55,13 @@ func stop_and_select(target_angle, mode):
 	get_tree().change_scene_to_file("res://geonerds.tscn")
  
 
+@onready var on_click: AudioStreamPlayer = $OnClick
+@onready var compass_starting: AudioStreamPlayer = $CompassStarting
 
 func _on_start_pressed() -> void:
+	on_click.play()
+	await get_tree().create_timer(0.3).timeout
+	compass_starting.play()
 	pointer.visible = true
 	pointer_outline.visible = true
 	dial.visible = true 
@@ -75,7 +79,9 @@ func _on_start_pressed() -> void:
 
 
 func _on_hard_pressed() -> void:
+	on_click.play()
 	stop_and_select(45, "hard")
 
 func _on_easy_pressed() -> void:
+	on_click.play()
 	stop_and_select(245, "easy")

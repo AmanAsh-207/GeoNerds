@@ -352,8 +352,7 @@ grow_horizontal = 2
 grow_vertical = 0
 
 [node name="score" type="Node2D" parent="CanvasLayer" unique_id=1809240460]
-visible = false
-position = Vector2(83, -2)
+position = Vector2(178, 70)
 
 [node name="your_score_is" type="Label" parent="CanvasLayer/score" unique_id=1974945413]
 anchors_preset = 8
@@ -388,18 +387,23 @@ theme_override_fonts/font = ExtResource("6_p3muq")
 theme_override_font_sizes/font_size = 56
 text = "SCORE :"
 
-[node name="your_score" type="Label" parent="CanvasLayer" unique_id=237404858]
+[node name="your_score" type="Label" parent="CanvasLayer/score" unique_id=237404858]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -62.0
-offset_top = -53.0
-offset_right = 62.0
-offset_bottom = 53.0
+offset_left = 527.0
+offset_top = 291.0
+offset_right = 868.0
+offset_bottom = 397.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0.76373565, 0.76373565, 0.76373565, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("6_p3muq")
+theme_override_font_sizes/font_size = 58
+text = "0"
 
 [node name="Correct_Answer_Sound_Effect" type="AudioStreamPlayer" parent="." unique_id=1574759489]
 stream = ExtResource("8_rtr7l")

@@ -725,8 +725,7 @@ func Check_Color_Of_Submit_Button():
 		label.get_theme_stylebox("normal").border_color = Color("d41e42")
 		label_2.get_theme_stylebox("normal").border_color = Color("d41e42")
 		
-
-@onready var your_score: Label = $CanvasLayer/your_score
+@onready var your_score: Label = $CanvasLayer/score/your_score
 @onready var score1: Node2D = $CanvasLayer/score
 
 func game_Over()->void:

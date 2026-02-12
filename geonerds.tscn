@@ -351,6 +351,43 @@ offset_bottom = -59.0
 grow_horizontal = 2
 grow_vertical = 0
 
+[node name="score" type="Node2D" parent="CanvasLayer" unique_id=1809240460]
+visible = false
+position = Vector2(83, -2)
+
+[node name="your_score_is" type="Label" parent="CanvasLayer/score" unique_id=1974945413]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 265.0
+offset_top = 293.0
+offset_right = 509.0
+offset_bottom = 355.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("6_p3muq")
+theme_override_font_sizes/font_size = 56
+text = "SCORE :"
+
+[node name="your_score_is2" type="Label" parent="CanvasLayer/score" unique_id=1749009442]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 262.0
+offset_top = 289.0
+offset_right = 506.0
+offset_bottom = 351.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.13967969, 0.37240466, 0.8046084, 1)
+theme_override_fonts/font = ExtResource("6_p3muq")
+theme_override_font_sizes/font_size = 56
+text = "SCORE :"
+
 [node name="your_score" type="Label" parent="CanvasLayer" unique_id=237404858]
 anchors_preset = 8
 anchor_left = 0.5

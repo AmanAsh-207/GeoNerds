@@ -251,7 +251,6 @@ chain."
 horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="CanvasLayer" unique_id=62972702]
-visible = false
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5

@@ -1,4 +1,172 @@
 extends Node2D
+var new_country_data={
+#	Asia
+"afghanistan": "asia",
+"armenia": "asia",
+"azerbaijan": "asia",
+"bangladesh": "asia",
+"bhutan": "asia",
+"brunei": "asia",
+"cambodia": "asia",
+"china": "asia",
+"georgia": "asia",
+"india": "asia",
+"indonesia": "asia",
+"iran": "asia",
+"iraq": "asia",
+"israel": "asia",
+"jordan": "asia",
+"kazakhstan": "asia",
+"kuwait": "asia",
+"kyrgyzstan": "asia",
+"laos": "asia",
+"lebanon": "asia",
+"malaysia": "asia",
+"mongolia": "asia",
+"myanmar": "asia",
+"nepal": "asia",
+"northkorea": "asia",
+"oman": "asia",
+"pakistan": "asia",
+"palestine":"asia",
+"qatar": "asia",
+"russia":"asia",
+"saudiarabia": "asia",
+"southkorea": "asia",
+"syria": "asia",
+"tajikistan": "asia",
+"thailand": "asia",
+"timorleste": "asia",
+"turkey": "asia",
+"turkmenistan": "asia",
+"uae": "asia",
+"uzbekistan": "asia",
+"vietnam": "asia",
+"yemen": "asia",
+
+#Europe
+"albania": "europe",
+"austria": "europe",
+"belarus": "europe",
+"belgium": "europe",
+"bosniaandherzegovina": "europe",
+"bulgaria": "europe",
+"croatia": "europe",
+"czechia": "europe",
+"denmark": "europe",
+"estonia": "europe",
+"finland": "europe",
+"france": "europe",
+"germany": "europe",
+"greece": "europe",
+"hungary": "europe",
+"ireland": "europe",
+"italy": "europe",
+"kosovo": "europe",
+"latvia": "europe",
+"liechtenstein": "europe",
+"lithuania": "europe",
+"luxembourg": "europe",
+"moldova": "europe",
+"montenegro": "europe",
+"netherlands": "europe",
+"northmacedonia": "europe",
+"norway": "europe",
+"poland": "europe",
+"portugal": "europe",
+"romania": "europe",
+"serbia": "europe",
+"slovakia": "europe",
+"slovenia": "europe",
+"spain": "europe",
+"sweden": "europe",
+"switzerland": "europe",
+"ukraine": "europe",
+"uk": "europe",
+
+#Africa
+"algeria": "africa",
+"angola": "africa",
+"benin": "africa",
+"botswana": "africa",
+"burkinafaso": "africa",
+"burundi": "africa",
+"cameroon": "africa",
+"centralafricanrepublic": "africa",
+"chad": "africa",
+"democraticrepublicofcongo": "africa",
+"republicofcongo": "africa",
+"cotedivoire": "africa",
+"djibouti": "africa",
+"egypt": "africa",
+"equatorialguinea": "africa",
+"eritrea": "africa",
+"eswatini": "africa",
+"ethiopia": "africa",
+"gabon": "africa",
+"thegambia": "africa",
+"ghana": "africa",
+"guinea": "africa",
+"guineabissau": "africa",
+"kenya": "africa",
+"lesotho": "africa",
+"liberia": "africa",
+"libya": "africa",
+"malawi": "africa",
+"mali": "africa",
+"mauritania": "africa",
+"morocco": "africa",
+"mozambique": "africa",
+"namibia": "africa",
+"niger": "africa",
+"nigeria": "africa",
+"rwanda": "africa",
+"senegal": "africa",
+"sierraleone": "africa",
+"somalia": "africa",
+"southafrica": "africa",
+"southsudan": "africa",
+"sudan": "africa",
+"tanzania": "africa",
+"togo": "africa",
+"tunisia": "africa",
+"uganda": "africa",
+"zambia": "africa",
+"zimbabwe": "africa",
+
+#North America
+"belize": "northamerica",
+"canada": "northamerica",
+"costarica": "northamerica",
+"dominicanrepublic": "northamerica",
+"elsalvador": "northamerica",
+"guatemala": "northamerica",
+"haiti": "northamerica",
+"honduras": "northamerica",
+"mexico": "northamerica",
+"nicaragua": "northamerica",
+"panama": "northamerica",
+"usa": "northamerica",
+
+#South America
+"argentina": "southamerica",
+"bolivia": "southamerica",
+"brazil": "southamerica",
+"chile": "southamerica",
+"colombia": "southamerica",
+"ecuador": "southamerica",
+"guyana": "southamerica",
+"paraguay": "southamerica",
+"peru": "southamerica",
+"suriname": "southamerica",
+"uruguay": "southamerica",
+"venezuela": "southamerica",
+
+#Oceania
+"papuanewguinea": "oceania",
+}
+
+
 var country_data = {
 
 # ----- ASIA -----
@@ -216,15 +384,16 @@ var borders = {
 # ---- ASIA ----
 "india": ["pakistan", "china", "nepal", "bangladesh", "myanmar", "bhutan"],
 "pakistan": ["india", "afghanistan", "iran", "china"],
-"china": ["india", "pakistan", "nepal", "bhutan", "myanmar", "laos", "vietnam", "mongolia", "northkorea", "russia", "kazakhstan", "kyrgyzstan", "tajikistan"],
+"china": ["afghanistan","india", "pakistan", "nepal", "bhutan", "myanmar", "laos", "vietnam", "mongolia", "northkorea", "russia", "kazakhstan", "kyrgyzstan", "tajikistan"],
 "nepal": ["india", "china"],
 "bangladesh": ["india", "myanmar"],
+"bhutan":["india","china"],
 "myanmar": ["india", "bangladesh", "china", "laos", "thailand"],
 "thailand": ["myanmar", "laos", "cambodia", "malaysia"],
 "laos": ["china", "myanmar", "thailand", "cambodia", "vietnam"],
 "vietnam": ["china", "laos", "cambodia"],
 "cambodia": ["thailand", "laos", "vietnam"],
-"malaysia": ["thailand","brunei","indonesia"],
+"malaysia": ["thailand","brunei","indonesia","singapore"],
 "northkorea": ["china", "southkorea", "russia"],
 "southkorea": ["northkorea"],
 "mongolia": ["china", "russia"],
@@ -240,117 +409,187 @@ var borders = {
 "lebanon": ["syria", "israel"],
 "israel": ["palestine","lebanon", "syria", "jordan", "egypt"],
 "palestine" : ["israel","jordan","egypt"],
-"jordan": ["israel", "syria", "iraq", "saudiarabia"],
-"saudiarabia": ["jordan", "iraq", "kuwait", "qatar", "uae", "oman", "yemen","bahrain"],
+"jordan": ["palestine","israel", "syria", "iraq", "saudiarabia"],
+"saudiarabia": ["jordan", "iraq", "kuwait", "qatar", "uae", "oman", "yemen"],
 "oman": ["saudiarabia", "uae", "yemen"],
 "yemen": ["oman", "saudiarabia"],
 "uae": ["saudiarabia", "oman"],
 "qatar": ["saudiarabia"],
 "kuwait": ["iraq", "saudiarabia"],
-"armenia": ["turkiye", "georgia", "azerbaijan", "iran"],
+"armenia": ["turkey", "georgia", "azerbaijan", "iran"],
 "azerbaijan": ["armenia", "georgia", "russia", "iran"],
-"georgia": ["russia", "azerbaijan", "armenia", "turkiye"],
-"turkiye": ["greece", "bulgaria", "georgia", "armenia", "iran", "iraq", "syria"],
+"georgia": ["russia", "azerbaijan", "armenia", "turkey"],
+"turkey": ["greece", "bulgaria", "georgia", "armenia", "iran", "iraq", "syria"],
+"bahrain":[],
+"brunei":["malaysia"],
+"timorleste":["indonesia"],
+"indonesia":["papanewguinea","timorleste","malaysia"],
+"cyprus":[],
+"japan":[],
+"maldives":[],
+"philippines":[],
+"singapore":["malaysia"],
+"srilanka":[],
+"taiwan":[],
 
 # ---- EUROPE ----
-"france": ["spain", "belgium", "luxembourg", "germany", "switzerland", "italy","monaco","andorra"],
-"germany": ["france", "netherlands", "belgium", "luxembourg", "switzerland", "austria", "czechrepublic", "poland", "denmark"],
-"spain": ["france", "portugal"],
-"portugal": ["spain"],
-"italy": ["france", "switzerland", "austria", "slovenia"],
-"switzerland": ["france", "germany", "austria", "italy"],
-"austria": ["germany", "czechrepublic", "slovakia", "hungary", "slovenia", "italy", "switzerland"],
-"poland": ["germany", "czechrepublic", "slovakia", "ukraine", "belarus", "lithuania", "russia"],
-"czechrepublic": ["germany", "poland", "slovakia", "austria"],
-"slovakia": ["czechrepublic", "poland", "ukraine", "hungary", "austria"],
-"hungary": ["austria", "slovakia", "ukraine", "romania", "serbia", "croatia", "slovenia"],
-"romania": ["hungary", "ukraine", "moldova", "bulgaria", "serbia"],
-"bulgaria": ["romania", "serbia", "northmacedonia", "greece", "turkey"],
-"greece": ["albania", "northmacedonia", "bulgaria", "turkey"],
 "albania": ["greece", "northmacedonia", "montenegro", "kosovo"],
-"northmacedonia": ["albania", "greece", "bulgaria", "serbia", "kosovo"],
-"serbia": ["hungary", "romania", "bulgaria", "northmacedonia", "kosovo", "montenegro", "bosniaandherzegovina", "croatia"],
-"croatia": ["slovenia", "hungary", "serbia", "bosniaandherzegovina", "montenegro"],
-"slovenia": ["italy", "austria", "hungary", "croatia"],
-"bosniaandherzegovina": ["croatia", "serbia", "montenegro"],
-"montenegro": ["croatia", "bosniaandherzegovina", "serbia", "kosovo", "albania"],
-"kosovo": ["serbia", "montenegro", "albania", "northmacedonia"],
-"belgium": ["france", "netherlands", "germany", "luxembourg"],
-"netherlands": ["belgium", "germany"],
-"luxembourg": ["france", "belgium", "germany"],
-"denmark": ["germany"],
-"norway": ["sweden", "finland", "russia"],
-"sweden": ["norway", "finland"],
-"finland": ["sweden", "norway", "russia"],
-"estonia": ["latvia", "russia"],
-"latvia": ["estonia", "lithuania", "russia"],
-"lithuania": ["latvia", "poland", "belarus", "russia"],
-"belarus": ["poland", "lithuania", "latvia", "russia", "ukraine"],
-"ukraine": ["poland", "slovakia", "hungary", "romania", "moldova", "belarus", "russia"],
-"moldova": ["romania", "ukraine"],
-"russia": ["norway", "finland", "estonia", "latvia", "lithuania", "poland", "belarus", "ukraine", "georgia", "azerbaijan", "kazakhstan", "mongolia", "china", "northkorea"],
 "andorra": ["france", "spain"],
-"liechtenstein": ["switzerland", "austria"],
-"sanmarino": ["italy"],
-"vaticancity": ["italy"],
+"austria": ["germany", "czechia", "slovakia", "hungary", "slovenia", "italy", "switzerland"],
+"belarus": ["poland", "lithuania", "latvia", "russia", "ukraine"],
+"belgium": ["france", "netherlands", "germany", "luxembourg"],
+"bosniaandherzegovina": ["croatia", "serbia", "montenegro"],
+"bulgaria": ["romania", "serbia", "northmacedonia", "greece", "turkey"],
+"croatia": ["slovenia", "hungary", "serbia", "bosniaandherzegovina", "montenegro"],
+"czechia": ["germany", "poland", "slovakia", "austria"],
+"denmark": ["germany"],
+"estonia": ["latvia", "russia"],
+"finland": ["sweden", "norway", "russia"],
+"france": ["spain", "belgium", "luxembourg", "germany", "switzerland", "italy","monaco","andorra"],
+"germany": ["france", "netherlands", "belgium", "luxembourg", "switzerland", "austria", "czechia", "poland", "denmark"],
+"greece": ["albania", "northmacedonia", "bulgaria", "turkey"],
+"hungary": ["austria", "slovakia", "ukraine", "romania", "serbia", "croatia", "slovenia"],
 "iceland": [],
 "ireland": ["unitedkingdom"],
+"italy": ["france", "switzerland", "austria", "slovenia","sanmarino","vaticancity"],
+"kosovo": ["serbia", "montenegro", "albania", "northmacedonia"],
+"latvia": ["estonia", "lithuania", "russia","belarus"],
+"liechtenstein": ["switzerland", "austria"],
+"lithuania": ["latvia", "poland", "belarus", "russia"],
+"luxembourg": ["france", "belgium", "germany"],
+"malta":[],
+"moldova": ["romania", "ukraine"],
+"monaco":["france"],
+"montenegro": ["croatia", "bosniaandherzegovina", "serbia", "kosovo", "albania"],
+"netherlands": ["belgium", "germany"],
+"northmacedonia": ["albania", "greece", "bulgaria", "serbia", "kosovo"],
+"norway": ["sweden", "finland", "russia"],
+"poland": ["germany", "czechia", "slovakia", "ukraine", "belarus", "lithuania", "russia"],
+"portugal": ["spain"],
+"romania": ["hungary", "ukraine", "moldova", "bulgaria", "serbia"],
+"russia": ["norway", "finland", "estonia", "latvia", "lithuania", "poland", "belarus", "ukraine", "georgia", "azerbaijan", "kazakhstan", "mongolia", "china", "northkorea"],
+"sanmarino": ["italy"],
+"serbia": ["hungary", "romania", "bulgaria", "northmacedonia", "kosovo", "montenegro", "bosniaandherzegovina", "croatia"],
+"slovakia": ["czechia", "poland", "ukraine", "hungary", "austria"],
+"slovenia": ["italy", "austria", "hungary", "croatia"],
+"spain": ["france", "portugal","andorra"],
+"sweden": ["norway", "finland"],
+"switzerland": ["france", "germany", "austria", "italy"],
+"ukraine": ["poland", "slovakia", "hungary", "romania", "moldova", "belarus", "russia"],
+"vaticancity": ["italy"],
 "uk": ["ireland"],
+
 # ---- AFRICA ----
-"egypt": ["libya", "sudan", "israel"],
-"libya": ["egypt", "sudan", "chad", "niger", "algeria", "tunisia"],
-"tunisia": ["algeria", "libya"],
-"algeria": ["tunisia", "libya", "niger", "mali", "mauritania", "morocco"],
-"morocco": ["algeria"],
-"mauritania": ["algeria", "mali", "senegal"],
-"mali": ["algeria", "niger", "burkinafaso", "cotedivoire", "guinea", "senegal", "mauritania"],
-"niger": ["algeria", "libya", "chad", "nigeria", "benin", "burkinafaso", "mali"],
-"chad": ["libya", "sudan", "centralafricanrepublic", "cameroon", "nigeria", "niger"],
-"sudan": ["egypt", "libya", "chad", "centralafricanrepublic", "southsudan", "ethiopia", "eritrea"],
-"ethiopia": ["sudan", "southsudan", "kenya", "somalia", "djibouti", "eritrea"],
-"kenya": ["ethiopia", "somalia", "tanzania", "uganda", "southsudan"],
-"uganda": ["kenya", "tanzania", "rwanda", "southsudan", "democraticrepublicofthecongo"],
-"tanzania": ["kenya", "uganda", "rwanda", "burundi", "democraticrepublicofthecongo", "zambia", "malawi", "mozambique"],
-"southafrica": ["namibia", "botswana", "zimbabwe", "mozambique", "lesotho", "eswatini"],
-"centralafricanrepublic": ["chad", "sudan", "southsudan", "democraticrepublicofthecongo", "republicofthecongo", "cameroon"],
-"democraticrepublicofthecongo": ["centralafricanrepublic", "southsudan", "uganda", "rwanda", "burundi", "tanzania", "zambia", "angola", "republicofthecongo"],
-"republicofthecongo": ["cameroon", "centralafricanrepublic", "democraticrepublicofthecongo", "angola", "gabon"],
-"cameroon": ["nigeria", "chad", "centralafricanrepublic", "republicofthecongo", "gabon", "equatorialguinea"],
-"gabon": ["cameroon", "republicofthecongo", "equatorialguinea"],
-"equatorialguinea": ["cameroon", "gabon"],
-"nigeria": ["benin", "niger", "chad", "cameroon"],
-"benin": ["nigeria", "niger", "burkinafaso", "togo"],
-"togo": ["ghana", "burkinafaso", "benin"],
-"ghana": ["togo", "burkinafaso", "cotedivoire"],
-"cotedivoire": ["mali", "burkinafaso", "ghana", "guinea", "liberia"],
-"liberia": ["cotedivoire", "guinea", "sierraleone"],
-"sierraleone": ["guinea", "liberia"],
-"guinea": ["senegal", "mali", "cotedivoire", "liberia", "sierraleone", "guineabissau"],
-"guineabissau": ["senegal", "guinea"],
-"senegal": ["mauritania", "mali", "guinea", "guineabissau", "gambia"],
-"gambia": ["senegal"],
-"burkinafaso": ["mali", "niger", "benin", "togo", "ghana", "cotedivoire"],
-"southsudan": ["sudan", "ethiopia", "kenya", "uganda", "democraticrepublicofthecongo", "centralafricanrepublic"],
-"eritrea": ["sudan", "ethiopia", "djibouti"],
-"djibouti": ["eritrea", "ethiopia", "somalia"],
-"somalia": ["djibouti", "ethiopia", "kenya"],
-"rwanda": ["uganda", "tanzania", "burundi", "democraticrepublicofthecongo"],
-"burundi": ["rwanda", "tanzania", "democraticrepublicofthecongo"],
+"algeria": ["tunisia", "libya", "niger", "mali", "mauritania", "morocco", "westernsahara"],
+
 "angola": ["namibia", "zambia", "democraticrepublicofthecongo", "republicofthecongo"],
-"zambia": ["angola", "democraticrepublicofthecongo", "tanzania", "malawi", "mozambique", "zimbabwe", "botswana", "namibia"],
-"zimbabwe": ["southafrica", "botswana", "zambia", "mozambique"],
+
+"benin": ["nigeria", "niger", "burkinafaso", "togo"],
+
 "botswana": ["southafrica", "namibia", "zambia", "zimbabwe"],
-"namibia": ["southafrica", "botswana", "zambia", "angola"],
-"mozambique": ["tanzania", "malawi", "zambia", "zimbabwe", "southafrica", "eswatini"],
-"malawi": ["tanzania", "zambia", "mozambique"],
-"lesotho": ["southafrica"],
-"eswatini": ["southafrica", "mozambique"],
-"madagascar": [],
-"comoros": [],
-"seychelles": [],
-"mauritius": [],
-"saotomeandprincipe": [],
+
+"burkinafaso": ["mali", "niger", "benin", "togo", "ghana", "cotedivoire"],
+
+"burundi": ["rwanda", "tanzania", "democraticrepublicofthecongo"],
+
 "caboverde": [],
+
+"cameroon": ["nigeria", "chad", "centralafricanrepublic", "republicofthecongo", "gabon", "equatorialguinea"],
+
+"centralafricanrepublic": ["chad", "sudan", "southsudan", "democraticrepublicofthecongo", "republicofthecongo", "cameroon"],
+
+"chad": ["libya", "sudan", "centralafricanrepublic", "cameroon", "nigeria", "niger"],
+
+"comoros": [],
+
+"cotedivoire": ["mali", "burkinafaso", "ghana", "guinea", "liberia"],
+
+"democraticrepublicofthecongo": ["centralafricanrepublic", "southsudan", "uganda", "rwanda", "burundi", "tanzania", "zambia", "angola", "republicofthecongo"],
+
+"djibouti": ["eritrea", "ethiopia", "somalia"],
+
+"egypt": ["libya", "sudan", "israel","palestine"],
+
+"equatorialguinea": ["cameroon", "gabon"],
+
+"eritrea": ["sudan", "ethiopia", "djibouti"],
+
+"eswatini": ["southafrica", "mozambique"],
+
+"ethiopia": ["sudan", "southsudan", "kenya", "somalia", "djibouti", "eritrea"],
+
+"gabon": ["cameroon", "republicofthecongo", "equatorialguinea"],
+
+"thegambia": ["senegal"],
+
+"ghana": ["togo", "burkinafaso", "cotedivoire"],
+
+"guinea": ["senegal", "mali", "cotedivoire", "liberia", "sierraleone", "guineabissau"],
+
+"guineabissau": ["senegal", "guinea"],
+
+"kenya": ["ethiopia", "somalia", "tanzania", "uganda", "southsudan"],
+
+"lesotho": ["southafrica"],
+
+"liberia": ["cotedivoire", "guinea", "sierraleone"],
+
+"libya": ["egypt", "sudan", "chad", "niger", "algeria", "tunisia"],
+
+"madagascar": [],
+
+"malawi": ["tanzania", "zambia", "mozambique"],
+
+"mali": ["algeria", "niger", "burkinafaso", "cotedivoire", "guinea", "senegal", "mauritania"],
+
+"mauritania": ["algeria", "mali", "senegal", "westernsahara"],
+
+"mauritius": [],
+
+"morocco": ["algeria"],
+
+"mozambique": ["tanzania", "malawi", "zambia", "zimbabwe", "southafrica", "eswatini"],
+
+"namibia": ["southafrica", "botswana", "zambia", "angola"],
+
+"niger": ["algeria", "libya", "chad", "nigeria", "benin", "burkinafaso", "mali"],
+
+"nigeria": ["benin", "niger", "chad", "cameroon"],
+
+"republicofthecongo": ["cameroon", "centralafricanrepublic", "democraticrepublicofthecongo", "angola", "gabon"],
+
+"rwanda": ["uganda", "tanzania", "burundi", "democraticrepublicofthecongo"],
+
+"saotomeandprincipe": [],
+
+"senegal": ["mauritania", "mali", "guinea", "guineabissau", "thegambia"],
+
+"seychelles": [],
+
+"sierraleone": ["guinea", "liberia"],
+
+"somalia": ["djibouti", "ethiopia", "kenya"],
+
+"southafrica": ["namibia", "botswana", "zimbabwe", "mozambique", "lesotho", "eswatini"],
+
+"southsudan": ["sudan", "ethiopia", "kenya", "uganda", "democraticrepublicofthecongo", "centralafricanrepublic"],
+
+"sudan": ["egypt", "libya", "chad", "centralafricanrepublic", "southsudan", "ethiopia", "eritrea"],
+
+"tanzania": ["kenya", "uganda", "rwanda", "burundi", "democraticrepublicofthecongo", "zambia", "malawi", "mozambique"],
+
+"togo": ["ghana", "burkinafaso", "benin"],
+
+"tunisia": ["algeria", "libya"],
+
+"uganda": ["kenya", "tanzania", "rwanda", "southsudan", "democraticrepublicofthecongo"],
+
+"westernsahara": ["morocco", "algeria", "mauritania"],
+
+"zambia": ["angola", "democraticrepublicofthecongo", "tanzania", "malawi", "mozambique", "zimbabwe", "botswana", "namibia"],
+
+"zimbabwe": ["southafrica", "botswana", "zambia", "mozambique"],
+
 
 
 
@@ -365,7 +604,8 @@ var borders = {
 "nicaragua": ["honduras", "costarica"],
 "costarica": ["nicaragua", "panama"],
 "panama": ["costarica", "colombia"],
-
+"haiti":["dominicanrepublic"],
+"dominicanrepublic":["haiti"],
 # ---- SOUTH AMERICA ----
 "brazil": ["argentina", "bolivia", "peru", "colombia", "venezuela", "guyana", "suriname", "paraguay", "uruguay"],
 "argentina": ["brazil", "bolivia", "paraguay", "uruguay", "chile"],
@@ -377,8 +617,10 @@ var borders = {
 "colombia": ["panama", "venezuela", "brazil", "peru", "ecuador"],
 "venezuela": ["colombia", "brazil", "guyana"],
 "ecuador": ["colombia", "peru"],
-
+"guyana":["venezuela","suriname","brazil"],
+"suriname":["guyana","brazil"],
 # ---- OCEANIA ----
+"papuanewguinea":["indonesia"],
 "australia": [],
 "newzealand": []
 }
@@ -442,11 +684,11 @@ func add_score():
 func starting_country():
 	selected_country.clear()
 	current_sprite.clear()
-	var random_country = country_data.keys().pick_random()
+	var random_country = new_country_data.keys().pick_random()
 	print("Starting country:", random_country)
 	create_country(random_country, FIRST_COLOR)
 	last_country = random_country
-	label_2.text = "Guess the Neighbouring country of " + last_country
+	label_2.text = "Guess the Neighbouring country of " + (last_country).to_upper()
 	selected_country.append(random_country)
 
 
@@ -588,7 +830,7 @@ func _on_submitbutton_pressed(_text = "") -> void:
 			add_score()
 			
 			correct_answer_sound_effect.play()
-			label_2.text = "Guess the Neighbouring country of " + name
+			label_2.text = "Guess the Neighbouring country of " + name.to_upper()
 			recolor_country(last_country, BORDER_COLOR)
 			create_country(name, FIRST_COLOR)
 			label_3.text = "Correct :)"
@@ -613,7 +855,7 @@ func _on_submitbutton_pressed(_text = "") -> void:
 		if borders_previous(name):
 			correct_answer_sound_effect.play()
 			add_score()
-			label_2.text = "Guess the Neighbouring country of " + name
+			label_2.text = "Guess the Neighbouring country of " + name.to_upper()
 			recolor_country(last_country, BORDER_COLOR)
 			create_country(name, FIRST_COLOR)
 			label_3.text = "Correct :)"

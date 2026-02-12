@@ -413,6 +413,7 @@ volume_db = -10.0
 
 [node name="On_Click" type="AudioStreamPlayer" parent="." unique_id=1326937718]
 stream = ExtResource("10_upg52")
+volume_db = -15.474
 
 [connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Submitbutton" to="." method="_on_submitbutton_pressed"]

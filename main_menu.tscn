@@ -355,6 +355,7 @@ horizontal_alignment = 1
 
 [node name="OnClick" type="AudioStreamPlayer" parent="." unique_id=2102547122]
 stream = ExtResource("10_0o4t1")
+volume_db = -15.509
 
 [node name="CompassStarting" type="AudioStreamPlayer" parent="." unique_id=2099445529]
 stream = ExtResource("11_0k4wn")

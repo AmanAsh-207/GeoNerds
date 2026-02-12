@@ -56,12 +56,12 @@ func stop_and_select(target_angle, mode):
  
 
 @onready var on_click: AudioStreamPlayer = $OnClick
-@onready var compass_starting: AudioStreamPlayer = $CompassStarting
+#@onready var compass_starting: AudioStreamPlayer = $CompassStarting
 
 func _on_start_pressed() -> void:
 	on_click.play()
 	await get_tree().create_timer(0.3).timeout
-	compass_starting.play()
+	#compass_starting.play()
 	pointer.visible = true
 	pointer_outline.visible = true
 	dial.visible = true 

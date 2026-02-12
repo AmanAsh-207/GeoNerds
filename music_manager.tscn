@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://bslpmtb7pj15c"]
+
+[ext_resource type="Script" uid="uid://djngfjr081wsi" path="res://music_manager.gd" id="1_rjr7q"]
+[ext_resource type="AudioStream" uid="uid://lxoys08f7mda" path="res://music/geonerds bgm.mp3" id="1_tylfe"]
+
+[node name="music_manager" type="Node2D" unique_id=863920750]
+script = ExtResource("1_rjr7q")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=751423592]
+stream = ExtResource("1_tylfe")
+autoplay = true

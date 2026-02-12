@@ -382,7 +382,7 @@ offset_right = 506.0
 offset_bottom = 351.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(0.13967969, 0.37240466, 0.8046084, 1)
+theme_override_colors/font_color = Color(0.38009778, 0.07519718, 0.48173133, 1)
 theme_override_fonts/font = ExtResource("6_p3muq")
 theme_override_font_sizes/font_size = 56
 text = "SCORE :"
@@ -400,10 +400,9 @@ offset_bottom = 397.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 10
+theme_override_constants/outline_size = 17
 theme_override_fonts/font = ExtResource("6_p3muq")
 theme_override_font_sizes/font_size = 58
-text = "0"
 
 [node name="Correct_Answer_Sound_Effect" type="AudioStreamPlayer" parent="." unique_id=1574759489]
 stream = ExtResource("8_rtr7l")

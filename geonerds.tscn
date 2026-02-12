@@ -351,6 +351,19 @@ offset_bottom = -59.0
 grow_horizontal = 2
 grow_vertical = 0
 
+[node name="your_score" type="Label" parent="CanvasLayer" unique_id=237404858]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -62.0
+offset_top = -53.0
+offset_right = 62.0
+offset_bottom = 53.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [node name="Correct_Answer_Sound_Effect" type="AudioStreamPlayer" parent="." unique_id=1574759489]
 stream = ExtResource("8_rtr7l")
 volume_db = -20.0

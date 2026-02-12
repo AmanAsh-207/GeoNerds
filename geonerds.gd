@@ -727,9 +727,11 @@ func Check_Color_Of_Submit_Button():
 		
 
 @onready var your_score: Label = $CanvasLayer/your_score
+@onready var score1: Node2D = $CanvasLayer/score
 
 func game_Over()->void:
 	your_score.text = str(score)
+	score1.visible = true
 	color_rect.visible = true
 	game_over.visible = true
 	game_over_2.visible = true

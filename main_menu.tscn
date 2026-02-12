@@ -211,6 +211,11 @@ position = Vector2(217, 170)
 scale = Vector2(0.27222222, 0.26666668)
 texture = ExtResource("5_nlkkf")
 
+[node name="geo2" type="Sprite2D" parent="Node2D" unique_id=21169184]
+position = Vector2(1067, 682.00006)
+scale = Vector2(0.27222222, 0.26666668)
+texture = ExtResource("5_nlkkf")
+
 [node name="nerds" type="Sprite2D" parent="Node2D" unique_id=1094793956]
 position = Vector2(289, 176)
 scale = Vector2(0.36203703, 0.40092593)

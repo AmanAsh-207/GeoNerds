@@ -264,7 +264,6 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_upg52")
 horizontal_alignment = 1
 
 [node name="game_over" type="Label" parent="CanvasLayer" unique_id=323428740]
-visible = false
 z_index = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -280,7 +279,6 @@ theme_override_font_sizes/font_size = 128
 text = "GAME OVER"
 
 [node name="game_over2" type="Label" parent="CanvasLayer" unique_id=1002694100]
-visible = false
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -295,7 +293,6 @@ theme_override_font_sizes/font_size = 128
 text = "GAME OVER"
 
 [node name="play_again" type="Button" parent="CanvasLayer" unique_id=692213905]
-visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -352,8 +349,7 @@ grow_horizontal = 2
 grow_vertical = 0
 
 [node name="score" type="Node2D" parent="CanvasLayer" unique_id=1809240460]
-visible = false
-position = Vector2(178, 70)
+position = Vector2(178, 19.125)
 
 [node name="your_score_is" type="Label" parent="CanvasLayer/score" unique_id=1974945413]
 anchors_preset = 8
@@ -400,8 +396,8 @@ offset_right = 868.0
 offset_bottom = 397.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_outline_color = Color(0.76373565, 0.76373565, 0.76373565, 1)
-theme_override_constants/outline_size = 6
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("6_p3muq")
 theme_override_font_sizes/font_size = 58
 text = "0"

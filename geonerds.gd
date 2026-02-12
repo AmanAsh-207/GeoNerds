@@ -575,6 +575,7 @@ func _on_submitbutton_pressed(_text = "") -> void:
 
 	# If not a valid country, do nothing
 	if not name in country_data:
+		wrong_answer.play()
 		$CanvasLayer/InputBox.text = "" 
 		label_3.text = "Invalid"
 		await get_tree().create_timer(1.5).timeout

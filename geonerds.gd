@@ -560,6 +560,12 @@ func is_valid_hard_mode(new_country):
 			return false
 
 	return true
+	
+func recolor_country(country_name: String, color: Color):
+	for s in current_sprite:
+		if s.name == country_name:
+			s.modulate = color
+			return
 
 func _on_submitbutton_pressed(_text = "") -> void:
 	var name = $CanvasLayer/InputBox.text.to_lower().strip_edges()
@@ -579,9 +585,11 @@ func _on_submitbutton_pressed(_text = "") -> void:
 	
 		if is_valid_hard_mode(name):
 			add_score()
+			
 			correct_answer_sound_effect.play()
 			label_2.text = "Guess the Neighbouring country of " + name
-			create_country(name, BORDER_COLOR)
+			recolor_country(last_country, BORDER_COLOR)
+			create_country(name, FIRST_COLOR)
 			label_3.text = "Correct :)"
 			await get_tree().create_timer(1.5).timeout
 			label_3.text = ""
@@ -605,7 +613,8 @@ func _on_submitbutton_pressed(_text = "") -> void:
 			correct_answer_sound_effect.play()
 			add_score()
 			label_2.text = "Guess the Neighbouring country of " + name
-			create_country(name, BORDER_COLOR)
+			recolor_country(last_country, BORDER_COLOR)
+			create_country(name, FIRST_COLOR)
 			label_3.text = "Correct :)"
 			await get_tree().create_timer(1.5).timeout
 			label_3.text = ""
@@ -619,8 +628,6 @@ func _on_submitbutton_pressed(_text = "") -> void:
 			await get_tree().create_timer(1.0).timeout
 			label_3.text = ""
 			game_Over()
-
-
 
 	# Save progress
 	last_country = name
@@ -716,6 +723,8 @@ func Check_Color_Of_Submit_Button():
 		submitbutton.get_theme_stylebox("hover").bg_color = Color("cf0007")
 		label.get_theme_stylebox("normal").border_color = Color("d41e42")
 		label_2.get_theme_stylebox("normal").border_color = Color("d41e42")
+		
+
 
 func game_Over()->void:
 	color_rect.visible = true
@@ -730,12 +739,15 @@ func game_Over()->void:
 	play_again.visible = true
 	play_again_2.visible = true
 	
+@onready var on_click: AudioStreamPlayer = $On_Click
 
 func _on_exit_pressed() -> void:
+	on_click.play()
 	await get_tree().create_timer(0.5).timeout
 	get_tree().change_scene_to_file("res://main_menu.tscn")
 
 
 func _on_play_again_pressed() -> void:
+	on_click.play()
 	await get_tree().create_timer(0.5).timeout
 	get_tree().change_scene_to_file("res://geonerds.tscn")

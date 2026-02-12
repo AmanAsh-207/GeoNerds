@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://0sn3qkm74mew" path="res://delete-button.png" id="7_dke4l"]
 [ext_resource type="AudioStream" uid="uid://c15u0lvxd60j0" path="res://music/Right_Answer_Sound_Effect_V1.mp3.mp3" id="8_rtr7l"]
 [ext_resource type="AudioStream" uid="uid://bpht6qqvbo08f" path="res://music/WrongAnswer.mp3.mp3" id="9_jnbpa"]
+[ext_resource type="AudioStream" uid="uid://bwssd3me0ggq7" path="res://music/On_Click.mp3.mp3" id="10_upg52"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nla3t"]
 content_margin_left = 10.0
@@ -357,6 +358,9 @@ volume_db = -20.0
 [node name="WrongAnswer" type="AudioStreamPlayer" parent="." unique_id=1188968921]
 stream = ExtResource("9_jnbpa")
 volume_db = -10.0
+
+[node name="On_Click" type="AudioStreamPlayer" parent="." unique_id=1326937718]
+stream = ExtResource("10_upg52")
 
 [connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Submitbutton" to="." method="_on_submitbutton_pressed"]

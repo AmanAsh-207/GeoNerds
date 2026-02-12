@@ -413,6 +413,8 @@ var cam_start = Vector2()
 
 
 func _ready():
+	MusicManager.play_music(preload("res://music/geonerds bgm.mp3"))
+
 	default_zoom = cam.zoom
 	default_position = cam.position
 	starting_country()

@@ -19,6 +19,13 @@ var spin_speed = 500
 
 @onready var start: Button = $Node2D/start
 
+func _ready() -> void:
+	MusicManager.play_music(preload("res://music/geonerds bgm.mp3"))
+
+
+
+
+
 func _process(delta):
 	if is_spinning:
 		compass.rotation_degrees = fmod(compass.rotation_degrees + spin_speed * delta, 360)

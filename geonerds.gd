@@ -380,6 +380,206 @@ var country_data = {
 "vanuatu": "oceania"
 }
 
+var country_focus = {
+	"algeria": Vector2(-103.0, 191.0),
+	"angola": Vector2(82.0, 656.0),
+	"benin": Vector2(-96.0, 422.0),
+	"botswana": Vector2(160.0, 788.0),
+	"burkinafaso": Vector2(-140.0, 388.0),
+	"burundi": Vector2(219.0, 566.0),
+	"caboverde": Vector2(-396.0, 344.0),
+	"cameroon": Vector2(19.0, 444.0),
+	"centralafricanrepublic": Vector2(117.0, 453.0),
+	"chad": Vector2(91.0, 348.0),
+	"comoros": Vector2(378.0, 663.0),
+	"cotedivoire": Vector2(-186.0, 442.0),
+	"democraticrepublicofcongo": Vector2(125.0, 574.0),
+	"djibouti": Vector2(363.0, 393.0),
+	"egypt": Vector2(229.0, 211.0),
+	"equatorial": Vector2(-9.0, 501.0),
+	"eritrea": Vector2(331.0, 353.0),
+	"eswatini": Vector2(236.0, 839.0),
+	"ethiopia": Vector2(340.0, 423.0),
+	"gabon": Vector2(10.0, 537.0),
+	"ghana": Vector2(-134.0, 437.0),
+	"guinea": Vector2(-252.0, 415.0),
+	"guineabissau": Vector2(-296.0, 393.0),
+	"kenya": Vector2(310.0, 522.0),
+	"lesotho": Vector2(199.0, 879.0),
+	"liberia": Vector2(-230.0, 454.0),
+	"libya": Vector2(74.0, 216.0),
+	"madagascar": Vector2(412.0, 746.0),
+	"malawi": Vector2(269.0, 679.0),
+	"mali": Vector2(-168.0, 324.0),
+	"mauritania": Vector2(-246.0, 282.0),
+	"mauritius": Vector2(533.0, 762.0),
+	"morocco": Vector2(-203.0, 147.0),
+	"mozambique": Vector2(283.0, 745.0),
+	"namibia": Vector2(89.0, 796.0),
+	"niger": Vector2(-30.0, 324.0),
+	"nigeria": Vector2(-24.0, 424.0),
+	"republicofcongo": Vector2(47.0, 535.0),
+	"rwanda": Vector2(218.0, 549.0),
+	"saotomeprincipe": Vector2(-43.0, 518.0),
+	"senegal": Vector2(-287.0, 362.0),
+	"seychelles": Vector2(509.0, 581.0),
+	"sierraleone": Vector2(-256.0, 432.0),
+	"somalia": Vector2(404.0, 470.0),
+	"southafrica": Vector2(187.0, 958.0),
+	"southsudan": Vector2(216.0, 439.0),
+	"sudan": Vector2(222.0, 349.0),
+	"tanzania": Vector2(276.0, 600.0),
+	"thegambia": Vector2(-297.0, 375.0),
+	"togo": Vector2(-113.0, 430.0),
+	"tunisia": Vector2(-14.0, 120.0),
+	"uganda": Vector2(245.0, 512.0),
+	"zambia": Vector2(195.0, 678.0),
+	"zimbabwe": Vector2(210.0, 748.0),
+	"afghanistan": Vector2(650.0, 117.0),
+	"armenia": Vector2(391.0, 31.0),
+	"azerbaijan": Vector2(420.0, 30.0),
+	"bahrain": Vector2(453.0, 223.0),
+	"bangladesh": Vector2(907.0, 251.0),
+	"bhutan": Vector2(908.0, 203.0),
+	"brunei": Vector2(1184.0, 476.0),
+	"cambodia": Vector2(1073.0, 384.0),
+	"china": Vector2(1065.0, 62.0),
+	"cyprus": Vector2(258.0, 103.0),
+	"georgia": Vector2(371.0, -3.0),
+	"india": Vector2(821.0, 275.0),
+	"indonesia": Vector2(1223.0, 556.0),
+	"iran": Vector2(489.0, 135.0),
+	"iraq": Vector2(376.0, 127.0),
+	"israel": Vector2(278.0, 152.0),
+	"japan": Vector2(1414.0, 96.0),
+	"jordan": Vector2(301.0, 154.0),
+	"kazakhstan": Vector2(641.0, -103.0),
+	"kuwait": Vector2(419.0, 180.0),
+	"kyrgyzstan": Vector2(729.0, 14.0),
+	"laos": Vector2(1061.0, 317.0),
+	"lebanon": Vector2(286.0, 119.0),
+	"malaysia": Vector2(1125.0, 481.0),
+	"maldives": Vector2(715.0, 485.0),
+	"mongolia": Vector2(1061.0, -79.0),
+	"myanmar": Vector2(979.0, 303.0),
+	"nepal": Vector2(836.0, 192.0),
+	"northkorea": Vector2(1331.0, 27.0),
+	"oman": Vector2(514.0, 277.0),
+	"pakistan": Vector2(666.0, 163.0),
+	"palestine": Vector2(275.0, 147.0),
+	"philippines": Vector2(1265.0, 378.0),
+	"qatar": Vector2(461.0, 230.0),
+	"russia": Vector2(1073.0, -589.0),
+	"saudiarabia": Vector2(392.0, 242.0),
+	"singapore": Vector2(1061.0, 512.0),
+	"southkorea": Vector2(1341.0, 90.0),
+	"srilanka": Vector2(798.0, 438.0),
+	"syria": Vector2(323.0, 106.0),
+	"taiwan": Vector2(1246.0, 252.0),
+	"tajikistan": Vector2(689.0, 49.0),
+	"thailand": Vector2(1034.0, 377.0),
+	"timorleste": Vector2(1309.0, 628.0),
+	"turkey": Vector2(280.0, 47.0),
+	"turkmenistan": Vector2(557.0, 46.0),
+	"uae": Vector2(493.0, 243.0),
+	"uzbekistan": Vector2(613.0, 11.0),
+	"vietnam": Vector2(1083.0, 343.0),
+	"yemen": Vector2(431.0, 348.0),
+	"albania": Vector2(107.0, 15.0),
+	"andorra": Vector2(-104.0, -6.0),
+	"austria": Vector2(29.0, -89.0),
+	"belarus": Vector2(196.0, -198.0),
+	"belgium": Vector2(-72.0, -138.0),
+	"bosniaandherzegovina": Vector2(79.0, -27.0),
+	"bulgaria": Vector2(168.0, -9.0),
+	"croatia": Vector2(66.0, -37.0),
+	"czechia": Vector2(54.0, -125.0),
+	"denmark": Vector2(-451.0, -782.0),
+	"estonia": Vector2(162.0, -297.0),
+	"finland": Vector2(175.0, -463.0),
+	"france": Vector2(-95.0, -68.0),
+	"germany": Vector2(-3.0, -153.0),
+	"greece": Vector2(150.0, 56.0),
+	"hungary": Vector2(100.0, -80.0),
+	"iceland": Vector2(-339.0, -452.0),
+	"ireland": Vector2(-216.0, -192.0),
+	"italy": Vector2(21.0, 1.0),
+	"kosovo": Vector2(116.0, -6.0),
+	"latvia": Vector2(158.0, -261.0),
+	"liehtenstein": Vector2(-13.0, -81.0),
+	"lithuania": Vector2(149.0, -226.0),
+	"luxembourg": Vector2(-52.0, -125.0),
+	"malta": Vector2(42.0, 91.0),
+	"moldova": Vector2(201.0, -77.0),
+	"monaco": Vector2(-38.0, -24.0),
+	"montenegro": Vector2(99.0, -8.0),
+	"netherlands": Vector2(-62.0, -169.0),
+	"northmacedonia": Vector2(126.0, 9.0),
+	"norway": Vector2(81.0, -462.0),
+	"poland": Vector2(96.0, -165.0),
+	"portugal": Vector2(-336.0, 68.0),
+	"romania": Vector2(162.0, -61.0),
+	"sanmarino": Vector2(20.0, -28.0),
+	"serbia": Vector2(116.0, -33.0),
+	"slovakia": Vector2(103.0, -106.0),
+	"slovenia": Vector2(48.0, -63.0),
+	"spain": Vector2(-201.0, 89.0),
+	"sweden": Vector2(79.0, -399.0),
+	"switzerland": Vector2(-28.0, -74.0),
+	"uk": Vector2(-158.0, -238.0),
+	"ukraine": Vector2(233.0, -103.0),
+	"vaticancity": Vector2(19.0, 4.0),
+	"antiguaandbarbuda": Vector2(-820.0, 321.0),
+	"bahamas": Vector2(-986.0, 248.0),
+	"barbados": Vector2(-798.0, 378.0),
+	"belize": Vector2(-1130.0, 330.0),
+	"canada": Vector2(-1225.0, -648.0),
+	"costarica": Vector2(-1082.0, 418.0),
+	"cuba": Vector2(-1028.0, 278.0),
+	"dominica": Vector2(-821.0, 351.0),
+	"dominicanrepublic": Vector2(-922.0, 311.0),
+	"elsalvador": Vector2(-1135.0, 370.0),
+	"grenada": Vector2(-825.0, 390.0),
+	"guatemala": Vector2(-1150.0, 347.0),
+	"haiti": Vector2(-954.0, 308.0),
+	"honduras": Vector2(-1104.0, 359.0),
+	"jamaica": Vector2(-1002.0, 319.0),
+	"mexico": Vector2(-1290.0, 248.0),
+	"nicaragua": Vector2(-1095.0, 381.0),
+	"panama": Vector2(-1035.0, 432.0),
+	"stkittsandnevis": Vector2(-836.0, 329.0),
+	"stlucia": Vector2(-817.0, 369.0),
+	"stvincentandgrenadines": Vector2(-820.0, 379.0),
+	"trinidadandtobago": Vector2(-818.0, 407.0),
+	"usa": Vector2(-1466.0, -170.0),
+	"australia": Vector2(1427.0, 958.0),
+	"fiji": Vector2(1907.0, 725.0),
+	"kiribati": Vector2(45.0, 571.0),
+	"marshallislands": Vector2(1807.0, 431.0),
+	"micronesia": Vector2(1593.0, 443.0),
+	"nauru": Vector2(1807.0, 431.0),
+	"newzealand": Vector2(1870.0, 1087.0),
+	"palau": Vector2(1392.0, 466.0),
+	"papuanewguinea": Vector2(1568.0, 602.0),
+	"samoa": Vector2(2018.0, 685.0),
+	"solomonislands": Vector2(1716.0, 632.0),
+	"tonga": Vector2(1989.0, 760.0),
+	"tuvalu": Vector2(1903.0, 611.0),
+	"vanuatu": Vector2(1794.0, 723.0),
+	"argentina": Vector2(-847.0, 1029.0),
+	"bolivia": Vector2(-846.0, 716.0),
+	"brazil": Vector2(-742.0, 701.0),
+	"chile": Vector2(-1124.0, 1012.0),
+	"colombia": Vector2(-953.0, 481.0),
+	"ecuador": Vector2(-1072.0, 547.0),
+	"guyana": Vector2(-793.0, 472.0),
+	"paraguay": Vector2(-788.0, 801.0),
+	"peru": Vector2(-977.0, 634.0),
+	"suriname": Vector2(-760.0, 483.0),
+	"uruguay": Vector2(-757.0, 918.0),
+	"venezuela": Vector2(-881.0, 454.0),
+}
+
 var borders = {
 # ---- ASIA ----
 "india": ["pakistan", "china", "nepal", "bangladesh", "myanmar", "bhutan"],
@@ -658,9 +858,28 @@ var dragging = false
 var drag_start = Vector2()
 var cam_start = Vector2() 
 
+func focus_country(country_name):
+
+	if country_name not in country_focus:
+		return
+
+	var tween = create_tween()
+
+	tween.parallel().tween_property(
+		cam,
+		"position",
+		country_focus[country_name],
+		0.5
+	)
+
+	tween.parallel().tween_property(
+		cam,
+		"zoom",
+		Vector2(0.7, 0.7),
+		0.5
+	)
 
 func _ready():
-	
 	Global.current_score = 0
 	score = 0
 	default_zoom = cam.zoom
@@ -673,6 +892,25 @@ func _ready():
 	input_box.text_submitted.connect(_on_submitbutton_pressed)
 	Check_Color_Of_Submit_Button()
 
+func zoom_at_mouse(factor: float):
+
+	var mouse_before = get_global_mouse_position()
+
+	var new_zoom = cam.zoom * factor
+
+	if new_zoom.x < MIN_ZOOM.x or new_zoom.y < MIN_ZOOM.y:
+		return
+
+	if new_zoom.x > MAX_ZOOM.x or new_zoom.y > MAX_ZOOM.y:
+		return
+
+	cam.zoom = new_zoom
+
+	var mouse_after = get_global_mouse_position()
+
+	cam.position += mouse_before - mouse_after
+
+	clamp_camera_to_viewport()
 	
 var score = 0
 
@@ -689,6 +927,7 @@ func starting_country():
 	var random_country = new_country_data.keys().pick_random()
 	print("Starting country:", random_country)
 	create_country(random_country, FIRST_COLOR)
+	focus_country(random_country)
 	last_country = random_country
 	label_2.text = "Guess the Neighbouring country of " + (last_country).to_upper()
 	selected_country.append(random_country)
@@ -706,21 +945,12 @@ func _input(event):
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			dragging = event.pressed
 
+		if event.button_index == MOUSE_BUTTON_WHEEL_DOWN and event.pressed:
+			zoom_at_mouse(0.9)
 
-		# -------- ZOOM LOGIC --------
-		if event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
-			var new_zoom = cam.zoom * 0.9
-			clamp_camera_to_viewport()
-			# Only apply if still above MIN_ZOOM
-			if new_zoom.x >= MIN_ZOOM.x and new_zoom.y >= MIN_ZOOM.y:
-				cam.zoom = new_zoom
+		elif event.button_index == MOUSE_BUTTON_WHEEL_UP and event.pressed:
+			zoom_at_mouse(1.1)
 
-		elif event.button_index == MOUSE_BUTTON_WHEEL_UP:
-			var new_zoom = cam.zoom * 1.1
-			clamp_camera_to_viewport()
-			# Only apply if still below MAX_ZOOM
-			if new_zoom.x <= MAX_ZOOM.x and new_zoom.y <= MAX_ZOOM.y:
-				cam.zoom = new_zoom	
 
 
 	# -------- ACTUAL DRAG MOVEMENT --------
@@ -845,6 +1075,7 @@ func _on_submitbutton_pressed(_text = "") -> void:
 			label_2.text = "Guess the Neighbouring country of " + name.to_upper()
 			recolor_country(last_country, BORDER_COLOR)
 			create_country(name, FIRST_COLOR)
+			focus_country(name)
 			label_3.text = "Correct :)"
 			await get_tree().create_timer(1.5).timeout
 			label_3.text = ""
@@ -870,6 +1101,7 @@ func _on_submitbutton_pressed(_text = "") -> void:
 			label_2.text = "Guess the Neighbouring country of " + name.to_upper()
 			recolor_country(last_country, BORDER_COLOR)
 			create_country(name, FIRST_COLOR)
+			focus_country(name)
 			label_3.text = "Correct :)"
 			await get_tree().create_timer(1.5).timeout
 			label_3.text = ""

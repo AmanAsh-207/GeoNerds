@@ -20,10 +20,30 @@ var spin_speed = 500
 @onready var start: Button = $Node2D/start
 
 
+#All the login related stuff
+var login_open = false;
+@onready var login_panel: Panel = $LoginPanel
+@onready var password_input: LineEdit = $LoginPanel/PasswordInput
+@onready var username_input: LineEdit = $LoginPanel/UsernameInput
+@onready var request: HTTPRequest = $SupabaseRequest
+const SUPABASE_URL = "https://gvpymhzzjcbaosbfessi.supabase.co" 
+const SUPABASE_KEY = "sb_publishable_szmd1Ofdt1XEB-QDY9kqyQ_HUbx8-ss"
+var pending_username = ""
+var pending_password = ""
 
 
+func _ready():
 
-
+	SupabaseManager.login_success.connect(_on_login_success)
+	SupabaseManager.login_failed.connect(_on_login_failed)
+	SupabaseManager.account_created.connect(_on_account_created)
+	
+	if not Global.is_guest:
+		player_name.visible = true
+		player_name.text = Global.username
+		login_button.visible = false
+		easy_best_data.text = str(Global.easy_highscore)
+		hard_best_data.text = str(Global.hard_highscore)
 
 func _process(delta):
 	if is_spinning:
@@ -57,8 +77,15 @@ func stop_and_select(target_angle, mode):
 
 @onready var on_click: AudioStreamPlayer = $OnClick
 #@onready var compass_starting: AudioStreamPlayer = $CompassStarting
+@onready var login_button: Button = $LoginButton
 
 func _on_start_pressed() -> void:
+	easy_best_text.visible = false
+	easy_best_data.visible = false
+	hard_best_text.visible = false
+	hard_best_data.visible = false
+	hard.disabled = false
+	easy.disabled = false
 	on_click.play()
 	await get_tree().create_timer(0.3).timeout
 	#compass_starting.play()
@@ -69,6 +96,9 @@ func _on_start_pressed() -> void:
 	hard.visible = true
 	easy.visible = true 
 	is_spinning = true
+	login_button.visible = false
+	login_panel.visible = false
+	player_name.visible = false
 	text_difficulty_choose.visible = true
 	
 	#compass.get_theme_stylebox("normal").shadow_size = 0
@@ -85,3 +115,78 @@ func _on_hard_pressed() -> void:
 func _on_easy_pressed() -> void:
 	on_click.play()
 	stop_and_select(245, "easy")
+
+ 
+
+
+
+func _on_login_button_pressed() -> void:
+	login_open = !login_open
+	easy_best_text.visible = false
+	easy_best_data.visible = false
+	hard_best_text.visible = false
+	hard_best_data.visible = false
+	login_panel.visible = login_open
+	login_button.visible = false
+	hard.disabled = login_open
+	easy.disabled = login_open
+	
+	if login_open:
+		username_input.grab_focus()
+
+
+func _on_submit_login_pressed() -> void:
+	var username = username_input.text.strip_edges()
+	var password = password_input.text.strip_edges()
+	
+	if username == "" and password == "":
+		Global.username = "Guest"
+		Global.is_guest = true
+
+		print("Guest Mode")
+		return
+
+	if username == "" or password == "":
+		print("Fill both fields")
+		return
+
+
+	pending_username = username
+	pending_password = password
+	print("Checking account...")
+	SupabaseManager.login(username, password)
+
+
+@onready var player_name: Label = $PlayerName
+
+@onready var easy_best_text: Label = $EasyBestText
+@onready var easy_best_data: Label = $EasyBestData
+@onready var hard_best_text: Label = $HardBestText
+@onready var hard_best_data: Label = $HardBestData
+
+func _on_login_success():
+	easy_best_text.visible = true
+	easy_best_data.visible = true
+	easy_best_data.text = str(Global.easy_highscore)
+	hard_best_text.visible = true
+	hard_best_data.visible = true
+	hard_best_data.text = str(Global.hard_highscore)
+	player_name.visible = true
+	player_name.text = Global.username
+	login_button.visible = false
+	login_open = !login_open
+	login_panel.visible = login_open
+	print("Login successful!")
+
+func _on_login_failed():
+	print("Incorrect password!")
+
+func _on_account_created():
+	print("Account created!")
+
+
+func _on_close_login_pressed() -> void:
+	login_button.visible = true
+	login_open = !login_open
+	
+	login_panel.visible = login_open

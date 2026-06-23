@@ -38,6 +38,8 @@ border_color = Color(0.17765072, 0.16966358, 0, 1)
 shadow_size = 8
 shadow_offset = Vector2(14.32, 0.93)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mg3m2"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_glbon"]
 bg_color = Color(0.7889274, 0.11871656, 0.14302473, 1)
 border_color = Color(1, 1, 1, 1)
@@ -75,6 +77,8 @@ shadow_offset = Vector2(42.155, 17.645)
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8qtwp"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dy7ct"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w44g7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8qtwp"]
 bg_color = Color(0.6, 0.156, 0.156, 0.6627451)
@@ -119,6 +123,10 @@ corner_radius_top_right = 35
 corner_radius_bottom_right = 35
 corner_radius_bottom_left = 35
 corner_detail = 20
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iotk1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j5v2v"]
 
 [node name="main_menu" type="Control" unique_id=348545031]
 layout_mode = 3
@@ -185,6 +193,7 @@ theme_override_font_sizes/font_size = 90
 theme_override_styles/normal = SubResource("StyleBoxFlat_jix8l")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_qe12f")
 theme_override_styles/hover = SubResource("StyleBoxFlat_dy7ct")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_mg3m2")
 
 [node name="pointer" type="Polygon2D" parent="compass" unique_id=1966282621]
 visible = false
@@ -288,6 +297,7 @@ theme_override_font_sizes/font_size = 90
 theme_override_styles/normal = SubResource("StyleBoxEmpty_qe12f")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_8qtwp")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_dy7ct")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_w44g7")
 text = " START"
 
 [node name="hard" type="Button" parent="." unique_id=115003591]
@@ -375,8 +385,149 @@ volume_db = -15.509
 [node name="CompassStarting" type="AudioStreamPlayer" parent="." unique_id=2099445529]
 stream = ExtResource("11_0k4wn")
 
+[node name="LoginButton" type="Button" parent="." unique_id=1638950092]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.818
+anchor_top = 0.040000003
+anchor_right = 0.818
+anchor_bottom = 0.040000003
+offset_left = -0.33599854
+offset_top = 0.07999802
+offset_right = 61.664
+offset_bottom = 23.079998
+theme_override_styles/normal = SubResource("StyleBoxEmpty_iotk1")
+text = "LOGIN"
+
+[node name="LoginPanel" type="Panel" parent="." unique_id=1972554741]
+visible = false
+layout_mode = 0
+offset_left = 821.0
+offset_top = 26.0
+offset_right = 1069.0
+offset_bottom = 309.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_j5v2v")
+
+[node name="UsernameInput" type="LineEdit" parent="LoginPanel" unique_id=814177536]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.48800004
+anchor_right = 0.48800004
+offset_left = 0.97600555
+offset_top = -5.0
+offset_right = 112.976006
+offset_bottom = 26.0
+theme_override_colors/font_color = Color(0.78284216, 0.9110322, 0.8454282, 1)
+placeholder_text = "Username"
+
+[node name="PasswordInput" type="LineEdit" parent="LoginPanel" unique_id=549229776]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.41200003
+anchor_top = 0.43
+anchor_right = 0.41200003
+anchor_bottom = 0.43
+offset_left = 19.82399
+offset_top = -90.69
+offset_right = 109.82399
+offset_bottom = -59.690002
+placeholder_text = "Password"
+secret = true
+
+[node name="SubmitLogin" type="Button" parent="LoginPanel" unique_id=341681215]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.70600003
+anchor_top = 0.735
+anchor_right = 0.70600003
+anchor_bottom = 0.735
+offset_left = -53.088013
+offset_top = -133.005
+offset_right = 11.911987
+offset_bottom = -102.005005
+text = "Submit
+"
+
+[node name="CloseLogin" type="Button" parent="LoginPanel" unique_id=981311678]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 75.0
+offset_right = 226.0
+offset_bottom = 106.0
+text = "X"
+
+[node name="SupabaseRequest" type="HTTPRequest" parent="." unique_id=262814722]
+
+[node name="PlayerName" type="Label" parent="." unique_id=1150044921]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.81900007
+anchor_top = 0.040000003
+anchor_right = 0.81900007
+anchor_bottom = 0.040000003
+offset_left = -0.48809814
+offset_top = 0.07999802
+offset_right = 79.5119
+offset_bottom = 30.079998
+
+[node name="EasyBestText" type="Label" parent="." unique_id=1898045637]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.82100004
+anchor_top = 0.091000006
+anchor_right = 0.82100004
+anchor_bottom = 0.091000006
+offset_left = 2.2079468
+offset_top = 3.2219963
+offset_right = 84.20795
+offset_bottom = 26.222008
+text = "Easy Best: "
+
+[node name="EasyBestData" type="Label" parent="." unique_id=187716149]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.90300006
+anchor_top = 0.096
+anchor_right = 0.90300006
+anchor_bottom = 0.096
+offset_left = -10.2561035
+offset_top = -0.20800018
+offset_right = 19.743896
+offset_bottom = 22.792
+text = "0"
+
+[node name="HardBestText" type="Label" parent="." unique_id=772974969]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.82100004
+anchor_top = 0.091000006
+anchor_right = 0.82100004
+anchor_bottom = 0.091000006
+offset_left = 2.2079468
+offset_top = 29.222
+offset_right = 84.20795
+offset_bottom = 52.222015
+text = "Hard Best: "
+
+[node name="HardBestData" type="Label" parent="." unique_id=2009698797]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.90300006
+anchor_top = 0.096
+anchor_right = 0.90300006
+anchor_bottom = 0.096
+offset_left = -10.2561035
+offset_top = 25.792
+offset_right = 19.743896
+offset_bottom = 48.792
+text = "0"
+
 [connection signal="pressed" from="compass" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Node2D/volume" to="Node2D/volume" method="_on_pressed"]
 [connection signal="pressed" from="Node2D/start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="hard" to="." method="_on_hard_pressed"]
 [connection signal="pressed" from="easy" to="." method="_on_easy_pressed"]
+[connection signal="pressed" from="LoginButton" to="." method="_on_login_button_pressed"]
+[connection signal="pressed" from="LoginPanel/SubmitLogin" to="." method="_on_submit_login_pressed"]
+[connection signal="pressed" from="LoginPanel/CloseLogin" to="." method="_on_close_login_pressed"]
+[connection signal="request_completed" from="SupabaseRequest" to="." method="_on_supabase_request_request_completed"]

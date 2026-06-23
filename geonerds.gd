@@ -661,7 +661,8 @@ var cam_start = Vector2()
 
 func _ready():
 	
-
+	Global.current_score = 0
+	score = 0
 	default_zoom = cam.zoom
 	default_position = cam.position
 	starting_country()
@@ -676,6 +677,7 @@ func _ready():
 var score = 0
 
 func add_score():
+	Global.current_score += 1
 	score += 1
 	label.text = "Score: " + str(score)
 
@@ -823,7 +825,17 @@ func _on_submitbutton_pressed(_text = "") -> void:
 		await get_tree().create_timer(1.5).timeout
 		label_3.text = ""
 		return
+	
+	
+	if name in selected_country:
+		wrong_answer.play()
+		label_3.text = "Already guessed!"
+		await get_tree().create_timer(1.5).timeout
+		label_3.text = ""
+		return
+	
 	$CanvasLayer/InputBox.text = ""
+	
 	if GameSettings.game_mode == "hard":
 	
 		if is_valid_hard_mode(name):
@@ -969,8 +981,28 @@ func Check_Color_Of_Submit_Button():
 		
 @onready var your_score: Label = $CanvasLayer/score/your_score
 @onready var score1: Node2D = $CanvasLayer/score
+@onready var player_name: Label = $CanvasLayer/PlayerName
+
+@onready var easy_best_text: Label = $CanvasLayer/EasyBestText
+@onready var easy_best_data: Label = $CanvasLayer/EasyBestData
+@onready var hard_best_text: Label = $CanvasLayer/HardBestText
+@onready var hard_best_data: Label = $CanvasLayer/HardBestData
+
 
 func game_Over()->void:
+	
+	if GameSettings.game_mode == "easy":
+
+		if Global.current_score > Global.easy_highscore:
+			Global.easy_highscore = Global.current_score
+			SupabaseManager.save_easy_highscore()
+
+	else:
+
+		if Global.current_score > Global.hard_highscore:
+			Global.hard_highscore = Global.current_score
+			SupabaseManager.save_hard_highscore()
+	
 	your_score.text = str(score)
 	score1.visible = true
 	color_rect.visible = true
@@ -984,6 +1016,14 @@ func game_Over()->void:
 	exit.visible = true
 	play_again.visible = true
 	play_again_2.visible = true
+	easy_best_text.visible = true
+	easy_best_data.visible = true
+	easy_best_data.text = str(Global.easy_highscore)
+	hard_best_text.visible = true
+	hard_best_data.visible = true
+	hard_best_data.text = str(Global.hard_highscore)
+	player_name.text = Global.username
+	player_name.visible = true
 	
 @onready var on_click: AudioStreamPlayer = $On_Click
 
@@ -997,3 +1037,4 @@ func _on_play_again_pressed() -> void:
 	on_click.play()
 	await get_tree().create_timer(0.5).timeout
 	get_tree().change_scene_to_file("res://geonerds.tscn")
+	

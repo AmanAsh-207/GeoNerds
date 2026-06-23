@@ -403,6 +403,64 @@ theme_override_constants/outline_size = 17
 theme_override_fonts/font = ExtResource("6_p3muq")
 theme_override_font_sizes/font_size = 58
 
+[node name="PlayerName" type="Label" parent="CanvasLayer" unique_id=850572523]
+offset_left = 943.0
+offset_top = 26.0
+offset_right = 1026.0
+offset_bottom = 56.0
+
+[node name="EasyBestText" type="Label" parent="CanvasLayer" unique_id=1584475888]
+visible = false
+anchors_preset = -1
+anchor_left = 0.82100004
+anchor_top = 0.091000006
+anchor_right = 0.82100004
+anchor_bottom = 0.091000006
+offset_left = 2.2079468
+offset_top = 3.2219963
+offset_right = 84.20795
+offset_bottom = 26.222008
+text = "Easy Best: "
+
+[node name="EasyBestData" type="Label" parent="CanvasLayer" unique_id=1318455621]
+visible = false
+anchors_preset = -1
+anchor_left = 0.90300006
+anchor_top = 0.096
+anchor_right = 0.90300006
+anchor_bottom = 0.096
+offset_left = -10.2561035
+offset_top = -0.20800018
+offset_right = 19.743896
+offset_bottom = 22.792
+text = "0"
+
+[node name="HardBestText" type="Label" parent="CanvasLayer" unique_id=1577090190]
+visible = false
+anchors_preset = -1
+anchor_left = 0.82100004
+anchor_top = 0.091000006
+anchor_right = 0.82100004
+anchor_bottom = 0.091000006
+offset_left = 2.2079468
+offset_top = 29.222
+offset_right = 84.20795
+offset_bottom = 52.222015
+text = "Hard Best: "
+
+[node name="HardBestData" type="Label" parent="CanvasLayer" unique_id=1669262771]
+visible = false
+anchors_preset = -1
+anchor_left = 0.90300006
+anchor_top = 0.096
+anchor_right = 0.90300006
+anchor_bottom = 0.096
+offset_left = -10.2561035
+offset_top = 25.792
+offset_right = 19.743896
+offset_bottom = 48.792
+text = "0"
+
 [node name="Correct_Answer_Sound_Effect" type="AudioStreamPlayer" parent="." unique_id=1574759489]
 stream = ExtResource("8_rtr7l")
 volume_db = -20.0

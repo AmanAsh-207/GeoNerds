@@ -27,6 +27,8 @@ buses/default_bus_layout=""
 
 GameSettings="*uid://dig4aaw6f48da"
 MusicManager="*res://music_manager.tscn"
+Global="*uid://bomobr0hv1mlo"
+SupabaseManager="*uid://dcv6fcy86ly2d"
 
 [display]
 

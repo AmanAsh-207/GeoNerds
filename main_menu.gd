@@ -32,18 +32,25 @@ var pending_username = ""
 var pending_password = ""
 
 
+#LeaderBoard
+@onready var easy_text: RichTextLabel = $LeaderboardPanel/EasyText
+@onready var hard_text: RichTextLabel = $LeaderboardPanel/HardText
+
+
 func _ready():
 
 	SupabaseManager.login_success.connect(_on_login_success)
 	SupabaseManager.login_failed.connect(_on_login_failed)
 	SupabaseManager.account_created.connect(_on_account_created)
-	
+	SupabaseManager.load_leaderboards()
 	if not Global.is_guest:
 		player_name.visible = true
 		player_name.text = Global.username
 		login_button.visible = false
 		easy_best_data.text = str(Global.easy_highscore)
 		hard_best_data.text = str(Global.hard_highscore)
+	
+	SupabaseManager.leaderboards_loaded.connect(_on_leaderboards_loaded)
 
 func _process(delta):
 	if is_spinning:
@@ -78,8 +85,10 @@ func stop_and_select(target_angle, mode):
 @onready var on_click: AudioStreamPlayer = $OnClick
 #@onready var compass_starting: AudioStreamPlayer = $CompassStarting
 @onready var login_button: Button = $LoginButton
+@onready var leaderboard_panel: Panel = $LeaderboardPanel
 
 func _on_start_pressed() -> void:
+	leaderboard_panel.visible = false
 	easy_best_text.visible = false
 	easy_best_data.visible = false
 	hard_best_text.visible = false
@@ -190,3 +199,44 @@ func _on_close_login_pressed() -> void:
 	login_open = !login_open
 	
 	login_panel.visible = login_open
+	
+func _on_leaderboards_loaded(data):
+
+	var easy_data = data.duplicate()
+	var hard_data = data.duplicate()
+
+	easy_data.sort_custom(
+		func(a,b):
+			return a["easy_highscore"] > b["easy_highscore"]
+	)
+
+	hard_data.sort_custom(
+		func(a,b):
+			return a["hard_highscore"] > b["hard_highscore"]
+	)
+	
+	Global.easy_leaderboard = easy_data
+	Global.hard_leaderboard = hard_data
+	var easy_string = ""
+	var hard_string = ""
+
+	for i in range(min(5, easy_data.size())):
+
+		easy_string += str(i + 1)
+		easy_string += ". "
+		easy_string += easy_data[i]["username"]
+		easy_string += " - "
+		easy_string += str(easy_data[i]["easy_highscore"])
+		easy_string += "\n"
+
+	for i in range(min(5, hard_data.size())):
+
+		hard_string += str(i + 1)
+		hard_string += ". "
+		hard_string += hard_data[i]["username"]
+		hard_string += " - "
+		hard_string += str(hard_data[i]["hard_highscore"])
+		hard_string += "\n"
+
+	easy_text.text = easy_string
+	hard_text.text = hard_string

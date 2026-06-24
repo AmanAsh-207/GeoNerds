@@ -502,6 +502,50 @@ offset_right = 19.743896
 offset_bottom = 48.792
 text = "0"
 
+[node name="LeaderboardPanel" type="Panel" parent="." unique_id=535094062]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.79300004
+anchor_top = 0.47700003
+anchor_right = 0.79300004
+anchor_bottom = 0.47700003
+offset_left = 0.46392822
+offset_top = -0.0960083
+offset_right = 225.46393
+offset_bottom = 323.904
+
+[node name="EasyModeTitle" type="Label" parent="LeaderboardPanel" unique_id=600568343]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "EASY BEST 5"
+
+[node name="EasyText" type="RichTextLabel" parent="LeaderboardPanel" unique_id=1824592165]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 40.0
+offset_right = 215.0
+offset_bottom = 80.0
+fit_content = true
+
+[node name="HardModeTitle" type="Label" parent="LeaderboardPanel" unique_id=331044605]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.46300003
+anchor_bottom = 0.46300003
+offset_top = -0.012008667
+offset_right = 40.0
+offset_bottom = 22.987991
+text = "HARD BEST 5"
+
+[node name="HardText" type="RichTextLabel" parent="LeaderboardPanel" unique_id=81376784]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 191.0
+offset_right = 218.0
+offset_bottom = 231.0
+fit_content = true
+
 [connection signal="pressed" from="compass" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Node2D/volume" to="Node2D/volume" method="_on_pressed"]
 [connection signal="pressed" from="Node2D/start" to="." method="_on_start_pressed"]

@@ -6,23 +6,35 @@ const SUPABASE_KEY = "sb_publishable_szmd1Ofdt1XEB-QDY9kqyQ_HUbx8-ss"
 var pending_username = ""
 var pending_password = ""
 
-var request : HTTPRequest
+var login_request : HTTPRequest
+var leaderboard_request : HTTPRequest
 
 signal login_success
 signal login_failed
 signal account_created
 signal highscore_saved
-signal leaderboard_loaded(data)
+signal leaderboards_loaded(data)
+
+
 
 func _ready():
 
-	request = HTTPRequest.new()
-	add_child(request)
+	login_request = HTTPRequest.new()
+	add_child(login_request)
 
-	request.request_completed.connect(_on_request_completed)
+	leaderboard_request = HTTPRequest.new()
+	add_child(leaderboard_request)
+
+	login_request.request_completed.connect(
+		_on_login_request_completed
+	)
+
+	leaderboard_request.request_completed.connect(
+		_on_leaderboard_request_completed
+	)
 
 func login(username: String, password: String):
-
+	
 	pending_username = username
 	pending_password = password
 
@@ -38,7 +50,7 @@ func check_user(username: String):
 
 	var url = SUPABASE_URL + "/rest/v1/players?username=eq." + username
 
-	request.request(url, headers, HTTPClient.METHOD_GET)
+	login_request.request(url, headers, HTTPClient.METHOD_GET)
 
 
 
@@ -58,7 +70,7 @@ func create_user():
 		"hard_highscore": 0
 	})
 
-	request.request(
+	login_request.request(
 		SUPABASE_URL + "/rest/v1/players",
 		headers,
 		HTTPClient.METHOD_POST,
@@ -67,7 +79,7 @@ func create_user():
 
 
 
-func _on_request_completed(
+func _on_login_request_completed(
 	result: int,
 	response_code: int,
 	headers: PackedStringArray,
@@ -88,7 +100,9 @@ func _on_request_completed(
 		return
 
 	var data = JSON.parse_string(text)
-
+	
+	
+	
 	if data is Array:
 
 		if data.size() == 0:
@@ -125,7 +139,7 @@ func save_easy_highscore():
 	var url = SUPABASE_URL + \
 	"/rest/v1/players?username=eq." + Global.username
 
-	request.request(
+	login_request.request(
 		url,
 		headers,
 		HTTPClient.METHOD_PATCH,
@@ -148,9 +162,44 @@ func save_hard_highscore():
 	var url = SUPABASE_URL + \
 	"/rest/v1/players?username=eq." + Global.username
 
-	request.request(
+	login_request.request(
 		url,
 		headers,
 		HTTPClient.METHOD_PATCH,
 		body
+	)
+
+func load_leaderboards():
+
+	var headers = [
+		"apikey: " + SUPABASE_KEY,
+		"Authorization: Bearer " + SUPABASE_KEY
+	]
+
+	var url = SUPABASE_URL + \
+	"/rest/v1/players?select=username,easy_highscore,hard_highscore"
+
+	leaderboard_request.request(
+		url,
+		headers,
+		HTTPClient.METHOD_GET
+	)
+
+func _on_leaderboard_request_completed(
+	result,
+	response_code,
+	headers,
+	body
+):
+
+	if response_code != 200:
+		return
+
+	var text = body.get_string_from_utf8()
+
+	var data = JSON.parse_string(text)
+
+	emit_signal(
+		"leaderboards_loaded",
+		data
 	)

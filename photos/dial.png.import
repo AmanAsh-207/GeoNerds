@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d4dkeai2og0ex"
-path="res://.godot/imported/New Piskel-2.png (5).png-3f18bd3a2dd234c4e04e4ecedea9b842.ctex"
+uid="uid://bhe6axgudmu2q"
+path="res://.godot/imported/dial.png-34f987615dd54afd543c45357c520ef5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://New Piskel-2.png (5).png"
-dest_files=["res://.godot/imported/New Piskel-2.png (5).png-3f18bd3a2dd234c4e04e4ecedea9b842.ctex"]
+source_file="res://photos/dial.png"
+dest_files=["res://.godot/imported/dial.png-34f987615dd54afd543c45357c520ef5.ctex"]
 
 [params]
 

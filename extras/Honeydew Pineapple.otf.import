@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://dpal6lw36owve"
-path="res://.godot/imported/Honeydew Pineapple.otf-bea7d66c11d95bd0742383591f600fdc.fontdata"
+path="res://.godot/imported/Honeydew Pineapple.otf-59625ab7b5cfa9b2d6acbb640b6c012c.fontdata"
 
 [deps]
 
-source_file="res://Honeydew Pineapple.otf"
-dest_files=["res://.godot/imported/Honeydew Pineapple.otf-bea7d66c11d95bd0742383591f600fdc.fontdata"]
+source_file="res://extras/Honeydew Pineapple.otf"
+dest_files=["res://.godot/imported/Honeydew Pineapple.otf-59625ab7b5cfa9b2d6acbb640b6c012c.fontdata"]
 
 [params]
 

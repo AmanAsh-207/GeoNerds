@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://brbqhcm4j8uh"
-path="res://.godot/imported/Sugar Cake.otf-362567453e8512a68295ffb2694e2cdb.fontdata"
+path="res://.godot/imported/Sugar Cake.otf-cd26d6abf6937e570cfc015b870844ed.fontdata"
 
 [deps]
 
-source_file="res://Sugar Cake.otf"
-dest_files=["res://.godot/imported/Sugar Cake.otf-362567453e8512a68295ffb2694e2cdb.fontdata"]
+source_file="res://extras/Sugar Cake.otf"
+dest_files=["res://.godot/imported/Sugar Cake.otf-cd26d6abf6937e570cfc015b870844ed.fontdata"]
 
 [params]
 

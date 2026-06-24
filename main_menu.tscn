@@ -1,15 +1,17 @@
 [gd_scene format=3 uid="uid://7sqwcd7nfgo2"]
 
-[ext_resource type="FontFile" uid="uid://brbqhcm4j8uh" path="res://Sugar Cake.otf" id="1_7vrkn"]
+[ext_resource type="FontFile" uid="uid://brbqhcm4j8uh" path="res://extras/Sugar Cake.otf" id="1_7vrkn"]
 [ext_resource type="Script" uid="uid://daqiw2xpf6nsb" path="res://main_menu.gd" id="1_qe12f"]
 [ext_resource type="Texture2D" uid="uid://lq3kpskoq6rg" path="res://volume.png" id="2_fu7sn"]
-[ext_resource type="Texture2D" uid="uid://cgaxlebhss1nm" path="res://main_menu.png" id="3_fu7sn"]
-[ext_resource type="Texture2D" uid="uid://bhe6axgudmu2q" path="res://dial.png" id="4_8qtwp"]
-[ext_resource type="Texture2D" uid="uid://d4dkeai2og0ex" path="res://New Piskel-2.png (5).png" id="7_j5v2v"]
-[ext_resource type="FontFile" uid="uid://dyreg5bx2jhms" path="res://Minecraft.ttf" id="8_8qtwp"]
+[ext_resource type="Texture2D" uid="uid://cgaxlebhss1nm" path="res://photos/main_menu.png" id="3_fu7sn"]
+[ext_resource type="Texture2D" uid="uid://bhe6axgudmu2q" path="res://photos/dial.png" id="4_8qtwp"]
+[ext_resource type="Texture2D" uid="uid://d4dkeai2og0ex" path="res://photos/New Piskel-2.png (5).png" id="7_j5v2v"]
+[ext_resource type="FontFile" uid="uid://dyreg5bx2jhms" path="res://extras/Minecraft.ttf" id="8_8qtwp"]
 [ext_resource type="Script" uid="uid://csi0aswwciiyb" path="res://volume.gd" id="8_dy7ct"]
 [ext_resource type="AudioStream" uid="uid://bwssd3me0ggq7" path="res://music/On_Click.mp3.mp3" id="10_0o4t1"]
 [ext_resource type="AudioStream" uid="uid://da34woh5akcab" path="res://music/CompassStarting.mp3.mp3" id="11_0k4wn"]
+[ext_resource type="Texture2D" uid="uid://bbl3vhh3isiae" path="res://photos/guest_nameplate.png" id="11_iotk1"]
+[ext_resource type="Texture2D" uid="uid://eucb5ibbiqac" path="res://photos/guest_dp.png" id="11_j5v2v"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nlkkf"]
 texture = ExtResource("3_fu7sn")
@@ -126,6 +128,8 @@ corner_detail = 20
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j5v2v"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cm266"]
+
 [node name="main_menu" type="Control" unique_id=348545031]
 layout_mode = 3
 anchors_preset = 15
@@ -241,10 +245,10 @@ anchor_left = 0.95100003
 anchor_top = 0.026
 anchor_right = 0.984
 anchor_bottom = 0.085
-offset_left = 1092.9191
-offset_top = 15.0
-offset_right = 1777.6011
-offset_bottom = 676.76794
+offset_left = 957.9999
+offset_top = 14.0
+offset_right = 1704.4104
+offset_bottom = 741.2727
 grow_horizontal = 0
 scale = Vector2(0.055, 0.055)
 theme_override_styles/normal = SubResource("StyleBoxFlat_glbon")
@@ -366,6 +370,7 @@ volume_db = -15.509
 stream = ExtResource("11_0k4wn")
 
 [node name="LoginButton" type="Button" parent="." unique_id=1638950092]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.818
@@ -451,6 +456,7 @@ offset_right = 79.5119
 offset_bottom = 30.079998
 
 [node name="EasyBestText" type="Label" parent="." unique_id=1898045637]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.82100004
@@ -464,6 +470,7 @@ offset_bottom = 26.222008
 text = "Easy Best: "
 
 [node name="EasyBestData" type="Label" parent="." unique_id=187716149]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.90300006
@@ -477,6 +484,7 @@ offset_bottom = 22.792
 text = "0"
 
 [node name="HardBestText" type="Label" parent="." unique_id=772974969]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.82100004
@@ -490,6 +498,7 @@ offset_bottom = 52.222015
 text = "Hard Best: "
 
 [node name="HardBestData" type="Label" parent="." unique_id=2009698797]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.90300006
@@ -503,6 +512,7 @@ offset_bottom = 48.792
 text = "0"
 
 [node name="LeaderboardPanel" type="Panel" parent="." unique_id=535094062]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.79300004
@@ -545,6 +555,35 @@ offset_top = 191.0
 offset_right = 218.0
 offset_bottom = 231.0
 fit_content = true
+
+[node name="login_ui" type="Node2D" parent="." unique_id=1838563542]
+
+[node name="Nameplate" type="Button" parent="login_ui" unique_id=357041151]
+offset_left = 1028.0
+offset_top = 14.0
+offset_right = 1629.0
+offset_bottom = 252.0
+scale = Vector2(0.17, 0.17)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_cm266")
+icon = ExtResource("11_iotk1")
+
+[node name="DP" type="Button" parent="login_ui" unique_id=882596187]
+offset_left = 1008.965
+offset_top = 14.462
+offset_right = 1238.9664
+offset_bottom = 244.462
+scale = Vector2(0.175, 0.175)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_cm266")
+icon = ExtResource("11_j5v2v")
+
+[node name="Guest_label" type="Label" parent="login_ui" unique_id=477949949]
+offset_left = 1055.0
+offset_top = 22.0
+offset_right = 1109.0
+offset_bottom = 45.0
+scale = Vector2(1.065, 1.065)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Guest!!"
 
 [connection signal="pressed" from="compass" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Node2D/volume" to="Node2D/volume" method="_on_pressed"]

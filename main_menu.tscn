@@ -12,6 +12,12 @@
 [ext_resource type="AudioStream" uid="uid://da34woh5akcab" path="res://music/CompassStarting.mp3.mp3" id="11_0k4wn"]
 [ext_resource type="Texture2D" uid="uid://bbl3vhh3isiae" path="res://photos/guest_nameplate.png" id="11_iotk1"]
 [ext_resource type="Texture2D" uid="uid://eucb5ibbiqac" path="res://photos/guest_dp.png" id="11_j5v2v"]
+[ext_resource type="Texture2D" uid="uid://cm0s7hjlquxmj" path="res://photos/Rectangle 3.png" id="13_cm266"]
+[ext_resource type="Texture2D" uid="uid://bks4i38cbfyil" path="res://photos/Rectangle 4.png" id="14_g8g3n"]
+[ext_resource type="Texture2D" uid="uid://dp5ldgdrh8tir" path="res://photos/Rectangle 5.png" id="15_8u0te"]
+[ext_resource type="Texture2D" uid="uid://bmn7bm6d7vov3" path="res://photos/cross_button.png" id="16_g8g3n"]
+[ext_resource type="Texture2D" uid="uid://nh5t6c8bmnh" path="res://photos/User.png" id="16_oiatc"]
+[ext_resource type="Texture2D" uid="uid://c2c8v608lbyhh" path="res://photos/Lock.png" id="17_mg3m2"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nlkkf"]
 texture = ExtResource("3_fu7sn")
@@ -126,9 +132,38 @@ corner_detail = 20
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iotk1"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cm266"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ojb7r"]
+bg_color = Color(0.15, 0.20833328, 0.5, 1)
+corner_radius_top_left = 45
+corner_radius_top_right = 45
+corner_radius_bottom_right = 45
+corner_radius_bottom_left = 45
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j5v2v"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cm266"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e5qqf"]
+bg_color = Color(0.13599999, 0.22839998, 0.4, 1)
+corner_radius_top_left = 75
+corner_radius_top_right = 75
+corner_radius_bottom_right = 75
+corner_radius_bottom_left = 75
+expand_margin_left = 100.0
+expand_margin_right = 100.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oiatc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7bbuq"]
+bg_color = Color(0.13548018, 0.22754557, 0.39852422, 0.85882354)
+corner_radius_top_left = 75
+corner_radius_top_right = 75
+corner_radius_bottom_right = 75
+corner_radius_bottom_left = 75
+expand_margin_left = 100.0
+expand_margin_right = 100.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ojb7r"]
 
 [node name="main_menu" type="Control" unique_id=348545031]
 layout_mode = 3
@@ -384,66 +419,10 @@ offset_bottom = 23.079998
 theme_override_styles/normal = SubResource("StyleBoxEmpty_iotk1")
 text = "LOGIN"
 
-[node name="LoginPanel" type="Panel" parent="." unique_id=1972554741]
-visible = false
-layout_mode = 0
-offset_left = 821.0
-offset_top = 26.0
-offset_right = 1069.0
-offset_bottom = 309.0
-theme_override_styles/panel = SubResource("StyleBoxEmpty_j5v2v")
-
-[node name="UsernameInput" type="LineEdit" parent="LoginPanel" unique_id=814177536]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.48800004
-anchor_right = 0.48800004
-offset_left = 0.97600555
-offset_top = -5.0
-offset_right = 112.976006
-offset_bottom = 26.0
-theme_override_colors/font_color = Color(0.78284216, 0.9110322, 0.8454282, 1)
-placeholder_text = "Username"
-
-[node name="PasswordInput" type="LineEdit" parent="LoginPanel" unique_id=549229776]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.41200003
-anchor_top = 0.43
-anchor_right = 0.41200003
-anchor_bottom = 0.43
-offset_left = 19.82399
-offset_top = -90.69
-offset_right = 109.82399
-offset_bottom = -59.690002
-placeholder_text = "Password"
-secret = true
-
-[node name="SubmitLogin" type="Button" parent="LoginPanel" unique_id=341681215]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.70600003
-anchor_top = 0.735
-anchor_right = 0.70600003
-anchor_bottom = 0.735
-offset_left = -53.088013
-offset_top = -133.005
-offset_right = 11.911987
-offset_bottom = -102.005005
-text = "Submit
-"
-
-[node name="CloseLogin" type="Button" parent="LoginPanel" unique_id=981311678]
-layout_mode = 0
-offset_left = 200.0
-offset_top = 75.0
-offset_right = 226.0
-offset_bottom = 106.0
-text = "X"
-
 [node name="SupabaseRequest" type="HTTPRequest" parent="." unique_id=262814722]
 
 [node name="PlayerName" type="Label" parent="." unique_id=1150044921]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.81900007
@@ -585,12 +564,197 @@ scale = Vector2(1.065, 1.065)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Guest!!"
 
+[node name="login_bg" type="Node2D" parent="." unique_id=1712697637]
+position = Vector2(999.00006, 148.00002)
+scale = Vector2(0.066, 0.065)
+
+[node name="Rectangle3" type="Sprite2D" parent="login_bg" unique_id=1583023255]
+texture = ExtResource("13_cm266")
+
+[node name="Rectangle4" type="Sprite2D" parent="login_bg" unique_id=1809289979]
+scale = Vector2(1.0204082, 1.0309278)
+texture = ExtResource("14_g8g3n")
+
+[node name="Rectangle5" type="Sprite2D" parent="login_bg" unique_id=165437002]
+scale = Vector2(1.0204082, 1.0309278)
+texture = ExtResource("15_8u0te")
+
+[node name="Nameplate2" type="Button" parent="login_bg" unique_id=317898071]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -564.6465
+offset_top = 778.57227
+offset_right = 564.6465
+offset_bottom = 1129.121
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_ojb7r")
+
+[node name="Guest_label2" type="Label" parent="login_bg/Nameplate2" unique_id=1145230453]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -237.49982
+offset_top = -118.884796
+offset_right = 237.50018
+offset_bottom = 88.115204
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.065, 1.065)
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.9, 0.9, 0.9, 1)
+theme_override_font_sizes/font_size = 184
+text = "LOGIN"
+
+[node name="Guest_label3" type="Label" parent="login_bg" unique_id=1233887073]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -786.0
+offset_top = -1307.6926
+offset_right = 786.0
+offset_bottom = -625.6926
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 500
+text = "LOGIN"
+
+[node name="Guest_label4" type="Label" parent="login_bg" unique_id=1371693431]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1834.5313
+offset_top = -723.0791
+offset_right = 1800.4688
+offset_bottom = -41.0791
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 156
+text = "to be a part of the leaderboard 
+and save your highscore...."
+horizontal_alignment = 1
+
+[node name="LoginPanel" type="Panel" parent="login_bg" unique_id=1972554741]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -2030.3037
+offset_top = -1369.2311
+offset_right = 2030.3027
+offset_bottom = 1369.2308
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_j5v2v")
+
+[node name="UsernameInput" type="LineEdit" parent="login_bg/LoginPanel" unique_id=814177536]
+z_index = 41
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1424.2417
+offset_top = -136.73291
+offset_right = 1424.2422
+offset_bottom = 198.26709
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.93214226, 0.9563096, 0.9974565, 1)
+theme_override_colors/caret_color = Color(1, 1, 1, 1)
+theme_override_constants/caret_width = 10
+theme_override_font_sizes/font_size = 145
+theme_override_styles/normal = SubResource("StyleBoxFlat_e5qqf")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_oiatc")
+placeholder_text = "Username"
+max_length = 30
+caret_blink = true
+
+[node name="User" type="Sprite2D" parent="login_bg/LoginPanel/UsernameInput" unique_id=1938989574]
+position = Vector2(2787.878, 167.50208)
+scale = Vector2(4.5, 4.5)
+texture = ExtResource("16_oiatc")
+
+[node name="PasswordInput" type="LineEdit" parent="login_bg/LoginPanel" unique_id=549229776]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1424.2422
+offset_top = 282.88037
+offset_right = 1424.2422
+offset_bottom = 617.8804
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/caret_color = Color(1, 1, 1, 1)
+theme_override_constants/caret_width = 10
+theme_override_font_sizes/font_size = 145
+theme_override_styles/normal = SubResource("StyleBoxFlat_7bbuq")
+placeholder_text = "Password"
+max_length = 20
+caret_blink = true
+secret = true
+
+[node name="Lock" type="Sprite2D" parent="login_bg/LoginPanel/PasswordInput" unique_id=1751459144]
+position = Vector2(2787.8782, 163.27328)
+scale = Vector2(4.5, 4.5)
+texture = ExtResource("17_mg3m2")
+
+[node name="SubmitLogin" type="Button" parent="login_bg/LoginPanel" unique_id=341681215]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.70600003
+anchor_top = 0.735
+anchor_right = 0.70600003
+anchor_bottom = 0.735
+offset_left = 193.81787
+offset_top = 264.1538
+offset_right = 258.81787
+offset_bottom = 295.1538
+scale = Vector2(4.23, 4.23)
+text = "Submit
+"
+
+[node name="CloseLogin" type="Button" parent="login_bg/LoginPanel" unique_id=981311678]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -424.24316
+offset_top = 153.84607
+offset_right = -372.24316
+offset_bottom = 209.58743
+grow_horizontal = 0
+scale = Vector2(4.84, 4.84)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ojb7r")
+icon = ExtResource("16_g8g3n")
+
 [connection signal="pressed" from="compass" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Node2D/volume" to="Node2D/volume" method="_on_pressed"]
 [connection signal="pressed" from="Node2D/start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="hard" to="." method="_on_hard_pressed"]
 [connection signal="pressed" from="easy" to="." method="_on_easy_pressed"]
 [connection signal="pressed" from="LoginButton" to="." method="_on_login_button_pressed"]
-[connection signal="pressed" from="LoginPanel/SubmitLogin" to="." method="_on_submit_login_pressed"]
-[connection signal="pressed" from="LoginPanel/CloseLogin" to="." method="_on_close_login_pressed"]
 [connection signal="request_completed" from="SupabaseRequest" to="." method="_on_supabase_request_request_completed"]
+[connection signal="pressed" from="login_bg/LoginPanel/SubmitLogin" to="." method="_on_submit_login_pressed"]
+[connection signal="pressed" from="login_bg/LoginPanel/CloseLogin" to="." method="_on_close_login_pressed"]

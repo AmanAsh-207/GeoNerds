@@ -21,10 +21,8 @@ var spin_speed = 500
 
 
 #All the login related stuff
-var login_open = false;
-@onready var login_panel: Panel = $LoginPanel
-@onready var password_input: LineEdit = $LoginPanel/PasswordInput
-@onready var username_input: LineEdit = $LoginPanel/UsernameInput
+@onready var username_input: LineEdit = $login_bg/LoginPanel/UsernameInput
+@onready var password_input: LineEdit = $login_bg/LoginPanel/PasswordInput
 @onready var request: HTTPRequest = $SupabaseRequest
 const SUPABASE_URL = "https://gvpymhzzjcbaosbfessi.supabase.co" 
 const SUPABASE_KEY = "sb_publishable_szmd1Ofdt1XEB-QDY9kqyQ_HUbx8-ss"
@@ -44,9 +42,7 @@ func _ready():
 	SupabaseManager.account_created.connect(_on_account_created)
 	SupabaseManager.load_leaderboards()
 	if not Global.is_guest:
-		player_name.visible = true
-		player_name.text = Global.username
-		login_button.visible = false
+		guest_label.text = Global.username
 		easy_best_data.text = str(Global.easy_highscore)
 		hard_best_data.text = str(Global.hard_highscore)
 	
@@ -84,7 +80,6 @@ func stop_and_select(target_angle, mode):
 
 @onready var on_click: AudioStreamPlayer = $OnClick
 #@onready var compass_starting: AudioStreamPlayer = $CompassStarting
-@onready var login_button: Button = $LoginButton
 @onready var leaderboard_panel: Panel = $LeaderboardPanel
 
 func _on_start_pressed() -> void:
@@ -105,9 +100,7 @@ func _on_start_pressed() -> void:
 	hard.visible = true
 	easy.visible = true 
 	is_spinning = true
-	login_button.visible = false
-	login_panel.visible = false
-	player_name.visible = false
+	
 	text_difficulty_choose.visible = true
 	
 	#compass.get_theme_stylebox("normal").shadow_size = 0
@@ -127,21 +120,21 @@ func _on_easy_pressed() -> void:
 
  
 
+var login_open = false
 
-
-func _on_login_button_pressed() -> void:
-	login_open = !login_open
-	easy_best_text.visible = false
-	easy_best_data.visible = false
-	hard_best_text.visible = false
-	hard_best_data.visible = false
-	login_panel.visible = login_open
-	login_button.visible = false
-	hard.disabled = login_open
-	easy.disabled = login_open
-	
-	if login_open:
-		username_input.grab_focus()
+#func _on_login_button_pressed() -> void:
+	#login_open = !login_open
+	#easy_best_text.visible = false
+	#easy_best_data.visible = false
+	#hard_best_text.visible = false
+	#hard_best_data.visible = false
+	#login_panel.visible = login_open
+	#login_button.visible = false
+	#hard.disabled = login_open
+	#easy.disabled = login_open
+	#
+	#if login_open:
+		#username_input.grab_focus()
 
 
 func _on_submit_login_pressed() -> void:
@@ -151,6 +144,7 @@ func _on_submit_login_pressed() -> void:
 	if username == "" and password == "":
 		Global.username = "Guest"
 		Global.is_guest = true
+		login_bg.visible = false
 
 		print("Guest Mode")
 		return
@@ -164,9 +158,10 @@ func _on_submit_login_pressed() -> void:
 	pending_password = password
 	print("Checking account...")
 	SupabaseManager.login(username, password)
+	login_bg.visible = false
 
+@onready var guest_label: Label = $login_ui/Guest_label
 
-@onready var player_name: Label = $PlayerName
 
 @onready var easy_best_text: Label = $EasyBestText
 @onready var easy_best_data: Label = $EasyBestData
@@ -180,11 +175,9 @@ func _on_login_success():
 	hard_best_text.visible = true
 	hard_best_data.visible = true
 	hard_best_data.text = str(Global.hard_highscore)
-	player_name.visible = true
-	player_name.text = Global.username
-	login_button.visible = false
+	guest_label.text = Global.username
+	
 	login_open = !login_open
-	login_panel.visible = login_open
 	print("Login successful!")
 
 func _on_login_failed():
@@ -193,12 +186,12 @@ func _on_login_failed():
 func _on_account_created():
 	print("Account created!")
 
+@onready var login_bg: Node2D = $login_bg
 
 func _on_close_login_pressed() -> void:
-	login_button.visible = true
 	login_open = !login_open
-	
-	login_panel.visible = login_open
+	login_bg.visible = false
+	#login_panel.visible = login_open
 	
 func _on_leaderboards_loaded(data):
 
@@ -240,3 +233,18 @@ func _on_leaderboards_loaded(data):
 
 	easy_text.text = easy_string
 	hard_text.text = hard_string
+
+
+func _on_nameplate_pressed() -> void:
+	login_open = !login_open
+	login_bg.visible = true
+	easy_best_text.visible = false
+	easy_best_data.visible = false
+	hard_best_text.visible = false
+	hard_best_data.visible = false
+	#login_panel.visible = login_open
+	hard.disabled = login_open
+	easy.disabled = login_open
+	
+	if login_open:
+		username_input.grab_focus()

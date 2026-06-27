@@ -71,6 +71,7 @@ func _on_start_pressed() -> void:
 	easy_best_data.visible = false
 	hard_best_text.visible = false
 	hard_best_data.visible = false
+	login_ui.visible = false
 	hard.disabled = false
 	easy.disabled = false
 	on_click.play()
@@ -147,7 +148,7 @@ func _on_leaderboards_loaded(data):
 	hard_text.text = hard_string
 
 
-
+@onready var login_ui: Node2D = $login_ui
 @onready var username_input: LineEdit = $login_bg/LoginPanel/UsernameInput
 @onready var password_input: LineEdit = $login_bg/LoginPanel/PasswordInput
 @onready var request: HTTPRequest = $SupabaseRequest

@@ -7,7 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://cmx6mlj38w7yp" path="res://photos/593713e5-3a82-49c0-8304-4f7a76ea902a.jpg" id="5_8uhbq"]
 [ext_resource type="FontFile" uid="uid://dyreg5bx2jhms" path="res://extras/Minecraft.ttf" id="6_p3muq"]
 [ext_resource type="Texture2D" uid="uid://0sn3qkm74mew" path="res://delete-button.png" id="7_dke4l"]
+[ext_resource type="Texture2D" uid="uid://bbl3vhh3isiae" path="res://photos/guest_nameplate.png" id="8_jks1h"]
 [ext_resource type="AudioStream" uid="uid://c15u0lvxd60j0" path="res://music/Right_Answer_Sound_Effect_V1.mp3.mp3" id="8_rtr7l"]
+[ext_resource type="Texture2D" uid="uid://eucb5ibbiqac" path="res://photos/guest_dp.png" id="9_f3ss8"]
 [ext_resource type="AudioStream" uid="uid://bpht6qqvbo08f" path="res://music/WrongAnswer.mp3.mp3" id="9_jnbpa"]
 [ext_resource type="AudioStream" uid="uid://bwssd3me0ggq7" path="res://music/On_Click.mp3.mp3" id="10_upg52"]
 
@@ -122,6 +124,8 @@ shadow_offset = Vector2(6.435, 4.915)
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_upg52"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nla3t"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ajoup"]
 
 [node name="Node2D" type="Node2D" unique_id=1669328160]
 script = ExtResource("1_rtr7l")
@@ -487,6 +491,36 @@ fit_content = true
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
+
+[node name="login_ui" type="Node2D" parent="CanvasLayer" unique_id=728427296]
+visible = false
+
+[node name="Nameplate" type="Button" parent="CanvasLayer/login_ui" unique_id=202438160]
+offset_left = 1028.0
+offset_top = 14.0
+offset_right = 1629.0
+offset_bottom = 252.0
+scale = Vector2(0.17, 0.17)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ajoup")
+icon = ExtResource("8_jks1h")
+
+[node name="DP" type="Button" parent="CanvasLayer/login_ui" unique_id=239085230]
+offset_left = 1008.965
+offset_top = 14.462
+offset_right = 1238.9664
+offset_bottom = 244.462
+scale = Vector2(0.175, 0.175)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ajoup")
+icon = ExtResource("9_f3ss8")
+
+[node name="Guest_label" type="Label" parent="CanvasLayer/login_ui" unique_id=2006604513]
+offset_left = 1055.0
+offset_top = 22.0
+offset_right = 1109.0
+offset_bottom = 45.0
+scale = Vector2(1.065, 1.065)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Guest!!"
 
 [node name="Correct_Answer_Sound_Effect" type="AudioStreamPlayer" parent="." unique_id=1574759489]
 stream = ExtResource("8_rtr7l")

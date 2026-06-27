@@ -1222,23 +1222,24 @@ func Check_Color_Of_Submit_Button():
 @onready var hard_best_text: Label = $CanvasLayer/HardBestText
 @onready var hard_best_data: Label = $CanvasLayer/HardBestData
 @onready var leaderboard_panel: Panel = $CanvasLayer/LeaderboardPanel
+@onready var login_ui: Node2D = $CanvasLayer/login_ui
+@onready var nameplate: Button = $CanvasLayer/login_ui/Nameplate
 
 
 func game_Over()->void:
-	
 	if GameSettings.game_mode == "easy":
-
 		if Global.current_score > Global.easy_highscore:
 			Global.easy_highscore = Global.current_score
 			SupabaseManager.save_easy_highscore()
 
 	else:
-
 		if Global.current_score > Global.hard_highscore:
 			Global.hard_highscore = Global.current_score
 			SupabaseManager.save_hard_highscore()
+			
 	await get_tree().create_timer(0.5).timeout
 	SupabaseManager.load_leaderboards()
+	login_ui.visible = true
 	your_score.text = str(score)
 	score1.visible = true
 	leaderboard_panel.visible = true
@@ -1259,8 +1260,7 @@ func game_Over()->void:
 	hard_best_text.visible = true
 	hard_best_data.visible = true
 	hard_best_data.text = str(Global.hard_highscore)
-	player_name.text = Global.username
-	player_name.visible = true
+	nameplate.text = Global.username
 	
 @onready var on_click: AudioStreamPlayer = $On_Click
 

@@ -18,6 +18,13 @@ var is_spinning = false
 var spin_speed = 500
 
 @onready var start: Button = $Node2D/start
+const DP_1 = preload("uid://wphpp3gnx3bo")
+const DP_2 = preload("uid://oqo4klrdsf8e")
+const DP_3 = preload("uid://b3vel5unwdush")
+const DP_4 = preload("uid://ct3kr34mepbbf")
+const DP_5 = preload("uid://c6ngw8ag5dm4y")
+const DP_6 = preload("uid://b2n5kfbjfoe52")
+@onready var dp: Button = $login_ui/DP
 
 
 #LeaderBoard
@@ -173,6 +180,7 @@ func _on_nameplate_pressed() -> void:
 	hard_best_data.visible = false
 	hard.disabled = login_open
 	easy.disabled = login_open
+	username_input.grab_focus()
 	
 
 
@@ -201,6 +209,7 @@ func _on_submit_login_pressed() -> void:
 
 
 func _on_login_success():
+	dp.icon = DP_3
 	easy_best_text.visible = true
 	easy_best_data.visible = true
 	easy_best_data.text = str(Global.easy_highscore)

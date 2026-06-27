@@ -474,7 +474,6 @@ offset_bottom = 48.792
 text = "0"
 
 [node name="LeaderboardPanel" type="Panel" parent="." unique_id=535094062]
-visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.79300004
@@ -548,7 +547,6 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Guest!!"
 
 [node name="login_bg" type="Node2D" parent="." unique_id=1712697637]
-visible = false
 position = Vector2(999.00006, 148.00002)
 scale = Vector2(0.066, 0.065)
 
@@ -642,6 +640,16 @@ position = Vector2(2787.878, 167.50208)
 scale = Vector2(4.5, 4.5)
 texture = ExtResource("16_oiatc")
 
+[node name="Label" type="Label" parent="login_bg/LoginPanel/UsernameInput" unique_id=514347625]
+layout_mode = 0
+offset_left = -15.152794
+offset_top = 336.73285
+offset_right = 1060.8472
+offset_bottom = 457.73285
+theme_override_colors/font_color = Color(10.668172, 0, 0, 1)
+theme_override_font_sizes/font_size = 88
+text = "Username already exist!!!"
+
 [node name="PasswordInput" type="LineEdit" parent="login_bg/LoginPanel" unique_id=549229776]
 layout_mode = 1
 anchors_preset = 8
@@ -650,9 +658,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -1424.2422
-offset_top = 282.88037
+offset_top = 323.07666
 offset_right = 1424.2422
-offset_bottom = 617.8804
+offset_bottom = 658.07666
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/caret_color = Color(1, 1, 1, 1)

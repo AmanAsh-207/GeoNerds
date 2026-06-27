@@ -881,6 +881,7 @@ func focus_country(country_name):
 	)
 
 func _ready():
+	input_box.grab_focus()
 	Global.current_score = 0
 	score = 0
 	default_zoom = cam.zoom

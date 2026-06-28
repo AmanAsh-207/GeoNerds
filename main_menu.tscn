@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://d4dkeai2og0ex" path="res://photos/New Piskel-2.png (5).png" id="7_j5v2v"]
 [ext_resource type="FontFile" uid="uid://dyreg5bx2jhms" path="res://extras/Minecraft.ttf" id="8_8qtwp"]
 [ext_resource type="Script" uid="uid://csi0aswwciiyb" path="res://volume.gd" id="8_dy7ct"]
+[ext_resource type="Texture2D" uid="uid://b0ue30xagj5dw" path="res://photos/New Piskel-7.png.png" id="8_mg3m2"]
 [ext_resource type="AudioStream" uid="uid://bwssd3me0ggq7" path="res://music/On_Click.mp3.mp3" id="10_0o4t1"]
 [ext_resource type="AudioStream" uid="uid://da34woh5akcab" path="res://music/CompassStarting.mp3.mp3" id="11_0k4wn"]
 [ext_resource type="Texture2D" uid="uid://bbl3vhh3isiae" path="res://photos/guest_nameplate.png" id="11_iotk1"]
@@ -255,19 +256,20 @@ texture = ExtResource("4_8qtwp")
 
 [node name="geo nerds" type="Sprite2D" parent="Node2D" unique_id=1565635146]
 self_modulate = Color(1.2092134, 0.8542383, 1.4458636, 1)
-position = Vector2(243.81857, 136.31857)
-scale = Vector2(0.46174803, 0.43065476)
+position = Vector2(243.99998, 129)
+scale = Vector2(0.4075856, 0.3801395)
 texture = ExtResource("7_j5v2v")
 
 [node name="credits" type="Label" parent="Node2D" unique_id=1406487451]
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 9.0
-offset_top = 601.0
-offset_right = 443.0
-offset_bottom = 648.0
+offset_left = 6.0
+offset_top = 622.00006
+offset_right = 440.225
+offset_bottom = 669.00006
 grow_vertical = 0
+scale = Vector2(0.445, 0.445)
 theme_override_fonts/font = ExtResource("1_7vrkn")
 theme_override_font_sizes/font_size = 32
 text = "Made by: u/AffectionateFriend85"
@@ -293,29 +295,20 @@ script = ExtResource("8_dy7ct")
 
 [node name="start" type="Button" parent="Node2D" unique_id=1382311528]
 z_index = 2
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 430.0
-offset_top = 250.0
-offset_right = 722.0
-offset_bottom = 398.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.8, 0.8)
-pivot_offset = Vector2(-3.265, 0)
-pivot_offset_ratio = Vector2(0.515, 0.48)
+offset_left = 431.00003
+offset_top = 178.00002
+offset_right = 1511.0
+offset_bottom = 1258.0
+scale = Vector2(0.27, 0.27)
+size_flags_horizontal = 4
 theme_override_colors/font_color = Color(0.8745098, 0.8745098, 0.8745098, 1)
 theme_override_constants/outline_size = 21
-theme_override_fonts/font = ExtResource("1_7vrkn")
-theme_override_font_sizes/font_size = 90
 theme_override_styles/normal = SubResource("StyleBoxEmpty_qe12f")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_8qtwp")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_dy7ct")
 theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_w44g7")
-text = " START"
+icon = ExtResource("8_mg3m2")
+metadata/_edit_use_anchors_ = true
 
 [node name="hard" type="Button" parent="." unique_id=115003591]
 visible = false
@@ -547,6 +540,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Guest!!"
 
 [node name="login_bg" type="Node2D" parent="." unique_id=1712697637]
+visible = false
 position = Vector2(999.00006, 148.00002)
 scale = Vector2(0.066, 0.065)
 
